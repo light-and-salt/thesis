@@ -56,9 +56,9 @@
 \setmonofont{Courier New}
 
 \RequirePackage[slantfont,boldfont]{xeCJK}
-\setCJKmainfont{SimSun}
-\setCJKsansfont{Heiti SC}
-\setCJKmonofont{SimSun}
+\setCJKmainfont{Adobe Song Std}
+\setCJKsansfont{Adobe Heiti Std}
+\setCJKmonofont{Adobe Song Std}
 \punctstyle{kaiming}
 
 
@@ -111,13 +111,13 @@
 \DeclareRobustCommand{\xiaoliu}{\fontsize{6.5pt}{\baselineskip}\selectfont}
 \DeclareRobustCommand{\qihao}{\fontsize{5.5pt}{\baselineskip}\selectfont}
 \DeclareRobustCommand{\bahao}{\fontsize{5pt}{\baselineskip}\selectfont}
-\setCJKfamilyfont{FangSong}{STFangSong}
-\setCJKfamilyfont{HeiTi}{Heiti SC}
-\setCJKfamilyfont{KaiShu}{STKaiti}
+\setCJKfamilyfont{FangSong}{Adobe FangSong Std}
+\setCJKfamilyfont{HeiTi}{Adobe Heiti Std}
+\setCJKfamilyfont{KaiShu}{Adobe Kaiti Std}
 \setCJKfamilyfont{LiShu}{LiSu}
-\setCJKfamilyfont{SongTi}{SimSun}
+\setCJKfamilyfont{SongTi}{Adobe Song Std}
 \setCJKfamilyfont{YouYuan}{YouYuan}
-\setCJKfamilyfont{STFangsong}{STFangsong}
+\setCJKfamilyfont{STFangsong}{Adobe Fangsong Std}
 \setCJKfamilyfont{STXingkai}{STXingkai}
 \DeclareRobustCommand{\fangsong}{\CJKfamily{FangSong}}
 \DeclareRobustCommand{\stfangsong}{\CJKfamily{STFangsong}}

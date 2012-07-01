@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.1415926-2.3-0.9997.5 (TeX Live 2011) (format=xelatex 2011.7.3)  1 JUL 2012 14:23
+This is XeTeX, Version 3.1415926-2.3-0.9997.5 (TeX Live 2011) (format=xelatex 2011.7.3)  1 JUL 2012 15:11
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -929,34 +929,30 @@ LaTeX Info: Redefining \gbt7714 on input line 49.
 ) (./data/cover.tex
 File: images/zjdx.png Graphic file (type QTm)
  <use  "images/zjdx.png" >
- fontspec info: Font SimSun does not contain any OpenType `Script' information.
+\g_fontspec_family_Adobe Song Std_int=\count289
+ fontspec info: Defining font family 'AdobeSongStd(0)' for font 'Adobe Song Std
+' with options [BoldFont={Adobe Song Std},BoldFeatures={RawFeature={embolden=4}
+},ItalicFont={Adobe Song Std},ItalicFeatures={RawFeature={slant=0.17}},BoldItal
+icFont={Adobe Song Std},BoldItalicFeatures={RawFeature={embolden=4,slant=0.17}}
+].
 
-
-\g_fontspec_family_SimSun_int=\count289
- fontspec info: Defining font family 'SimSun(0)' for font 'SimSun' with options
- [BoldFont={SimSun},BoldFeatures={RawFeature={embolden=4}},ItalicFont={SimSun},
-ItalicFeatures={RawFeature={slant=0.17}},BoldItalicFont={SimSun},BoldItalicFeat
-ures={RawFeature={embolden=4,slant=0.17}}].
-
-\g_fontspec_SimSun(0)_prop=\toks60
+\g_fontspec_AdobeSongStd(0)_prop=\toks60
  fontspec info: Defining shape 'normal' with NFSS spec.:
-(fontspec)  <->"SimSun/ICU:"
+(fontspec)  <->"Adobe Song Std/ICU:script=latn;language=DFLT;"
 
  fontspec info: Defining shape 'bold' with NFSS spec.:
-(fontspec)  <->"SimSun/ICU:embolden=4;"
+(fontspec)  <->"Adobe Song Std/ICU:script=latn;language=DFLT;embolden=4;"
 
  fontspec info: Defining shape 'italic' with NFSS spec.:
-(fontspec)  <->"SimSun/ICU:slant=0.17;"
+(fontspec)  <->"Adobe Song Std/ICU:script=latn;language=DFLT;slant=0.17;"
 
  fontspec info: Defining shape 'bold italic' with NFSS spec.:
-(fontspec)  <->"SimSun/ICU:embolden=4,slant=0.17;"
+(fontspec)  <->"Adobe Song Std/ICU:script=latn;language=DFLT;embolden=4,slant=0
+.17;"
 
 File: images/standxb.png Graphic file (type QTm)
 
 <use  "images/standxb.png" >
- fontspec info: Font SimSun does not contain any OpenType `Script' information.
-
-
 LaTeX Font Info:    Try loading font information for U+msa on input line 23.
 
 (/usr/local/texlive/2011/texmf-dist/tex/latex/amsfonts/umsa.fd
@@ -971,68 +967,59 @@ LaTeX Font Info:    Try loading font information for U+rsfs on input line 23.
 
 (/usr/local/texlive/2011/texmf-dist/tex/latex/jknapltx/ursfs.fd
 File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
-)
- fontspec info: Font SimSun does not contain any OpenType `Script' information.
-
-
- [1
+) [1
 
 ])
 (./data/announce.tex [2]
 LaTeX Font Info:    Calculating math sizes for size <14> on input line 7.
- fontspec info: Font SimSun does not contain any OpenType `Script' information.
-
-
  [3]) [4]
 \openout2 = `data/eval.aux'.
 
  (./data/eval.tex
- fontspec info: Font STFangsong does not contain any OpenType `Script' informat
-ion.
+\g_fontspec_family_Adobe Fangsong Std_int=\count290
+ fontspec info: Defining font family 'AdobeFangsongStd(0)' for font 'Adobe Fang
+song Std' with options [BoldFont={Adobe Fangsong Std},BoldFeatures={RawFeature=
+{embolden=4}},ItalicFont={Adobe Fangsong Std},ItalicFeatures={RawFeature={slant
+=0.17}},BoldItalicFont={Adobe Fangsong Std},BoldItalicFeatures={RawFeature={emb
+olden=4,slant=0.17}}].
 
-\g_fontspec_family_STFangsong_int=\count290
- fontspec info: Defining font family 'STFangsong(0)' for font 'STFangsong' with
- options [BoldFont={STFangsong},BoldFeatures={RawFeature={embolden=4}},ItalicFo
-nt={STFangsong},ItalicFeatures={RawFeature={slant=0.17}},BoldItalicFont={STFang
-song},BoldItalicFeatures={RawFeature={embolden=4,slant=0.17}}].
-
-\g_fontspec_STFangsong(0)_prop=\toks61
+\g_fontspec_AdobeFangsongStd(0)_prop=\toks61
  fontspec info: Defining shape 'normal' with NFSS spec.:
-(fontspec)  <->"STFangsong/AAT:"
+(fontspec)  <->"Adobe Fangsong Std/ICU:script=latn;language=DFLT;"
 
  fontspec info: Defining shape 'bold' with NFSS spec.:
-(fontspec)  <->"STFangsong/AAT:embolden=4;"
+(fontspec)  <->"Adobe Fangsong Std/ICU:script=latn;language=DFLT;embolden=4;"
 
  fontspec info: Defining shape 'italic' with NFSS spec.:
-(fontspec)  <->"STFangsong/AAT:slant=0.17;"
+(fontspec)  <->"Adobe Fangsong Std/ICU:script=latn;language=DFLT;slant=0.17;"
 
  fontspec info: Defining shape 'bold italic' with NFSS spec.:
-(fontspec)  <->"STFangsong/AAT:embolden=4,slant=0.17;"
+(fontspec)  <->"Adobe Fangsong Std/ICU:script=latn;language=DFLT;embolden=4,sla
+nt=0.17;"
 
 ) [5
 
 ]
- fontspec info: Font Heiti SC does not contain any OpenType `Script' informatio
-n.
+\g_fontspec_family_Adobe Heiti Std_int=\count291
+ fontspec info: Defining font family 'AdobeHeitiStd(0)' for font 'Adobe Heiti S
+td' with options [BoldFont={Adobe Heiti Std},BoldFeatures={RawFeature={embolden
+=4}},ItalicFont={Adobe Heiti Std},ItalicFeatures={RawFeature={slant=0.17}},Bold
+ItalicFont={Adobe Heiti Std},BoldItalicFeatures={RawFeature={embolden=4,slant=0
+.17}}].
 
-\g_fontspec_family_Heiti SC_int=\count291
- fontspec info: Defining font family 'HeitiSC(0)' for font 'Heiti SC' with opti
-ons [BoldFont={Heiti SC},BoldFeatures={RawFeature={embolden=4}},ItalicFont={Hei
-ti SC},ItalicFeatures={RawFeature={slant=0.17}},BoldItalicFont={Heiti SC},BoldI
-talicFeatures={RawFeature={embolden=4,slant=0.17}}].
-
-\g_fontspec_HeitiSC(0)_prop=\toks62
+\g_fontspec_AdobeHeitiStd(0)_prop=\toks62
  fontspec info: Defining shape 'normal' with NFSS spec.:
-(fontspec)  <->"Heiti SC/AAT:"
+(fontspec)  <->"Adobe Heiti Std/ICU:script=latn;language=DFLT;"
 
  fontspec info: Defining shape 'bold' with NFSS spec.:
-(fontspec)  <->"Heiti SC/AAT:embolden=4;"
+(fontspec)  <->"Adobe Heiti Std/ICU:script=latn;language=DFLT;embolden=4;"
 
  fontspec info: Defining shape 'italic' with NFSS spec.:
-(fontspec)  <->"Heiti SC/AAT:slant=0.17;"
+(fontspec)  <->"Adobe Heiti Std/ICU:script=latn;language=DFLT;slant=0.17;"
 
  fontspec info: Defining shape 'bold italic' with NFSS spec.:
-(fontspec)  <->"Heiti SC/AAT:embolden=4,slant=0.17;"
+(fontspec)  <->"Adobe Heiti Std/ICU:script=latn;language=DFLT;embolden=4,slant=
+0.17;"
 
  (./main.toc)
 \tf@toc=\write4
@@ -1047,14 +1034,7 @@ talicFeatures={RawFeature={embolden=4,slant=0.17}}].
 
 (./data/kaiti.tex
 Chapter 1.
- fontspec info: Font Heiti SC does not contain any OpenType `Script' informatio
-n.
-
-)
- fontspec info: Font SimSun does not contain any OpenType `Script' information.
-
-
- [1
+) [1
 
 
 
@@ -1079,12 +1059,12 @@ Chapter 3.
 ] (./main.aux (./data/eval.aux) (./data/kaiti.aux)
 (./data/wenxianzongshu.aux) (./data/waiwenfanyi.aux)) ) 
 Here is how much of TeX's memory you used:
- 14775 strings out of 494150
- 247266 string characters out of 3152950
- 337593 words of memory out of 3000000
+ 14780 strings out of 494150
+ 248729 string characters out of 3152950
+ 338089 words of memory out of 3000000
  17684 multiletter control sequences out of 15000+200000
- 12532 words of font info for 92 fonts, out of 3000000 for 9000
+ 12580 words of font info for 98 fonts, out of 3000000 for 9000
  1018 hyphenation exceptions out of 8191
- 60i,11n,94p,499b,467s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 60i,11n,94p,499b,471s stack positions out of 5000i,500n,10000p,200000b,50000s
 
 Output written on main.pdf (9 pages).
