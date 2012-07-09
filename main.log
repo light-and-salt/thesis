@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.1415926-2.3-0.9997.5 (TeX Live 2011) (format=xelatex 2011.7.3)  1 JUL 2012 15:11
+This is XeTeX, Version 3.1415926-2.3-0.9997.5 (TeX Live 2011) (format=xelatex 2011.7.3)  9 JUL 2012 09:39
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1052,19 +1052,51 @@ Chapter 2.
 
  (./data/waiwenfanyi.tex
 Chapter 3.
-) [3
+ fontspec info: Defining font family 'AdobeHeitiStd(1)' for font 'Adobe Heiti S
+td' with options [].
+
+\g_fontspec_AdobeHeitiStd(1)_prop=\toks63
+ fontspec info: Defining shape 'normal' with NFSS spec.:
+(fontspec)  <->"Adobe Heiti Std/ICU:script=latn;language=DFLT;"
+
+ fontspec info: Could not resolve font Adobe Heiti Std/B (it probably doesn't e
+xist).
+
+ fontspec info: Could not resolve font Adobe Heiti Std/I (it probably doesn't e
+xist).
+
+ fontspec info: Could not resolve font Adobe Heiti Std/BI (it probably doesn't 
+exist).
+
+ fontspec info: Defining font family 'AdobeSongStd(1)' for font 'Adobe Song Std
+' with options [].
+
+\g_fontspec_AdobeSongStd(1)_prop=\toks64
+ fontspec info: Defining shape 'normal' with NFSS spec.:
+(fontspec)  <->"Adobe Song Std/ICU:script=latn;language=DFLT;"
+
+ fontspec info: Could not resolve font Adobe Song Std/B (it probably doesn't ex
+ist).
+
+ fontspec info: Could not resolve font Adobe Song Std/I (it probably doesn't ex
+ist).
+
+ fontspec info: Could not resolve font Adobe Song Std/BI (it probably doesn't e
+xist).
+
+[3
 
 
 
-] (./main.aux (./data/eval.aux) (./data/kaiti.aux)
+]) [4] (./main.aux (./data/eval.aux) (./data/kaiti.aux)
 (./data/wenxianzongshu.aux) (./data/waiwenfanyi.aux)) ) 
 Here is how much of TeX's memory you used:
- 14780 strings out of 494150
- 248729 string characters out of 3152950
- 338089 words of memory out of 3000000
- 17684 multiletter control sequences out of 15000+200000
+ 14861 strings out of 494150
+ 250690 string characters out of 3152950
+ 342089 words of memory out of 3000000
+ 17759 multiletter control sequences out of 15000+200000
  12580 words of font info for 98 fonts, out of 3000000 for 9000
  1018 hyphenation exceptions out of 8191
  60i,11n,94p,499b,471s stack positions out of 5000i,500n,10000p,200000b,50000s
 
-Output written on main.pdf (9 pages).
+Output written on main.pdf (10 pages).
