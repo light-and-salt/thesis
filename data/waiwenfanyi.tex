@@ -1,26 +1,99 @@
 \chapter{本科毕业论文外文翻译}
 %字数要求3000字
 
-\setromanfont{Adobe Heiti Std}
+\heiti
 摘要
 
-\setromanfont{Adobe Song Std}
+\songti
 当今世界，网络已被内容（content）的散布和获取所主导，而网络技术却仍然只言主机间连接而不及其它。%其它指物，其他指人。
 为获取网络内容和服务，须要建立起一个从网络用户所关心的（内容）到网络中的位置的映射。
 我们提出内容为心网络（Content-Centric Networking~简称~CCN）。它以内容为原语——把网络位置与网络身份、安全和访问分离开来，用名字访问内容。
 我们从IP推演出适用于命名内容的路由算法。使用这些算法，我们可以使网络的可扩展性、安全性和性能同时达到要求。
 我们实现了我们的体系结构的基本框架，用安全文件下载和VoIP电话两个例子演示了网络的性能和可恢复性。
 
+\heiti
 类别和学科描述符
 
+\songti
 C.2.1~[计算机系统组织]：网络结构与设计；~C.2.2~[计算机系统组织]：网络协议
 
+\heiti
 通用术语
 
+\songti
 设计，实验，性能，安全
 
 \section{引言}
 今天的互联网背后的工程原理和体系结构创建于二十世纪六、七十年代。网络致力于解决的问题是资源共享的问题——远程使用如读卡器、高速磁带机甚至超级计算机等珍贵资源。这样产生的通信模型是一个仅仅存在于两台机器之间的对话模型，一台机器希望使用资源，另一台机器为前者提供资源。因此IP包含有两个地址，一个是发送方的，一个是目的地机器的，并且互联网上几乎所有的通信都包含TCP对话。
 
-自包交换网络被创造的50年来，计算机及其附件已经成为廉价、普适的商品。互联网的连通性和低价的存储成本使得对海量新内容的访问成为可能——仅2008年就有500艾字节的信息被生产出来。人们在意的是互联网所承载的东西，而通信仍然在谈论这些东西都在哪些地方。
+自包交换网络被创造的50年来，计算机及其附件已经成为廉价、普适的商品。互联网的连通性和低价的存储成本使得对海量新内容的访问成为可能——仅2008年就有500艾字节的信息被生产出来。[13]~人们在意的是互联网所承载的东西，而通信仍然在谈论这些东西都在哪些地方。
 
+
+\section{参考文献}
+\def\tm{\leavevmode\hbox{$\rm {}^{TM}$}} %注册符 网上找的
+[1] Project CCNx\tm. \url{http://www.ccnx.org}, Sep. 2009.
+[2] M. Abadi. On SDSI’s Linked Local Name Spaces. \emph{Journal of Computer Security}, 6(1-2):3–21, October 1998.
+[3] B. Adamson, C. Bormann, M. Handley, and J. Macker.\emph{Multicast Negative-Acknowledgement (NACK) BuildingBlocks}. IETF, November 2008. RFC 5401.
+[4] W. Adjie-Winoto, E. Schwartz, H. Balakrishnan, andJ. Lilley. The Design and Implementation of an Intentional Naming System. \emph{SIGOPS Oper. Syst. Rev.}, 33(5):186–201, 1999.
+[5] A. Anand, A. Gupta, A. Akella, S. Seshan, and S. Shenker. Packet Caches on Routers: The Implications of Universal Redundant Traffic Elimination. In \emph{SIGCOMM}, 2008.
+[6] H. Balakrishnan, K. Lakshminarayanan, S. Ratnasamy, S. Shenker, I. Stoica, and M. Walfish. A Layered Naming Architecture for the Internet. In \emph{SIGCOMM}, 2004.
+[7] M. Caesar, T. Condie, J. Kannan, K. Lakshminarayanan,I. Stoica, and S. Shenker. ROFL: Routing on Flat Labels. In \emph{SIGCOMM}, 2006.
+[8] D. Cheriton and M. Gritter. TRIAD: A New Next-Generation Internet Architecture, Jan 2000.
+[9] I. Clarke, O. Sandberg, B. Wiley, and T. W. Hong. Freenet: A Distributed Anonymous Information Storage and Retrieval System. \emph{Lecture Notes in Computer Science}, 2009:46, 2001.
+
+[10] C. M. Ellison, B. Frantz, B. Lampson, R. Rivest, B. M. Thomas, and T. Ylonen. \emph{SPKI Certificate Theory}, September 1999. RFC2693.
+
+[11] S. Farrell and V. Cahill. \emph{Delay- and Disruption-Tolerant Networking}. Artech House Publishers, 2006.
+
+[12] K. Fu, M. F. Kaashoek, and D. Mazières. Fast and secure distributed read-only file system. \emph{ACM Trans. Comput. Syst.}, 20(1):1–24, 2002.
+
+[13] J. F. Gantz et al. IDC - The Expanding Digital Universe: A Forecast of Worldwide Inform ation Growth Through 2010. Technical report, March 2007.
+
+[14] A. Gulbrandsen, P. Vixie, and L. Esibov. \emph{A DNS RR for specifying the location of services (DNS SRV)}. IETF - Network Working Group, The Internet Society, February 2000. RFC 2782.
+
+[15] E. Guttman, C.Perkins, J. Veizades, and M. Day. \emph{Service Location Protocol}. IETF - Network Working Group, The Internet Society, June 1999. RFC 2608.
+
+[16] IETF. RFC 2328 – OSPF Version 2.
+
+[17] IETF. RFC 3787 – Recommendations for Interoperable IP
+Networks using Intermediate System to Intermediate System (IS-IS).
+
+[18] IETF. RFC 4971 – Intermediate System to Intermediate System (IS-IS) Extensions for Advertising Router Information.
+
+[19] IETF. RFC 5250 – The OSPF Opaque LSA Option.
+
+[20] V. Jacobson. Congestion Avoidance and Control. In\emph{SIGCOMM}, 1988.
+
+[21] V. Jacobson, R. Braden, and D. Borman. \emph{TCP Extensions forHigh Performance}. IETF - Network Working Group, TheInternet Society, May 1992. RFC 1323.
+
+[22] V. Jacobson, D. K. Smetters, N. Briggs, M. Plass, P. Stewart,J. D. Thornton, and R. Braynard. VoCCN: Voice-overContent-Centric Networks. In \emph{ReArch}, 2009.
+
+[23] C. Kim, M. Caeser, and J. Rexford. Floodless in SEATTLE:A Scalable Ethernet Architecture for Large Enterprises. In\emph{SIGCOMM}, 2008.
+
+[24] T. Koponen, M. Chawla, B.-G. Chun, A. Ermolinskiy, K. H.Kim, S. Shenker, and I. Stoica. A Data-Oriented (andBeyond) Network Architecture. In \emph{SIGCOMM}, 2007.
+
+[25] J. Kubiatowicz et al. OceanStore: An architecture forglobal-scale persistent storage. \emph{SIGPLAN Not.},35(11):190–201, 2000.
+
+[26] D. Mazières, M. Kaminsky, M. F. Kaashoek, and E. Witchel.Separating Key Management from File System Security. In\emph{SOSP}, 1999.
+
+[27] R. C. Merkle. \emph{Secrecy, authentication, and public keysystems}. PhD thesis, 1979.
+
+[28] R. Moskowitz and P. Nikander. \emph{Host Identity ProtocolArchitecture}. IETF - Network Working Group, May 2006.RFC 4423.
+
+[29] B. Ohlman et al. First NetInf architecture description, April2009. \url{http://www.4ward-project.eu/index.php?s=file_download&id=39}.
+
+[30] E. Osterweil, D. Massey, B. Tsendjav, B. Zhang, andL. Zhang. Security Through Publicity. In \emph{HOTSEC}, 2006.
+
+[31] B. C. Popescu, M. van Steen, B. Crispo, A. S. Tanenbaum,J. Sacha, and I. Kuz. Securely replicated web documents. In\emph{IPDPS}, 2005.
+
+[32] R. L. Rivest and B. Lampson. SDSI - A Simple DistributedSecurity Infrastructure. Technical report, MIT, 1996.
+
+[33] M. Särelä, T. Rinta-aho, and S. Tarkoma. RTFM:Publish/Subscribe Internetworking Architecture. In\emph{ICT-MobileSummit}, 2008.
+
+[34] D. K. Smetters and V. Jacobson. Securing network content,October 2009. PARC Technical Report.
+
+[35] I. Stoica, D. Adkins, S. Zhuang, S. Shenker, and S. Surana.Internet Indirection Infrastructure. In \emph{SIGCOMM}, 2002.
+
+[36] I. Stoica, R. Morris, D. Karger, F. Kaashoek, andH. Balakrishnan. Chord: A Scalable Peer-To-Peer LookupService for Internet Applications. In \emph{SIGCOMM}, 2001.
+
+[37] D. Wendlandt, D. Andersen, and A. Perrig. Perspectives: Improving SSH-style host authentication with multi-pathprobing. In \emph{USENIX}, 2008.

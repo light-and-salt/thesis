@@ -1,0 +1,52 @@
+This is BibTeX, Version 0.99d (TeX Live 2011)
+Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
+The top-level auxiliary file: main.aux
+The style file: plain.bst
+A level-1 auxiliary file: data/eval.aux
+A level-1 auxiliary file: data/kaiti.aux
+A level-1 auxiliary file: data/wenxianzongshu.aux
+A level-1 auxiliary file: data/waiwenfanyi.aux
+Database file #1: data/mybib.bib
+Warning--empty institution in infogrowth
+You've used 1 entry,
+            2118 wiz_defined-function locations,
+            505 strings with 4188 characters,
+and the built_in function-call counts, 219 in all, are:
+= -- 20
+> -- 7
+< -- 0
++ -- 3
+- -- 2
+* -- 13
+:= -- 48
+add.period$ -- 3
+call.type$ -- 1
+change.case$ -- 5
+chr.to.int$ -- 0
+cite$ -- 2
+duplicate$ -- 8
+empty$ -- 16
+format.name$ -- 2
+if$ -- 39
+int.to.chr$ -- 0
+int.to.str$ -- 1
+missing$ -- 0
+newline$ -- 8
+num.names$ -- 2
+pop$ -- 4
+preamble$ -- 1
+purify$ -- 3
+quote$ -- 0
+skip$ -- 5
+stack$ -- 0
+substring$ -- 5
+swap$ -- 0
+text.length$ -- 0
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 4
+warning$ -- 1
+while$ -- 2
+width$ -- 2
+write$ -- 12
+(There was 1 warning)

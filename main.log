@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.1415926-2.3-0.9997.5 (TeX Live 2011) (format=xelatex 2011.7.3)  9 JUL 2012 09:39
+This is XeTeX, Version 3.1415926-2.3-0.9997.5 (TeX Live 2011) (format=xelatex 2011.7.3)  20 JUL 2012 19:31
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1052,51 +1052,44 @@ Chapter 2.
 
  (./data/waiwenfanyi.tex
 Chapter 3.
- fontspec info: Defining font family 'AdobeHeitiStd(1)' for font 'Adobe Heiti S
-td' with options [].
-
-\g_fontspec_AdobeHeitiStd(1)_prop=\toks63
- fontspec info: Defining shape 'normal' with NFSS spec.:
-(fontspec)  <->"Adobe Heiti Std/ICU:script=latn;language=DFLT;"
-
- fontspec info: Could not resolve font Adobe Heiti Std/B (it probably doesn't e
-xist).
-
- fontspec info: Could not resolve font Adobe Heiti Std/I (it probably doesn't e
-xist).
-
- fontspec info: Could not resolve font Adobe Heiti Std/BI (it probably doesn't 
-exist).
-
- fontspec info: Defining font family 'AdobeSongStd(1)' for font 'Adobe Song Std
-' with options [].
-
-\g_fontspec_AdobeSongStd(1)_prop=\toks64
- fontspec info: Defining shape 'normal' with NFSS spec.:
-(fontspec)  <->"Adobe Song Std/ICU:script=latn;language=DFLT;"
-
- fontspec info: Could not resolve font Adobe Song Std/B (it probably doesn't ex
-ist).
-
- fontspec info: Could not resolve font Adobe Song Std/I (it probably doesn't ex
-ist).
-
- fontspec info: Could not resolve font Adobe Song Std/BI (it probably doesn't e
-xist).
-
 [3
 
 
 
-]) [4] (./main.aux (./data/eval.aux) (./data/kaiti.aux)
+]
+Overfull \hbox (20.87276pt too wide) in paragraph at lines 38--41
+[]\EU1/TimesNewRoman(0)/m/n/14 [3] B. Adamson, C. Bormann, M. Handley, and J. M
+acker. \EU1/TimesNewRoman(0)/m/it/14 Multicast Negative-
+ []
+
+
+Overfull \hbox (3.45491pt too wide) in paragraph at lines 38--41
+\EU1/TimesNewRoman(0)/m/it/14 Acknowledgement (NACK) Building Blocks\EU1/TimesN
+ewRoman(0)/m/n/14 . IETF, November 2008. RFC 5401. 
+ []
+
+[4] [5] [6]
+Overfull \hbox (4.56792pt too wide) in paragraph at lines 77--79
+[]\EU1/TimesNewRoman(0)/m/n/14 [20] V. Jacobson. Congestion Avoidance and Contr
+ol. In \EU1/TimesNewRoman(0)/m/it/14 SIGCOMM\EU1/TimesNewRoman(0)/m/n/14 , 1988
+. 
+ []
+
+[7]
+Overfull \hbox (46.89568pt too wide) in paragraph at lines 111--114
+[][][][] [] [] [] [][][] [] [][][][][][][][][][][][][][] [] [][] [] [][][][][] 
+[] [][][] [] [] [] [][][][] [] [][][][][][][][][][][] []
+ []
+
+[8]) [9] (./main.aux (./data/eval.aux) (./data/kaiti.aux)
 (./data/wenxianzongshu.aux) (./data/waiwenfanyi.aux)) ) 
 Here is how much of TeX's memory you used:
- 14861 strings out of 494150
- 250690 string characters out of 3152950
- 342089 words of memory out of 3000000
- 17759 multiletter control sequences out of 15000+200000
- 12580 words of font info for 98 fonts, out of 3000000 for 9000
+ 14820 strings out of 494150
+ 249671 string characters out of 3152950
+ 342090 words of memory out of 3000000
+ 17722 multiletter control sequences out of 15000+200000
+ 12596 words of font info for 100 fonts, out of 3000000 for 9000
  1018 hyphenation exceptions out of 8191
- 60i,11n,94p,499b,471s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 60i,12n,94p,499b,471s stack positions out of 5000i,500n,10000p,200000b,50000s
 
-Output written on main.pdf (10 pages).
+Output written on main.pdf (15 pages).
