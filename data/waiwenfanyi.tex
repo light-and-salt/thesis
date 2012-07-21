@@ -6,10 +6,8 @@
 
 \songti
 当今世界，网络已被内容（content）的散布和获取所主导，而网络技术却仍然只言主机间连接而不及其它。%其它指物，其他指人。
-为获取网络内容和服务，须要建立起一个从网络用户所关心的（内容）到网络中的位置的映射。
-我们提出内容为心网络（Content-Centric Networking~简称~CCN）。它以内容为原语——把网络位置与网络身份、安全和访问分离开来，用名字访问内容。
-我们从IP推演出适用于命名内容的路由算法。使用这些算法，我们可以使网络的可扩展性、安全性和性能同时达到要求。
-我们实现了我们的体系结构的基本框架，用安全文件下载和VoIP电话两个例子演示了网络的性能和可恢复性。
+为获取网络内容和服务，须要建立起一个从网络用户所关心的（内容）到网络中的位置的映射。%需要主观且物质，须要客观且抽象
+我们提出内容为心网络（Content-Centric Networking~简称~CCN）。它以内容为原语——把网络位置与网络身份、安全和访问分离开来，用名字访问内容。我们从IP推演出适用于命名内容的路由算法。使用这些算法，我们可以使网络的可扩展性、安全性和性能同时达到要求。我们实现了我们的体系结构的基本框架，用安全文件下载和VoIP电话两个例子演示了网络的性能和可恢复性。
 
 \heiti
 类别和学科描述符
@@ -28,18 +26,77 @@ C.2.1~[计算机系统组织]：网络结构与设计；~C.2.2~[计算机系统�
 
 自包交换网络被创造的50年来，计算机及其附件已经成为廉价、普适的商品。互联网的连通性和低价的存储成本使得对海量新内容的访问成为可能——仅2008年就有500艾字节的信息被生产出来。[13]~人们在意的是互联网所承载的东西，而通信仍然在谈论这些东西都在哪些地方。
 
+我们看到这个矛盾给用户带来三方面的（负面）影响。
+
+\begin{description}
+\item[可用性]为快速、可靠地访问内容，不仅须要如~CDN~和~P2P~网络这样繁冗的，预先设计好的，面向应用软件的机制，而且还会大幅增加带宽成本。
+\item[安全性]对内容的信任这一概念被偷换为不那么可信的对物理位置和网络连接的的信任。
+\item[位置迁就]建立从内容到物理位置的映射使网络服务的配置和实现工作都变得复杂。
+\end{description}
+
+解决这些问题的直接办法就是把网络中的“在哪里”（where）替换为“是什么”（what）。主机到主机对话是为了解决六十年代的问题而提出的抽象模型。对于如今的通信问题，我们认为命名数据（named data）是比命名主机（named hosts）更好的模型。我们提出内容为心网络（CCN），一个建立于命名数据之上的网络架构。即使是在CCN的最底层，我们也没有位置的概念——一个CCN包的“地址”是一个内容的名字，而不是这个内容的位置。不过，我们也保留了当年使~TCP/IP~简单、稳健、可扩展的那些设计决策。
+
+\begin{figure}
+  \centering
+  \includegraphics[width=0.7\textwidth]{images/narrow_waist}
+  \caption{CCN~把网络协议栈中全局性的成分由IP换为了命名内容块} %不确定
+  \label{narrow_waist}
+\end{figure}
+
+图~\ref{narrow_waist}~比较了~IP~和~CCN~协议栈。其中很多层都反映了双端约定；例如，第二层的成帧协议就反映了物理层上两端的约定，而第四层的传输协议就是一些信息生产者和消费者之间的约定。唯一一个需要全局约定的层就是第三层，即网络层。~IP~的成功在很大程度上要归功于它的网络层的简洁和它在网络第二层处提出的低要求，即：无状态，不可靠，无序，尽力交付。~CCN~的网络层（详见~\ref{sec:3}）与~IP~的网络层很相似且~CCN~对第二层的要求更少，这使得它非常具有吸引力。除此之外，~CCN~可以单独成层，放置于任何一层之上，包括放置于~IP~层之上。%这一段我不是很清楚，尤其是最后一句
+
+CCN~与~IP~有几点关键性的不同。其中两点即策略和安全已经以新层的方式在协议栈中展示了出来。由于~CCN~与第二层的关系更为简单，它可以最大限度地利用众多同时存在的网络的连通性（如以太网，~3G~，蓝牙和~802.11~等等）。~CCN~的策略层（详见~\ref{sec:3.3}）为在不断变化的环境下最好地开发利用多种网络的连通性不断地做出细粒度、动态优化的选择。~CCN~确保的是内容本身的安全（详见~\ref{sec:5}），而不是内容走过的连接的安全。因此~CCN~没有许多基于主机网络的弱点，而不像~IP~网络那样深受其害。
+
+我们在~\ref{sec:2}~至~\ref{sec:5}~中叙述了~CCN~的体系结构和运行方式。在~\ref{sec:6}~中我们评估了我们样板网络的性能。最后，在~\ref{sec:7}~和~\ref{sec:8}~中，我们讨论了相关工作并做出了结论。
+
+\section{CCN~节点模型}
+\label{sec:2}
+
+\section{传输}
+\label{sec:3}
+	\subsection{可靠性与流控制}
+	\subsection{编号}
+	\subsection{高连通性，移动性及策略}
+	\label{sec:3.3}
+
+\section{路由}
+\label{sec:4}
+
+\section{内容为心安全}
+\label{sec:5}
+
+\section{评估}
+\label{sec:6}
+
+\section{相关工作}
+\label{sec:7}
+
+\section{结论}
+\label{sec:8}
 
 \section{参考文献}
 \def\tm{\leavevmode\hbox{$\rm {}^{TM}$}} %注册符 网上找的
 [1] Project CCNx\tm. \url{http://www.ccnx.org}, Sep. 2009.
-[2] M. Abadi. On SDSI’s Linked Local Name Spaces. \emph{Journal of Computer Security}, 6(1-2):3–21, October 1998.
-[3] B. Adamson, C. Bormann, M. Handley, and J. Macker.\emph{Multicast Negative-Acknowledgement (NACK) BuildingBlocks}. IETF, November 2008. RFC 5401.
-[4] W. Adjie-Winoto, E. Schwartz, H. Balakrishnan, andJ. Lilley. The Design and Implementation of an Intentional Naming System. \emph{SIGOPS Oper. Syst. Rev.}, 33(5):186–201, 1999.
-[5] A. Anand, A. Gupta, A. Akella, S. Seshan, and S. Shenker. Packet Caches on Routers: The Implications of Universal Redundant Traffic Elimination. In \emph{SIGCOMM}, 2008.
-[6] H. Balakrishnan, K. Lakshminarayanan, S. Ratnasamy, S. Shenker, I. Stoica, and M. Walfish. A Layered Naming Architecture for the Internet. In \emph{SIGCOMM}, 2004.
-[7] M. Caesar, T. Condie, J. Kannan, K. Lakshminarayanan,I. Stoica, and S. Shenker. ROFL: Routing on Flat Labels. In \emph{SIGCOMM}, 2006.
-[8] D. Cheriton and M. Gritter. TRIAD: A New Next-Generation Internet Architecture, Jan 2000.
-[9] I. Clarke, O. Sandberg, B. Wiley, and T. W. Hong. Freenet: A Distributed Anonymous Information Storage and Retrieval System. \emph{Lecture Notes in Computer Science}, 2009:46, 2001.
+
+[2] M. Abadi. On SDSI’s Linked Local Name Spaces. \emph{Journal of Computer Security}, 6(1-2):3–21, October 1998.
+
+[3] B. Adamson, C. Bormann, M. Handley, and J. Macker.
+\emph{Multicast Negative-Acknowledgement (NACK) Building
+Blocks}. IETF, November 2008. RFC 5401.
+
+[4] W. Adjie-Winoto, E. Schwartz, H. Balakrishnan, and
+J. Lilley. The Design and Implementation of an Intentional Naming System. \emph{SIGOPS Oper. Syst. Rev.}, 33(5):186–201, 1999.
+
+[5] A. Anand, A. Gupta, A. Akella, S. Seshan, and S. Shenker. Packet Caches on Routers: The Implications of Universal Redundant Traffic Elimination. In \emph{SIGCOMM}, 2008.
+
+[6] H. Balakrishnan, K. Lakshminarayanan, S. Ratnasamy, S. Shenker, I. Stoica, and M. Walfish. A Layered Naming Architecture for the Internet. In \emph{SIGCOMM}, 2004.
+
+[7] M. Caesar, T. Condie, J. Kannan, K. Lakshminarayanan,
+I. Stoica, and S. Shenker. ROFL: Routing on Flat Labels. In \emph{SIGCOMM}, 2006.
+
+[8] D. Cheriton and M. Gritter. TRIAD: A New Next-Generation Internet Architecture, Jan 2000.
+
+[9] I. Clarke, O. Sandberg, B. Wiley, and T. W. Hong. Freenet: A Distributed Anonymous Information Storage and Retrieval System. \emph{Lecture Notes in Computer Science}, 2009:46, 2001.
 
 [10] C. M. Ellison, B. Frantz, B. Lampson, R. Rivest, B. M. Thomas, and T. Ylonen. \emph{SPKI Certificate Theory}, September 1999. RFC2693.
 
@@ -62,38 +119,67 @@ Networks using Intermediate System to Intermediate System (IS-IS).
 
 [19] IETF. RFC 5250 – The OSPF Opaque LSA Option.
 
-[20] V. Jacobson. Congestion Avoidance and Control. In\emph{SIGCOMM}, 1988.
+[20] V. Jacobson. Congestion Avoidance and Control. In
+\emph{SIGCOMM}, 1988.
 
-[21] V. Jacobson, R. Braden, and D. Borman. \emph{TCP Extensions forHigh Performance}. IETF - Network Working Group, TheInternet Society, May 1992. RFC 1323.
+[21] V. Jacobson, R. Braden, and D. Borman. \emph{TCP Extensions for
+High Performance}. IETF - Network Working Group, The
+Internet Society, May 1992. RFC 1323.
 
-[22] V. Jacobson, D. K. Smetters, N. Briggs, M. Plass, P. Stewart,J. D. Thornton, and R. Braynard. VoCCN: Voice-overContent-Centric Networks. In \emph{ReArch}, 2009.
+[22] V. Jacobson, D. K. Smetters, N. Briggs, M. Plass, P. Stewart,
+J. D. Thornton, and R. Braynard. VoCCN: Voice-over
+Content-Centric Networks. In \emph{ReArch}, 2009.
 
-[23] C. Kim, M. Caeser, and J. Rexford. Floodless in SEATTLE:A Scalable Ethernet Architecture for Large Enterprises. In\emph{SIGCOMM}, 2008.
+[23] C. Kim, M. Caeser, and J. Rexford. Floodless in SEATTLE:
+A Scalable Ethernet Architecture for Large Enterprises. In
+\emph{SIGCOMM}, 2008.
 
-[24] T. Koponen, M. Chawla, B.-G. Chun, A. Ermolinskiy, K. H.Kim, S. Shenker, and I. Stoica. A Data-Oriented (andBeyond) Network Architecture. In \emph{SIGCOMM}, 2007.
+[24] T. Koponen, M. Chawla, B.-G. Chun, A. Ermolinskiy, K. H.
+Kim, S. Shenker, and I. Stoica. A Data-Oriented (and
+Beyond) Network Architecture. In \emph{SIGCOMM}, 2007.
 
-[25] J. Kubiatowicz et al. OceanStore: An architecture forglobal-scale persistent storage. \emph{SIGPLAN Not.},35(11):190–201, 2000.
+[25] J. Kubiatowicz et al. OceanStore: An architecture for
+global-scale persistent storage. \emph{SIGPLAN Not.},
+35(11):190–201, 2000.
 
-[26] D. Mazières, M. Kaminsky, M. F. Kaashoek, and E. Witchel.Separating Key Management from File System Security. In\emph{SOSP}, 1999.
+[26] D. Mazières, M. Kaminsky, M. F. Kaashoek, and E. Witchel.
+Separating Key Management from File System Security. In
+\emph{SOSP}, 1999.
 
-[27] R. C. Merkle. \emph{Secrecy, authentication, and public keysystems}. PhD thesis, 1979.
+[27] R. C. Merkle. \emph{Secrecy, authentication, and public key
+systems}. PhD thesis, 1979.
 
-[28] R. Moskowitz and P. Nikander. \emph{Host Identity ProtocolArchitecture}. IETF - Network Working Group, May 2006.RFC 4423.
+[28] R. Moskowitz and P. Nikander. \emph{Host Identity Protocol
+Architecture}. IETF - Network Working Group, May 2006.
+RFC 4423.
 
-[29] B. Ohlman et al. First NetInf architecture description, April2009. \url{http://www.4ward-project.eu/index.php?s=file_download&id=39}.
+[29] B. Ohlman et al. First NetInf architecture description, April
+2009. \url{http://www.4ward-project.eu/index.
+php?s=file_download&id=39}.
 
-[30] E. Osterweil, D. Massey, B. Tsendjav, B. Zhang, andL. Zhang. Security Through Publicity. In \emph{HOTSEC}, 2006.
+[30] E. Osterweil, D. Massey, B. Tsendjav, B. Zhang, and
+L. Zhang. Security Through Publicity. In \emph{HOTSEC}, 2006.
 
-[31] B. C. Popescu, M. van Steen, B. Crispo, A. S. Tanenbaum,J. Sacha, and I. Kuz. Securely replicated web documents. In\emph{IPDPS}, 2005.
+[31] B. C. Popescu, M. van Steen, B. Crispo, A. S. Tanenbaum,
+J. Sacha, and I. Kuz. Securely replicated web documents. In
+\emph{IPDPS}, 2005.
 
-[32] R. L. Rivest and B. Lampson. SDSI - A Simple DistributedSecurity Infrastructure. Technical report, MIT, 1996.
+[32] R. L. Rivest and B. Lampson. SDSI - A Simple Distributed
+Security Infrastructure. Technical report, MIT, 1996.
 
-[33] M. Särelä, T. Rinta-aho, and S. Tarkoma. RTFM:Publish/Subscribe Internetworking Architecture. In\emph{ICT-MobileSummit}, 2008.
+[33] M. Särelä, T. Rinta-aho, and S. Tarkoma. RTFM:
+Publish/Subscribe Internetworking Architecture. In
+\emph{ICT-MobileSummit}, 2008.
 
-[34] D. K. Smetters and V. Jacobson. Securing network content,October 2009. PARC Technical Report.
+[34] D. K. Smetters and V. Jacobson. Securing network content,
+October 2009. PARC Technical Report.
 
-[35] I. Stoica, D. Adkins, S. Zhuang, S. Shenker, and S. Surana.Internet Indirection Infrastructure. In \emph{SIGCOMM}, 2002.
+[35] I. Stoica, D. Adkins, S. Zhuang, S. Shenker, and S. Surana.
+Internet Indirection Infrastructure. In \emph{SIGCOMM}, 2002.
 
-[36] I. Stoica, R. Morris, D. Karger, F. Kaashoek, andH. Balakrishnan. Chord: A Scalable Peer-To-Peer LookupService for Internet Applications. In \emph{SIGCOMM}, 2001.
+[36] I. Stoica, R. Morris, D. Karger, F. Kaashoek, and
+H. Balakrishnan. Chord: A Scalable Peer-To-Peer Lookup
+Service for Internet Applications. In \emph{SIGCOMM}, 2001.
 
-[37] D. Wendlandt, D. Andersen, and A. Perrig. Perspectives: Improving SSH-style host authentication with multi-pathprobing. In \emph{USENIX}, 2008.
+[37] D. Wendlandt, D. Andersen, and A. Perrig. Perspectives: Improving SSH-style host authentication with multi-path
+probing. In \emph{USENIX}, 2008.
