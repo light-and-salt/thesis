@@ -8,15 +8,15 @@
 \contentsline {chapter}{\numberline {2}本科毕业论文文献综述}{2}
 \contentsline {chapter}{\numberline {3}本科毕业论文外文翻译}{3}
 \contentsline {section}{\numberline {3.1}引言}{4}
-\contentsline {section}{\numberline {3.2}CCN\nobreakspace {}节点模型}{8}
-\contentsline {section}{\numberline {3.3}传输}{8}
-\contentsline {subsection}{\numberline {3.3.1}可靠性与流控制}{8}
-\contentsline {subsection}{\numberline {3.3.2}编号}{8}
-\contentsline {subsection}{\numberline {3.3.3}高连通性，移动性及策略}{8}
-\contentsline {section}{\numberline {3.4}路由}{8}
-\contentsline {section}{\numberline {3.5}内容为心安全}{8}
-\contentsline {section}{\numberline {3.6}评估}{8}
-\contentsline {section}{\numberline {3.7}相关工作}{8}
-\contentsline {section}{\numberline {3.8}结论}{8}
-\contentsline {section}{\numberline {3.9}参考文献}{8}
+\contentsline {section}{\numberline {3.2}CCN\nobreakspace {}节点模型}{7}
+\contentsline {section}{\numberline {3.3}传输}{11}
+\contentsline {subsection}{\numberline {3.3.1}可靠性与流控制}{11}
+\contentsline {subsection}{\numberline {3.3.2}编号}{11}
+\contentsline {subsection}{\numberline {3.3.3}高连通性，移动性及策略}{11}
+\contentsline {section}{\numberline {3.4}路由}{11}
+\contentsline {section}{\numberline {3.5}内容为心安全}{11}
+\contentsline {section}{\numberline {3.6}评估}{11}
+\contentsline {section}{\numberline {3.7}相关工作}{11}
+\contentsline {section}{\numberline {3.8}结论}{11}
+\contentsline {section}{\numberline {3.9}参考文献}{11}
 \contentsfinish 

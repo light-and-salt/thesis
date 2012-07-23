@@ -433,4 +433,79 @@ Missing character: There is no ； in font nullfont!
 Missing character: There is no C in font nullfont!
 Missing character: There is no . in font nullfont!
 Missing character: There is no 2 in font nullfont!
-Missing characte
+Missing character: There is no . in font nullfont!
+Missing character: There is no 2 in font nullfont!
+Missing character: There is no [ in font nullfont!
+Missing character: There is no 计 in font nullfont!
+Missing character: There is no 算 in font nullfont!
+Missing character: There is no 机 in font nullfont!
+Missing character: There is no 系 in font nullfont!
+Missing character: There is no 统 in font nullfont!
+Missing character: There is no 组 in font nullfont!
+Missing character: There is no 织 in font nullfont!
+Missing character: There is no ] in font nullfont!
+Missing character: There is no ： in font nullfont!
+Missing character: There is no 网 in font nullfont!
+Missing character: There is no 络 in font nullfont!
+Missing character: There is no 协 in font nullfont!
+Missing character: There is no 议 in font nullfont!
+
+Overfull \hbox (20.0pt too wide) in paragraph at lines 16--17
+[]    
+ []
+
+./waiwenfanyi.tex:18: Undefined control sequence.
+l.18 \heiti
+           
+? 
+
+./waiwenfanyi.tex:19: LaTeX Error: Missing \begin{document}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.19 通
+        用术语
+? 
+Missing character: There is no 通 in font nullfont!
+Missing character: There is no 用 in font nullfont!
+Missing character: There is no 术 in font nullfont!
+Missing character: There is no 语 in font nullfont!
+
+Overfull \hbox (20.0pt too wide) in paragraph at lines 19--20
+[] 
+ []
+
+./waiwenfanyi.tex:21: Undefined control sequence.
+l.21 \songti
+            
+? 
+
+./waiwenfanyi.tex:22: LaTeX Error: Missing \begin{document}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.22 设
+        计，实验，性能，安全
+? 
+./waiwenfanyi.tex:22: Emergency stop.
+ ...                                              
+                                                  
+l.22 设
+        计，实验，性能，安全
+You're in trouble here.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+ 
+Here is how much of TeX's memory you used:
+ 5 strings out of 494150
+ 191 string characters out of 3152950
+ 47910 words of memory out of 3000000
+ 3362 multiletter control sequences out of 15000+200000
+ 3640 words of font info for 14 fonts, out of 3000000 for 9000
+ 1018 hyphenation exceptions out of 8191
+ 5i,0n,4p,206b,16s stack positions out of 5000i,500n,10000p,200000b,50000s
+No pages of output.

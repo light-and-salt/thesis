@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.1415926-2.3-0.9997.5 (TeX Live 2011) (format=xelatex 2011.7.3)  22 JUL 2012 01:55
+This is XeTeX, Version 3.1415926-2.3-0.9997.5 (TeX Live 2011) (format=xelatex 2011.7.3)  24 JUL 2012 01:23
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1059,44 +1059,51 @@ Chapter 3.
 
 ] [4]
 File: images/narrow_waist.png Graphic file (type QTm)
- <use  "images/narrow_waist.png" > [5] [6] [7]
-Overfull \vbox (85.16861pt too high) has occurred while \output is active []
+ <use  "images/narrow_waist.png" > [5] [6]
+File: images/packet_types.png Graphic file (type QTm)
 
+<use  "images/packet_types.png" >
+File: images/name.png Graphic file (type QTm)
+ <use  "images/name.png" > [7] [8]
+File: images/engine.png Graphic file (type QTm)
 
-[8]
-Overfull \hbox (20.87276pt too wide) in paragraph at lines 83--86
-[]\EU1/TimesNewRoman(0)/m/n/14 [3] B. Adamson, C. Bormann, M. Handley, and J. M
-acker. \EU1/TimesNewRoman(0)/m/it/14 Multicast Negative-
+<use  "images/engine.png" > [9] [10] [11]
+Overfull \hbox (20.87276pt too wide) in paragraph at lines 146--149
+[]\zf@basefont [3] B. Adamson, C. Bormann, M. Handley, and J. Macker. \EU1/Time
+sNewRoman(0)/m/it/14 Multicast Negative-
  []
 
 
-Overfull \hbox (3.45491pt too wide) in paragraph at lines 83--86
-\EU1/TimesNewRoman(0)/m/it/14 Acknowledgement (NACK) Building Blocks\EU1/TimesN
-ewRoman(0)/m/n/14 . IETF, November 2008. RFC 5401. 
+Overfull \hbox (3.45491pt too wide) in paragraph at lines 146--149
+\EU1/TimesNewRoman(0)/m/it/14 Acknowledgement (NACK) Building Blocks\zf@basefon
+t . IETF, November 2008. RFC 5401. 
  []
 
-[9] [10]
-Overfull \hbox (4.56792pt too wide) in paragraph at lines 122--124
-[]\EU1/TimesNewRoman(0)/m/n/14 [20] V. Jacobson. Congestion Avoidance and Contr
-ol. In \EU1/TimesNewRoman(0)/m/it/14 SIGCOMM\EU1/TimesNewRoman(0)/m/n/14 , 1988
-. 
+[12] [13]
+Overfull \hbox (4.56792pt too wide) in paragraph at lines 185--187
+[]\zf@basefont [20] V. Jacobson. Congestion Avoidance and Control. In \EU1/Time
+sNewRoman(0)/m/it/14 SIGCOMM\zf@basefont , 1988. 
  []
 
-[11]
-Overfull \hbox (46.89568pt too wide) in paragraph at lines 156--159
+[14]
+Overfull \hbox (46.89568pt too wide) in paragraph at lines 219--222
 [][][][] [] [] [] [][][] [] [][][][][][][][][][][][][][] [] [][] [] [][][][][] 
 [] [][][] [] [] [] [][][][] [] [][][][][][][][][][][] []
  []
 
-[12]) [13] (./main.aux (./data/eval.aux) (./data/kaiti.aux)
-(./data/wenxianzongshu.aux) (./data/waiwenfanyi.aux)) ) 
+[15]) [16] (./main.aux (./data/eval.aux) (./data/kaiti.aux)
+(./data/wenxianzongshu.aux) (./data/waiwenfanyi.aux))
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
+ ) 
 Here is how much of TeX's memory you used:
- 14863 strings out of 494150
- 250541 string characters out of 3152950
- 343182 words of memory out of 3000000
- 17759 multiletter control sequences out of 15000+200000
- 12636 words of font info for 105 fonts, out of 3000000 for 9000
+ 14929 strings out of 494150
+ 251620 string characters out of 3152950
+ 346246 words of memory out of 3000000
+ 17815 multiletter control sequences out of 15000+200000
+ 15163 words of font info for 117 fonts, out of 3000000 for 9000
  1018 hyphenation exceptions out of 8191
  60i,12n,94p,499b,489s stack positions out of 5000i,500n,10000p,200000b,50000s
 
-Output written on main.pdf (21 pages).
+Output written on main.pdf (24 pages).
