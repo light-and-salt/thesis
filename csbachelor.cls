@@ -85,6 +85,7 @@
 \RequirePackage{array}
 \setlength{\headheight}{27pt}
 \setlength{\footskip}{1.3cm}
+\setlength{\footnotesep}{4ex} %我自己加的脚注段间距
 \raggedbottom
 
 \frenchspacing
