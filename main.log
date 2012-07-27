@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.1415926-2.3-0.9997.5 (TeX Live 2011) (format=xelatex 2011.7.3)  27 JUL 2012 09:11
+This is XeTeX, Version 3.1415926-2.3-0.9997.5 (TeX Live 2011) (format=xelatex 2011.7.3)  27 JUL 2012 11:40
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1071,46 +1071,45 @@ File: images/name.png Graphic file (type QTm)
 File: images/name_tree.png Graphic file (type QTm)
 
 <use  "images/name_tree.png" > [18] [19] [20]
-Overfull \vbox (117.83392pt too high) has occurred while \output is active []
+File: images/routing.png Graphic file (type QTm)
+ <use  "images/routing.png" >
+[21] [22]
+Overfull \vbox (77.0014pt too high) has occurred while \output is active []
 
 
-[21]
-Overfull \hbox (20.87276pt too wide) in paragraph at lines 243--246
+[23]
+Overfull \hbox (20.87276pt too wide) in paragraph at lines 262--265
 []\zf@basefont [3] B. Adamson, C. Bormann, M. Handley, and J. Macker. \EU1/Time
 sNewRoman(0)/m/it/14 Multicast Negative-
  []
 
 
-Overfull \hbox (3.45491pt too wide) in paragraph at lines 243--246
+Overfull \hbox (3.45491pt too wide) in paragraph at lines 262--265
 \EU1/TimesNewRoman(0)/m/it/14 Acknowledgement (NACK) Building Blocks\zf@basefon
 t . IETF, November 2008. RFC 5401. 
  []
 
-[22] [23]
-Overfull \hbox (4.56792pt too wide) in paragraph at lines 282--284
+[24] [25]
+Overfull \hbox (4.56792pt too wide) in paragraph at lines 301--303
 []\zf@basefont [20] V. Jacobson. Congestion Avoidance and Control. In \EU1/Time
 sNewRoman(0)/m/it/14 SIGCOMM\zf@basefont , 1988. 
  []
 
-[24]
-Overfull \hbox (46.89568pt too wide) in paragraph at lines 316--319
+[26]
+Overfull \hbox (46.89568pt too wide) in paragraph at lines 335--338
 [][][][] [] [] [] [][][] [] [][][][][][][][][][][][][][] [] [][] [] [][][][][] 
 [] [][][] [] [] [] [][][][] [] [][][][][][][][][][][] []
  []
 
-[25]) [26] (./main.aux (./data/eval.aux) (./data/kaiti.aux)
-(./data/wenxianzongshu.aux) (./data/waiwenfanyi.aux))
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
- ) 
+[27]) [28] (./main.aux (./data/eval.aux) (./data/kaiti.aux)
+(./data/wenxianzongshu.aux) (./data/waiwenfanyi.aux)) ) 
 Here is how much of TeX's memory you used:
- 14955 strings out of 494150
- 252020 string characters out of 3152950
- 350404 words of memory out of 3000000
- 17839 multiletter control sequences out of 15000+200000
+ 14958 strings out of 494150
+ 252058 string characters out of 3152950
+ 350415 words of memory out of 3000000
+ 17841 multiletter control sequences out of 15000+200000
  15171 words of font info for 118 fonts, out of 3000000 for 9000
  1018 hyphenation exceptions out of 8191
  60i,12n,94p,572b,489s stack positions out of 5000i,500n,10000p,200000b,50000s
 
-Output written on main.pdf (34 pages).
+Output written on main.pdf (36 pages).

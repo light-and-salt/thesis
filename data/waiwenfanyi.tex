@@ -171,6 +171,25 @@ CCN~兴趣包使用~TCP ack~包使用的流控制和定序方法。%function 不
 \subsection{高连通性，移动性及策略}
 \label{sec:3.3}
 
+今天的计算机通常都有多个网络接口和极强的移动性。由于~IP~只能在生成树上转发包，它很难利用多网络接口的优势，也很难适应高移动性给网络带来的变化。%为什么呢
+~CCN~包不能转发成环，所以~CCN~充分利用多网络接口优势。%为什么呢
+~CCN~谈论数据，而不是对节点谈话，所以它不需要把第三层的身份信息（如~IP~地址）和第二层的身份信息（如~MAC~地址）绑定在一起。即使是在连通性快速变化的情况下，~CCN~总是能够快速传输数据——物理传输有多快，~CCN~就能做到多快。再者，由于~CCN~的兴趣包和数据包是配对的，每个节点都可以获得每个名字前缀、每个~face~的细粒度性能信息。这些信息可用于动态将名字和~face~匹配（详见~\ref{sec:6.3}）。
+\renewcommand\baselinestretch{1} %调一下脚注行间距
+\footnote{在~IP~中，路由的不对称性通常决定了中间接地啊不可能知道某一个接口是否真的工作良好，因为路由只能看到一个对话的一个方向。}
+
+正如~\ref{sec:2}~中说的一样，~CCN~特意用与~FIB~表项对应的~face~列表模拟了多连通性。由于缺乏能使用所有~face~的万金油式策略，设计的初衷是让每个~FIB~表项都包含一个程序。这个程序像一台抽象机器，专门负责决定怎样转发兴趣。这台机器的“指令”应该包含普通存取、算术、比较指令的子集，包含一些动作（\emph{sendToAll, sendToBest, markAsBest}）和触发器（\emph{interestSatisfied, interestTimedOut, faceDown}）。与此匹配的，~face~会有一套开放式的属性（\emph{BroadcastCapable, isContentRouter, UsageBasedCharging, PeakUseLimited}）。使用动作，属性可以被动态创建。
+
+这些动作、触发器和属性合并在一起统称策略层（CCN Strategy Layer）。~FIB~表项中的程序就是获得这个表项所指数据的策略。我们目前的默认策略是先给所有具广播能力（\emph{BroadcastCapable}）的~face~发兴趣包，如果没有回复，则依次尝试所有其它~face。本地数据（如一场报告中报告人机器中的数据，一次商业会议中同事电脑或手机中的数据）可以直接获得。只有在本地找不到的数据才会使用路由机器去获取。
+
+\begin{figure}[htbp]
+\begin{center}
+\includegraphics[width=0.7\textwidth]{images/routing}
+\caption{将兴趣包路由至域内多媒体内容存放处}
+\label{routing}
+\end{center}
+\end{figure}
+
+FIB~表项中的~face~信息可以通过各种方式获得。如图~\ref{routing}~中的数据源可以用~\emph{Register}~动作作用于本地~CCN~内核，接收对它可以提供的数据的兴趣。这么做会在本地~FIB~表中创建起相关兴趣的表项，并且会在它们后面填上对应程序的~face。已注册的名字会有一个标志位，决定它们是否应该被宣传到本地机器之外。宣传代理（announcement agent）扫描本地注册名字表，把负责他们要求的、被置位了的名字广而告之（详见~\ref{sec:5.4}）。本地扫描可以使用局限于本地名字空间的正常~CCN~兴趣包和数据包来做。广告可以使用~CCN~（即让宣传代理提供~\url{/local/CCN/registrations}），可以使用标准~IP~服务位置协议（SLP），或使用~CCN~或~IP~路由（详见~\ref{sec:4}）。%不确定
 
 %===========================%
 \section{路由}
