@@ -12,22 +12,22 @@
 \contentsline {section}{\numberline {3.3}传输}{13}
 \contentsline {subsection}{\numberline {3.3.1}可靠性与流控制}{15}
 \contentsline {subsection}{\numberline {3.3.2}定序}{16}
-\contentsline {subsection}{\numberline {3.3.3}高连通性，移动性及策略}{18}
-\contentsline {section}{\numberline {3.4}路由}{18}
-\contentsline {subsection}{\numberline {3.4.1}链路状态域内路由}{18}
-\contentsline {subsection}{\numberline {3.4.2}域间路由}{18}
-\contentsline {section}{\numberline {3.5}内容为心安全}{18}
-\contentsline {subsection}{\numberline {3.5.1}内容验证}{18}
-\contentsline {subsection}{\numberline {3.5.2}信任管理}{18}
-\contentsline {subsubsection}{\numberline {3.5.2.1}信任钥匙}{18}
-\contentsline {subsubsection}{\numberline {3.5.2.2}基于证据的安全}{18}
-\contentsline {subsection}{\numberline {3.5.3}内容保护与访问控制}{18}
-\contentsline {subsection}{\numberline {3.5.4}网络安全与措施强化}{18}
-\contentsline {section}{\numberline {3.6}评估}{18}
-\contentsline {subsection}{\numberline {3.6.1}数据传输的效率}{18}
-\contentsline {subsection}{\numberline {3.6.2}内容散布的效率}{18}
-\contentsline {subsection}{\numberline {3.6.3}VoCCN\nobreakspace {}与策略层}{18}
-\contentsline {section}{\numberline {3.7}相关工作}{18}
-\contentsline {section}{\numberline {3.8}结论}{18}
-\contentsline {section}{\numberline {3.9}参考文献}{18}
+\contentsline {subsection}{\numberline {3.3.3}高连通性，移动性及策略}{21}
+\contentsline {section}{\numberline {3.4}路由}{21}
+\contentsline {subsection}{\numberline {3.4.1}链路状态域内路由}{21}
+\contentsline {subsection}{\numberline {3.4.2}域间路由}{21}
+\contentsline {section}{\numberline {3.5}内容为心安全}{21}
+\contentsline {subsection}{\numberline {3.5.1}内容验证}{21}
+\contentsline {subsection}{\numberline {3.5.2}信任管理}{21}
+\contentsline {subsubsection}{\numberline {3.5.2.1}信任钥匙}{21}
+\contentsline {subsubsection}{\numberline {3.5.2.2}基于证据的安全}{21}
+\contentsline {subsection}{\numberline {3.5.3}内容保护与访问控制}{21}
+\contentsline {subsection}{\numberline {3.5.4}网络安全与措施强化}{21}
+\contentsline {section}{\numberline {3.6}评估}{21}
+\contentsline {subsection}{\numberline {3.6.1}数据传输的效率}{21}
+\contentsline {subsection}{\numberline {3.6.2}内容散布的效率}{21}
+\contentsline {subsection}{\numberline {3.6.3}VoCCN\nobreakspace {}与策略层}{21}
+\contentsline {section}{\numberline {3.7}相关工作}{21}
+\contentsline {section}{\numberline {3.8}结论}{21}
+\contentsline {section}{\numberline {3.9}参考文献}{21}
 \contentsfinish 
