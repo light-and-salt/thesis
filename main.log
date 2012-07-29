@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.1415926-2.3-0.9997.5 (TeX Live 2011) (format=xelatex 2011.7.3)  29 JUL 2012 11:21
+This is XeTeX, Version 3.1415926-2.3-0.9997.5 (TeX Live 2011) (format=xelatex 2011.7.3)  29 JUL 2012 20:20
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1073,31 +1073,31 @@ File: images/name_tree.png Graphic file (type QTm)
 <use  "images/name_tree.png" > [18] [19] [20]
 File: images/routing.png Graphic file (type QTm)
  <use  "images/routing.png" >
-[21] [22] [23] [24] [25] [26] [27] [28]
-Overfull \hbox (20.87276pt too wide) in paragraph at lines 291--294
+[21] [22] [23] [24] [25] [26] [27] [28] [29] [30]
+Overfull \hbox (20.87276pt too wide) in paragraph at lines 295--298
 []\zf@basefont [3] B. Adamson, C. Bormann, M. Handley, and J. Macker. \EU1/Time
 sNewRoman(0)/m/it/14 Multicast Negative-
  []
 
 
-Overfull \hbox (3.45491pt too wide) in paragraph at lines 291--294
+Overfull \hbox (3.45491pt too wide) in paragraph at lines 295--298
 \EU1/TimesNewRoman(0)/m/it/14 Acknowledgement (NACK) Building Blocks\zf@basefon
 t . IETF, November 2008. RFC 5401. 
  []
 
-[29] [30]
-Overfull \hbox (4.56792pt too wide) in paragraph at lines 330--332
+[31] [32]
+Overfull \hbox (4.56792pt too wide) in paragraph at lines 334--336
 []\zf@basefont [20] V. Jacobson. Congestion Avoidance and Control. In \EU1/Time
 sNewRoman(0)/m/it/14 SIGCOMM\zf@basefont , 1988. 
  []
 
-[31]
-Overfull \hbox (46.89568pt too wide) in paragraph at lines 364--367
+[33]
+Overfull \hbox (46.89568pt too wide) in paragraph at lines 368--371
 [][][][] [] [] [] [][][] [] [][][][][][][][][][][][][][] [] [][] [] [][][][][] 
 [] [][][] [] [] [] [][][][] [] [][][][][][][][][][][] []
  []
 
-[32]) [33] (./main.aux (./data/eval.aux) (./data/kaiti.aux)
+[34]) [35] (./main.aux (./data/eval.aux) (./data/kaiti.aux)
 (./data/wenxianzongshu.aux) (./data/waiwenfanyi.aux)) ) 
 Here is how much of TeX's memory you used:
  14960 strings out of 494150
@@ -1106,6 +1106,6 @@ Here is how much of TeX's memory you used:
  17843 multiletter control sequences out of 15000+200000
  15171 words of font info for 118 fonts, out of 3000000 for 9000
  1018 hyphenation exceptions out of 8191
- 60i,12n,94p,733b,489s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 60i,12n,94p,739b,489s stack positions out of 5000i,500n,10000p,200000b,50000s
 
-Output written on main.pdf (41 pages).
+Output written on main.pdf (43 pages).
