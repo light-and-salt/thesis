@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.1415926-2.3-0.9997.5 (TeX Live 2011) (format=xelatex 2011.7.3)  4 AUG 2012 17:47
+This is XeTeX, Version 3.1415926-2.3-0.9997.5 (TeX Live 2011) (format=xelatex 2011.7.3)  5 AUG 2012 00:15
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1076,43 +1076,43 @@ File: images/routing.png Graphic file (type QTm)
 [21] [22] [23] [24] [25] [26] [27] [28] [29] [30] [31] [32] [33]
 File: images/trust.png Graphic file (type QTm)
 
-<use  "images/trust.png" > [34] [35] [36] [37]
-Overfull \hbox (20.87276pt too wide) in paragraph at lines 340--343
+<use  "images/trust.png" > [34] [35] [36] [37] [38] [39] [40]
+Overfull \hbox (20.87276pt too wide) in paragraph at lines 351--354
 []\zf@basefont [3] B. Adamson, C. Bormann, M. Handley, and J. Macker. \EU1/Time
 sNewRoman(0)/m/it/14 Multicast Negative-
  []
 
 
-Overfull \hbox (3.45491pt too wide) in paragraph at lines 340--343
+Overfull \hbox (3.45491pt too wide) in paragraph at lines 351--354
 \EU1/TimesNewRoman(0)/m/it/14 Acknowledgement (NACK) Building Blocks\zf@basefon
 t . IETF, November 2008. RFC 5401. 
  []
 
-[38] [39] [40]
-Overfull \hbox (4.56792pt too wide) in paragraph at lines 379--381
+[41] [42]
+Overfull \hbox (4.56792pt too wide) in paragraph at lines 390--392
 []\zf@basefont [20] V. Jacobson. Congestion Avoidance and Control. In \EU1/Time
 sNewRoman(0)/m/it/14 SIGCOMM\zf@basefont , 1988. 
  []
 
-[41]
-Overfull \hbox (46.89568pt too wide) in paragraph at lines 413--416
+[43]
+Overfull \hbox (46.89568pt too wide) in paragraph at lines 424--427
 [][][][] [] [] [] [][][] [] [][][][][][][][][][][][][][] [] [][] [] [][][][][] 
 [] [][][] [] [] [] [][][][] [] [][][][][][][][][][][] []
  []
 
-[42]) [43] (./main.aux (./data/eval.aux) (./data/kaiti.aux)
+[44]) [45] (./main.aux (./data/eval.aux) (./data/kaiti.aux)
 (./data/wenxianzongshu.aux) (./data/waiwenfanyi.aux))
 
 LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
 
  ) 
 Here is how much of TeX's memory you used:
- 14966 strings out of 494150
- 252197 string characters out of 3152950
+ 14968 strings out of 494150
+ 252243 string characters out of 3152950
  350427 words of memory out of 3000000
- 17848 multiletter control sequences out of 15000+200000
+ 17850 multiletter control sequences out of 15000+200000
  15171 words of font info for 118 fonts, out of 3000000 for 9000
  1018 hyphenation exceptions out of 8191
  60i,12n,94p,739b,489s stack positions out of 5000i,500n,10000p,200000b,50000s
 
-Output written on main.pdf (51 pages).
+Output written on main.pdf (53 pages).
