@@ -40,7 +40,7 @@ C.2.1~[计算机系统组织]：网络结构与设计；~C.2.2~[计算机系统�
 
 解决这些问题的直接办法就是把网络中的“在哪里”（where）替换为“是什么”（what）。主机到主机对话是为了解决六十年代的问题而提出的抽象模型。对于如今的通信问题，我们认为命名数据（named data）是比命名主机（named hosts）更好的模型。我们提出内容为心网络（CCN），一个建立于命名数据之上的网络架构。即使是在CCN的最底层，我们也没有位置的概念——一个CCN包的“地址”是一个内容的名字，而不是这个内容的位置。不过，我们也保留了当年使~TCP/IP~简单、稳健、可扩展的那些设计决策。
 
-\begin{figure}
+\begin{figure}[htbp]
   \centering
   \includegraphics[width=0.7\textwidth]{images/narrow_waist}
   \caption{CCN~把网络协议栈中全局性的成分由IP换为了命名内容块} %不确定
@@ -59,7 +59,7 @@ CCN~与~IP~有几点关键性的不同。其中两点即策略和安全已经以
 \section{CCN~节点模型}
 \label{sec:2}
 
-\begin{figure}
+\begin{figure}[htbp]
   \centering
   \includegraphics[width=0.7\textwidth]{images/packet_types}
   \caption{CCN~包的类型} 
@@ -78,7 +78,7 @@ CCN~通信是由数据消费者驱动的。~CCN~包分为两类：兴趣包（In
 \renewcommand\baselinestretch{1} %调一下脚注行间距
 \footnote{这第二个例子会用到~CCN~签名机制产生的身份信息使好友们能用固定的名字约会而不是使用复杂的枚举或是探测算法。换言之，名字表示谈话的内容，而签名表示谈话者在上下文中的身份，如“本地的一个好友”。}
 
-\begin{figure}
+\begin{figure}[htbp]
   \centering
   \includegraphics[width=0.7\textwidth]{images/engine}
   \caption{CCN~转发引擎模型} 
@@ -138,7 +138,7 @@ CCN~兴趣包使用~TCP ack~包使用的流控制和定序方法。%function 不
 \label{sec:3.2}
 在一个~TCP~对话中，数据的辨识要依靠序列号。相比序列号而言，~CCN~需要一些更复杂的东西：~CCN~的消费者们要从海量的数据之中申请一份，并且众多的消费者还可能共享同样的数据。~CCN~对数据的定位和分享依靠的是结构化的、聚合而成的名字。这些名字并不仅仅是一场转瞬即逝的对话中使用到的临时序列号。组成这些名字的至少部分部件是人们可读、可理解的，并且反应了数据的来历信息。虽说~CCN~的名字拥有这些内涵，当它们出现在兴趣包里的时候，它们的通信功能跟~TCP ACK~的功能是一模一样的：道明接受者需要的下一个数据。
 
-\begin{figure}
+\begin{figure}[htbp]
   \centering
   \includegraphics[width=0.7\textwidth]{images/name}
   \caption{名字示例} 
@@ -151,7 +151,7 @@ CCN~兴趣包使用~TCP ack~包使用的流控制和定序方法。%function 不
 
 兴趣包可以准确地言明它需要什么数据，然而在大多数情况下，下一个需要的数据的全名是未知的，所以消费者根据已知的名字采用“相对命名”法来表达兴趣。这样的做法之所以可行，是由于~CCN~名字树完全可以是有序的（子树按词典编撰顺序排列），从而可以用诸如“下一个”、“上一个”之类的词语来无歧义地表示关系而完全不需要知道名字的语义。
 
-\begin{figure}
+\begin{figure}[htbp]
   \centering
   \includegraphics[width=0.4\textwidth]{images/name_tree}
   \caption{名字树遍历} 
@@ -325,8 +325,59 @@ CCN~还提供工具使公司或组织能对他们的内容的散布范围加以�
 %...............................................................%
 \subsection{数据传输的效率}
 \label{sec:6.1}
-TCP~很擅长传输数据。
+TCP~很擅长传输数据。对于批量数据的陆上传输，~TCP~的常规应用到应用递送吞吐量可以接近理论上限（瓶颈链路的带宽）。~TCP~可以“把管道填满”，因为它的可变大小的窗口可以容许足够多的数据被传输，去填满沿途带宽与延时的乘积和途中所有存储转发缓存空间~[21]。~CCN~能够同时保持多个兴趣的能力（详见~\ref{sec:3.1}）赋予了它相同的能力。我们认为它的数据传输性能是与~TCP~的类似的。
 
+为了检验这个观点我们测量了在不同~TCP~窗口和~CCN~兴趣数量下传输~6MB~文件所需的时间。测试是在两台用~100Mb/s~连接接入校园以太网的~Linux~主机之间进行的。在对~TCP~的检测中我们使用~ttcp~传输文件。在对~CCN~的检测中，我们先在数据发送方本地请求一次数据，把文件预装进~ccnd~的内容仓库。
+\renewcommand\baselinestretch{1} %调一下脚注行间距
+\footnote{这么做的原因是使测量结果仅包括传输时间，不包括为~CCN~内容签名所消耗的时间。}
+其结果是制造了~6278~个拥有自己的名字的签过名的~CCN~内容，每个内容有~1 KB~的数据量（内容总大小约为~1350~字节）。
+
+\begin{figure}[htbp]
+\begin{center}
+\includegraphics[width=0.7\textwidth]{images/performance}
+\caption{批量数据传输性能}
+\label{performance}
+\end{center}
+\end{figure}
+
+测量结果见图~\ref{performance}。
+\renewcommand\baselinestretch{1} %调一下脚注行间距
+\footnote{由于~CCN~是以一个包大小的内容为单位传输，图中的~TCP~窗口大小也被除以了每个包的数据量，转换成了包的数量。}
+CCN~需要~TCP~五倍的流水化程度（4~包比~20~包）才能达到~TCP~吞吐量的渐近线。但这其实是一种假象：我们的原型是在应用程序的层次上实现的，其执行完全未加优化，会有额外的存储转发环节被引入；~Linux TCP~则是在内核中被实现的，并且是高度优化了的。~TCP~吞吐量可以达到链路带宽的~90\%，这个比例体现了它的包的头部开销（净荷与包大小之比）。~CCN~能达到链路带宽的~68\%。由于在这个测试中~CCN~被封装在~IP/UDP~中测试，它具有~TCP~的所有开销，外加~22\%~它自己的头部开销。因此对这个例子而言~CCN~的批量数据传输效率与~TCP~处于同一数量级，但由于其头部更大，传输效率比~TCP~低。
+
+批量数据传输性能对于下载大型多媒体文件这样的任务是很重要的，不过用户对于网速的体验更多地取决于网络传输体积小很多的网页内容的速度。我们比较了~CCN~和~HTTP、HTTPS~获取单个~HTML~文件的速度。在非安全（HTTP）案例中我们使用了~Google~的主页，在安全（HTTPS）案例中我们使用了~Wells Fargo~银行的主页。有两种~CCN~封装方法被测试：直接封装为~1500~字节的以太网包（净荷域~1230~字节），或封装为~UDP~数据报（最大净荷~7656~字节）。
+
+{
+\renewcommand{\arraystretch}{1.2}\renewcommand{\tabcolsep}{0.2cm}
+\begin{table}[htdp]
+\begin{center}
+\begin{tabular}{|c|c|c|c|c|}
+\hline
+\space & \multicolumn{2}{c|}{Bytes (packets)} & \multicolumn{2}{c|}{Overheads}  \\
+\space & Sent & Received & Encap & Transact \\
+\hline
+\multicolumn{5}{|l|}{Web Page (6429 bytes)} \\
+\hline
+HTTP & 723 (9) & 7364 (9) & 15\% & 11\% \\
+CCN/ETH & 811 (8) & 8101 (6) & 26\% & 13\% \\
+CCN/UDP & 325 (3) & 6873 (5) & 7\% & 5\% \\
+\hline
+\multicolumn{5}{|l|}{Secured Web page (16944 bytes)} \\
+\hline
+HTTPS & 1548 (16) & 21232 (22) & 25\% & 9\% \\
+CCN/ETH & 1791 (16) & 20910 (14) & 23\% & 11\% \\
+CCN/UDP & 629 (5) & 18253 (14) & 8\% & 4\% \\
+\hline
+\end{tabular}
+\caption{网页内容传输效率}
+\label{web_performance}
+\end{center}
+\end{table}
+}
+
+结果汇总见表~\ref{web_performance}。前两列给出了获取一个~HTML~文件过程中收发总字节数和包数（包括所有用于控制的通信量如~SYN~和~ACK~包）。后两列是由前两列计算得出的，给出了每种协议的开销比例：~Encap~测量了数据封装的开销，它是开销字节数（收到的总字节数减去收到的数据字节数）与数据字节树之比；~Transact~测量了会话开销（请求一份内容的成本），它是总发出字节数与总收到字节数之比。
+
+由~CCN~传输内容总是安全的，不过测试的结果显示了~CCN~的性能与无安全保证的~HTTP~相当，比有安全保证的~HTTPS~好很多。位于以太网之上的~CCN~和~HTTP~效率相等（CCN~每个包的字节数更多但是包的总数较少，即来回次数较少），并且是~HTTPS~效率的两倍（只需一半的包数量）。位于~UDP~之上的~CCN~的传输效率从包数量和开销来说都是~HTTP~的两倍，~HTTPS~的四倍。
 %...............................................................%
 \subsection{内容散布的效率}
 \label{sec:6.2}
