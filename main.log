@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.1415926-2.3-0.9997.5 (TeX Live 2011) (format=xelatex 2011.7.3)  6 AUG 2012 01:19
+This is XeTeX, Version 3.1415926-2.3-0.9997.5 (TeX Live 2011) (format=xelatex 2011.7.3)  6 AUG 2012 03:08
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1090,32 +1090,36 @@ File: images/share_performance.png Graphic file (type QTm)
 <use  "images/share_performance.png" > [44] [45] [46] [47]
 File: images/failover.png Graphic file (type QTm)
 
-<use  "images/failover.png" > [48] [49]
-Overfull \hbox (20.87276pt too wide) in paragraph at lines 457--460
+<use  "images/failover.png" > [48] [49] [50] [51] [52]
+Overfull \hbox (20.87276pt too wide) in paragraph at lines 473--476
 []\zf@basefont [3] B. Adamson, C. Bormann, M. Handley, and J. Macker. \EU1/Time
 sNewRoman(0)/m/it/14 Multicast Negative-
  []
 
 
-Overfull \hbox (3.45491pt too wide) in paragraph at lines 457--460
+Overfull \hbox (3.45491pt too wide) in paragraph at lines 473--476
 \EU1/TimesNewRoman(0)/m/it/14 Acknowledgement (NACK) Building Blocks\zf@basefon
 t . IETF, November 2008. RFC 5401. 
  []
 
-[50] [51]
-Overfull \hbox (4.56792pt too wide) in paragraph at lines 496--498
+[53] [54]
+Overfull \hbox (4.56792pt too wide) in paragraph at lines 512--514
 []\zf@basefont [20] V. Jacobson. Congestion Avoidance and Control. In \EU1/Time
 sNewRoman(0)/m/it/14 SIGCOMM\zf@basefont , 1988. 
  []
 
-[52]
-Overfull \hbox (46.89568pt too wide) in paragraph at lines 530--533
+[55]
+Overfull \hbox (46.89568pt too wide) in paragraph at lines 546--549
 [][][][] [] [] [] [][][] [] [][][][][][][][][][][][][][] [] [][] [] [][][][][] 
 [] [][][] [] [] [] [][][][] [] [][][][][][][][][][][] []
  []
 
-[53]) [54] (./main.aux (./data/eval.aux) (./data/kaiti.aux)
-(./data/wenxianzongshu.aux) (./data/waiwenfanyi.aux)) ) 
+[56]) [57] [58] (./main.aux (./data/eval.aux) (./data/kaiti.aux)
+(./data/wenxianzongshu.aux) (./data/waiwenfanyi.aux))
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
+ ) 
 Here is how much of TeX's memory you used:
  14984 strings out of 494150
  252545 string characters out of 3152950
@@ -1125,4 +1129,4 @@ Here is how much of TeX's memory you used:
  1018 hyphenation exceptions out of 8191
  60i,12n,94p,739b,489s stack positions out of 5000i,500n,10000p,200000b,50000s
 
-Output written on main.pdf (62 pages).
+Output written on main.pdf (66 pages).
