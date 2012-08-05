@@ -27,7 +27,7 @@
 \contentsline {subsection}{\numberline {3.6.1}数据传输的效率}{41}
 \contentsline {subsection}{\numberline {3.6.2}内容传播的效率}{45}
 \contentsline {subsection}{\numberline {3.6.3}VoCCN\nobreakspace {}与策略层}{47}
-\contentsline {section}{\numberline {3.7}相关工作}{47}
-\contentsline {section}{\numberline {3.8}结论}{47}
-\contentsline {section}{\numberline {3.9}参考文献}{47}
+\contentsline {section}{\numberline {3.7}相关工作}{49}
+\contentsline {section}{\numberline {3.8}结论}{49}
+\contentsline {section}{\numberline {3.9}参考文献}{50}
 \contentsfinish 
