@@ -6,28 +6,37 @@
 \contentsline {section}{\numberline {1.5}预期研究结果}{1}
 \contentsline {section}{\numberline {1.6}进度计划}{1}
 \contentsline {chapter}{\numberline {2}本科毕业论文文献综述}{2}
-\contentsline {chapter}{\numberline {3}本科毕业论文外文翻译}{3}
-\contentsline {section}{\numberline {3.1}引言}{4}
-\contentsline {section}{\numberline {3.2}CCN\nobreakspace {}节点模型}{7}
-\contentsline {section}{\numberline {3.3}传输}{13}
-\contentsline {subsection}{\numberline {3.3.1}可靠性与流控制}{15}
-\contentsline {subsection}{\numberline {3.3.2}定序}{16}
-\contentsline {subsection}{\numberline {3.3.3}高连通性，移动性及策略}{20}
-\contentsline {section}{\numberline {3.4}路由}{22}
-\contentsline {subsection}{\numberline {3.4.1}链路状态域内路由}{23}
-\contentsline {subsection}{\numberline {3.4.2}域间路由}{27}
-\contentsline {section}{\numberline {3.5}内容为心安全}{29}
-\contentsline {subsection}{\numberline {3.5.1}内容验证}{30}
-\contentsline {subsection}{\numberline {3.5.2}信任管理}{32}
-\contentsline {subsubsection}{\numberline {3.5.2.1}公钥信任}{33}
-\contentsline {subsubsection}{\numberline {3.5.2.2}基于证据的安全}{35}
-\contentsline {subsection}{\numberline {3.5.3}内容保护与访问控制}{37}
-\contentsline {subsection}{\numberline {3.5.4}网络安全与策略实施}{37}
-\contentsline {section}{\numberline {3.6}评估}{40}
-\contentsline {subsection}{\numberline {3.6.1}数据传输的效率}{41}
-\contentsline {subsection}{\numberline {3.6.2}内容传播的效率}{45}
-\contentsline {subsection}{\numberline {3.6.3}VoCCN\nobreakspace {}与策略层}{47}
-\contentsline {section}{\numberline {3.7}相关工作}{49}
-\contentsline {section}{\numberline {3.8}结论}{53}
-\contentsline {section}{\numberline {3.9}参考文献}{53}
+\contentsline {section}{\numberline {2.1}引言}{3}
+\contentsline {section}{\numberline {2.2}网络游戏的同步机制}{3}
+\contentsline {section}{\numberline {2.3}传统网络中的主流同步机制}{3}
+\contentsline {subsection}{\numberline {2.3.1}结构}{3}
+\contentsline {subsection}{\numberline {2.3.2}算法}{3}
+\contentsline {section}{\numberline {2.4}内容命名网络中的同步}{3}
+\contentsline {subsection}{\numberline {2.4.1}SYNC\nobreakspace {}协议}{3}
+\contentsline {subsection}{\numberline {2.4.2}用户自定义协议}{3}
+\contentsline {section}{\numberline {2.5}其它新型网络中的同步}{3}
+\contentsline {chapter}{\numberline {3}本科毕业论文外文翻译}{4}
+\contentsline {section}{\numberline {3.1}引言}{5}
+\contentsline {section}{\numberline {3.2}CCN\nobreakspace {}节点模型}{8}
+\contentsline {section}{\numberline {3.3}传输}{14}
+\contentsline {subsection}{\numberline {3.3.1}可靠性与流控制}{16}
+\contentsline {subsection}{\numberline {3.3.2}定序}{17}
+\contentsline {subsection}{\numberline {3.3.3}高连通性，移动性及策略}{21}
+\contentsline {section}{\numberline {3.4}路由}{23}
+\contentsline {subsection}{\numberline {3.4.1}链路状态域内路由}{24}
+\contentsline {subsection}{\numberline {3.4.2}域间路由}{28}
+\contentsline {section}{\numberline {3.5}内容为心安全}{30}
+\contentsline {subsection}{\numberline {3.5.1}内容验证}{31}
+\contentsline {subsection}{\numberline {3.5.2}信任管理}{33}
+\contentsline {subsubsection}{\numberline {3.5.2.1}公钥信任}{34}
+\contentsline {subsubsection}{\numberline {3.5.2.2}基于证据的安全}{36}
+\contentsline {subsection}{\numberline {3.5.3}内容保护与访问控制}{38}
+\contentsline {subsection}{\numberline {3.5.4}网络安全与策略实施}{38}
+\contentsline {section}{\numberline {3.6}评估}{41}
+\contentsline {subsection}{\numberline {3.6.1}数据传输的效率}{42}
+\contentsline {subsection}{\numberline {3.6.2}内容传播的效率}{46}
+\contentsline {subsection}{\numberline {3.6.3}VoCCN\nobreakspace {}与策略层}{48}
+\contentsline {section}{\numberline {3.7}相关工作}{50}
+\contentsline {section}{\numberline {3.8}结论}{54}
+\contentsline {section}{\numberline {3.9}参考文献}{54}
 \contentsfinish 
