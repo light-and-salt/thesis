@@ -1,9 +1,94 @@
-\begin{thebibliography}{1}
+\begin{thebibliography}{10}
 
-\bibitem{infogrowth}
-J.~F.~Gantz et~al.
-\newblock Idc - the expanding digital universe: A forecast of worldwide inform
-  ation growth through 2010.
-\newblock Technical report, March 2007.
+\bibitem{hla}
+Ieee standard for modeling and simulation (m amp;s) high level architecture
+  (hla) - framework and rules.
+\newblock {\em IEEE Std. 1516-2000}, pages i --22, 2000.
+
+\bibitem{traditional}
+R.A. Bangun and H.P. Beadle.
+\newblock A network architecture for multiuser net- worked games on demand.
+\newblock In {\em Proceedings of the 1997 International Conference on
+  Information, Communications and Signal Processing}, pages 1815--1819,
+  Singapore, September 1997.
+
+\bibitem{cheat1}
+B.D. Chen and M.~Maheswaran.
+\newblock A cheat controlled protocol for centralized online multiplayer games.
+\newblock In {\em Proceedings of ACMSIGCOMM 2004 workshops on NetGames '04},
+  pages 139--143. ACM Press, 2004.
+
+\bibitem{cheat2}
+E.~Cronin, B.~Filstrup, and S.~Jamin.
+\newblock Cheat-proofing dead reckoned multi-player games.
+\newblock In {\em Proceedings of the International Conference on Application
+  and Development of Computer Games (AdCog 2003)}, January 2003.
+
+\bibitem{cheat3}
+C.~Gauthier Dickey, D.~Zappala, V.~Lo, and J.~Marr.
+\newblock Low latency and cheat-proof event ordering for peer-to-peer games.
+\newblock In {\em Proceedings of the 14th international workshop on Network and
+  operating systems support for digital audio and video}, pages 134--139. ACM
+  Press, 2004.
+
+\bibitem{Ferretti2005}
+Stefano Ferretti.
+\newblock {Interactivity maintenance for event synchronization in massive
+  multiplayer online games}.
+\newblock Technical Report March, Department of Computer Science, University of
+  Bologna, 2005.
+
+\bibitem{ultima}
+Electronic~Arts Inc.
+\newblock Ultima online.
+\newblock http://www.uo.com/.
+
+\bibitem{cheat4}
+H.~Lee, E.~Kozlowski, S.~Lenker, and S.~Jamin.
+\newblock Synchronization and cheat-proofing protocol for real-time mulitplayer
+  games.
+\newblock In {\em Proceedings of 1st Workshop on Entertainment Computing},
+  Makuhari, Japan, May 2002.
+
+\bibitem{openping}
+P.~Okanda and G.~Blair.
+\newblock Openping: a reflective middleware for the construc- tion of adaptive
+  networked game applications.
+\newblock In {\em Proceedings of ACM SIGCOMM 2004 workshops on NetGames '04},
+  pages 111--115. ACM Press, 2004.
+
+\bibitem{modern1}
+M.~Roccetti, P.~Salomoni, V.~Ghini, and S.~Ferretti.
+\newblock Bringing the wireless internet to umts devices: A case study with
+  music distribution.
+\newblock {\em Multimedia Tools and Applications}, December 2002.
+
+\bibitem{modern2}
+M.~Roccetti, P.~Salomoni, V.~Ghini, S.~Ferretti, and S.~Cacciaguerra.
+\newblock Delivering music over the wireless internet: from song distribution
+  to interactive karaoke on umts devices.
+\newblock In B.~Furht and M.~Ilyas, editors, {\em Wireless Internet Handbook:
+  Technologies, Standards, and Applications}. CRC Press, March 2003.
+
+\bibitem{modern3}
+M.~Roccetti, P.~Salomoni, V.~Ghini, S.~Ferretti, S.~Cacciaguerra, and
+  A.~Sor-cinelli.
+\newblock Moka: a wireless internet application for delivering mobile karaoke
+  on umts devices.
+\newblock In {\em Proceedings of the International Conference on
+  Communications, Internet and Information Technology}, pages 346--351, St.
+  Thomas, Virgin Islands, November 2002.
+
+\bibitem{quake}
+the QuakeForge~Project.
+\newblock Quake forge project.
+\newblock http://www.quakeforge.net/, 2002.
+
+\bibitem{dsl}
+S.~Wright and S.~Tischer.
+\newblock Architectural considerations in online game services over dsl
+  networks.
+\newblock In {\em Proceedings of the IEEE International Conference on
+  Communications (ICC2004)}, Paris, France, June 2004.
 
 \end{thebibliography}
