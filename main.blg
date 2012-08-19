@@ -9,45 +9,45 @@ A level-1 auxiliary file: data/waiwenfanyi.aux
 Database file #1: data/zjubib.bib
 Warning--to sort, need author or key in hla
 Warning--empty author in hla
-You've used 14 entries,
+You've used 17 entries,
             2118 wiz_defined-function locations,
-            582 strings with 6833 characters,
-and the built_in function-call counts, 5120 in all, are:
-= -- 508
-> -- 230
-< -- 7
-+ -- 92
-- -- 76
-* -- 316
-:= -- 802
-add.period$ -- 45
-call.type$ -- 14
-change.case$ -- 79
+            599 strings with 7390 characters,
+and the built_in function-call counts, 6043 in all, are:
+= -- 594
+> -- 273
+< -- 8
++ -- 110
+- -- 90
+* -- 382
+:= -- 956
+add.period$ -- 54
+call.type$ -- 17
+change.case$ -- 95
 chr.to.int$ -- 0
-cite$ -- 16
-duplicate$ -- 225
-empty$ -- 420
-format.name$ -- 76
-if$ -- 1132
+cite$ -- 19
+duplicate$ -- 264
+empty$ -- 501
+format.name$ -- 90
+if$ -- 1324
 int.to.chr$ -- 0
-int.to.str$ -- 14
-missing$ -- 11
-newline$ -- 72
-num.names$ -- 28
-pop$ -- 115
+int.to.str$ -- 17
+missing$ -- 14
+newline$ -- 87
+num.names$ -- 34
+pop$ -- 136
 preamble$ -- 1
-purify$ -- 65
+purify$ -- 78
 quote$ -- 0
-skip$ -- 165
+skip$ -- 185
 stack$ -- 0
-substring$ -- 260
-swap$ -- 72
-text.length$ -- 7
+substring$ -- 301
+swap$ -- 77
+text.length$ -- 8
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 56
+type$ -- 68
 warning$ -- 2
-while$ -- 44
-width$ -- 16
-write$ -- 154
+while$ -- 52
+width$ -- 19
+write$ -- 187
 (There were 2 warnings)

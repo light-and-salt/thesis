@@ -21,6 +21,15 @@
 
 % 从CCN的角度出发，CCN更需要游戏，因为没有任何一个网络不需要游戏的，因此综述里应该写各种不同的网络对游戏的支持（这样的话反倒应该看看那篇很宽泛的文章）——侧重于同步机制
 
+% 一些宏定义
+\newcommand{\csa}{客户~\slash~服务器架构}
+\newcommand{\pa}{对等体架构}
+\newcommand{\da}{分布式架构}
+\newcommand{\ma}{镜像服务器架构}
+\newcommand{\ioc}{I{\slash}O\_C}
+\newcommand{\gss}{GSS}
+
+
 \heiti
 标题
 
@@ -55,30 +64,35 @@
 % 而 consistency，safety 的定义是有的
 % 分类，分为asset, state吗？
 % 同步与consistency, responsiveness有什么关系？
-本节介绍了网络游戏的基本架构（\ref{archi}），游戏架构须提供的基本服务（\ref{service}）和一致性的定义（\ref{def}）。
+本节介绍了网络游戏的基本架构（\ref{archi}）和游戏架构须提供的基本服务（\ref{service}）。在~\ref{def}~中给出了同步和一致性的基本定义。
 
+
+%-------------------------------------------------%
 \subsection{游戏架构}
 % 400字
 \label{archi}
 
 多人在线游戏中的玩家是分散的，为此游戏设计者和网络工程师设计了不同的拓扑结构（或称游戏架构）来适应性地为分散的用户提供服务。这些拓扑结构可以分为三类：
 \begin{itemize}
-\item Client \/ Server Architecture~客户~\/~服务器架构
-\item P2P Architecture~对等体架构
-\item Distributed Architecture~分布式架构
+\item Client {\slash} Server Architecture~\csa
+\item P2P Architecture~\pa
+\item Distributed Architecture~\da
 \end{itemize}
 
-\newcommand{\ioc}{I\/O\_C}
+对这三种结构的具体描述见下文。这里需要概括的是：不论游戏采用哪种拓扑结构，它都由两类实体组成——输入输出控制实体（I{\slash}O Client Control Entity,~简称~\ioc）和游戏状态服务器实体（Game State Server Entity,~简称~\gss）~\cite{Ferretti2005}。
 
-对这三种结构的具体描述见下文。这里需要概括的是：不论游戏采用哪种拓扑结构，它都由两类实体组成——输入输出控制实体（I\/O Client Control Entity,~简称~\ioc）和游戏状态服务器实体（Game State Server Entity,~简称~GSS）。\cite{Ferretti2005}
+\ioc~通常是一个客户端软件，负责输入输出，对~\gss~收发事件（event）和图形渲染工作。~\ioc~可以看做游戏场景中一个或多个虚拟实体的拥有者，负责更新它们的属性（attribute）~\cite{hla}。~\gss~通常负责维护游戏状态。
+\renewcommand\baselinestretch{1} %调一下脚注行间距
+\footnote{一个网络游戏的游戏状态指该虚拟世界和这个世界中所有角色的状态的总和。}
 
-\ioc~通常是一个客户端软件，负责输入输出，对~GSS~收发事件（event）和图形渲染工作。~\ioc~可以看做游戏场景中一个或多个虚拟实体的拥有者，负责更新它们的属性（attribute）。\cite{hla}
 
-\subsubsection{Client \/ Sserver~架构}
-% 好处与缺点
+% . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . %
+\subsubsection{\csa} 
+% 客户服务器架构  好处与缺点
 
-客户~\/~服务器架构是商业界采用得最多的一种架构。~Quake \cite{quake}, Ultima Online \cite{ultima}~等游戏都采用此架构。
+{\csa}是商业界采用得最多的一种架构。~Quake \cite{quake}, Ultima Online \cite{ultima}~等游戏都采用此架构。
 
+{\csa}只有一个中央服务器，属于~\gss~类实体；有许多客户端，属于~\ioc~类实体。~\gss~负责维护游戏状态，~\ioc~产生的所有事件都要发送到~\gss~进行运算；随后~\gss~将新的游戏状态发送给所有~\ioc。（如图~\ref{CS}）
 
 \begin{figure}[htbp]
 \begin{center}
@@ -101,19 +115,22 @@
 \end{center}
 \end{figure}
 
+由于{\csa}的~\gss~可以验证所有~\ioc~发来的信息，所以它的防作弊能力很强。类似地，由于游戏状态永远是由~\gss~统一发布，游戏也可以很容易地达到一致性要求。正是这两个原因使{\csa}获得了许多游戏运营商的青睐。
 
+然而，{\csa}的缺点也很多：首先，中央服务器很可能成为整个系统的性能瓶颈；其次，这类结构并不稳健，容易形成单点故障；再次，此类结构的可扩展性差，随着玩家数量的增长其服务质量将显著下降；最后，此种结构会因为不同玩家的延时差异而造成不公。
 
+% . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . %
+\subsubsection{\pa}
+% P2P架构  好处与缺点
 
+{\pa}中每个对等体既是~\ioc~又是~\gss。没有中央服务器，每一个对等体都维护着一份游戏状态的副本。{\pa}游戏的一个著名的例子就是~MiMaze \cite{mimaze}。
 
-
-\subsubsection{P2P~架构}
-% 好处与缺点
+{\pa}没有中央服务器，一个事件不需经过服务器验证发布的过程，可以直接发给玩家，所以它具有低延时的优点。{\pa}的另一个主要优势就是稳健性，不会因某个节点的故障而导致全局瘫痪。
 
 \begin{figure}[htbp]
 \begin{center}
 \begin{tikzpicture} [scale=1, transform shape]
 %\tikzstyle{every node}=[draw,shape=circle];
-
 \node (v1) at ( 0:3) {$Peer_1$};
 \node (v2) at ( 72:3) {$Peer_2$};
 \node (v3) at (2*72:3) {$Peer_3$};
@@ -135,9 +152,19 @@
 \end{center}
 \end{figure}
 
+{\pa}的主要缺点在于一致性和可扩展性。为了保障一致性，{\pa}常常使用全相连网络（如图~\ref{P2P}），这样每个事件产生之后就可以同时发给所有对等体。然而，这种全相连网络的可扩展性是很差的。如果网络中有~$N$~个用户对一事件感兴趣，那么产生该事件的用户就要向网络中发出~$N$~条信息，网络中的通信量就会以玩家数量的平方数的速度增长。为了减少通信量，{\pa}常常需要依靠多播技术，然而多播技术在目前的因特网中并不普遍。幸运的是，{\pa}并不一定要使用全相连网络，许多文献中提到了用动态创建覆盖网络的方法来支持对等体间通信~\cite{p2p1, p2p2}，这些方法提升了{\pa}的可扩展性。
 
-\subsubsection{分布式架构}
-% 好处与缺点
+另外，由于无法对用户产生的事件集中验证，在{\pa}中作弊会相对容易。
+
+% . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . %
+\subsubsection{\da}
+% 分布式架构  好处与缺点
+
+{\da}可以看做{\csa}的进化版本。它与{\csa}类似的地方是它也拥有客户端（\ioc）和服务器（\gss）这样的分类，~\ioc~之间也不许直接连接，必须经过~\gss~中转。不过{\da}没有中央服务器，而是有分布的服务器群。游戏状态由这个群来管理。根据~\gss~组织方式的不同，{\da}又可以分为三类。
+
+第一类：每个~\gss~维护一个游戏环节，每个~\ioc~只能连接到一个~\gss~并且只能与它交换数据。这类{\da}本质上就是多个{\csa}。它在一定程度上解决了游戏整体的可扩展性的问题，但是同时也限制了单个游戏环节的可扩展性。并且单点故障的问题仍然没有解决。
+
+第二类：每个~\gss~维护游戏状态的一个子集。将游戏中的虚拟世界分块，每个~\gss~执掌一个块的游戏状态。~\ioc~根据其虚拟角色所在虚拟位置选择它要连接的~\gss。这样做可以显著地降低各个~\gss~的运算负担，但是同样无法解决单点故障问题。另外~\ioc~与~\gss~的连接方式会带来不公，且当虚拟角色在虚拟世界上发生大幅位移时还需要切换~\gss。
 
 \begin{figure}[htbp]
 \begin{center}
@@ -151,26 +178,31 @@
 \node (c3) at (15:4) {$Client_3$};
 \node (c4) at (315:4) {$Client_4$};
 \node (c5) at (260:3) {$Client_5$};
-
 \draw (s1) -- (s2) -- (s3) -- (s1);
 \draw (c1) -- (s1) -- (c2)
 (c4) -- (s2) -- (c5)
 (c3) -- (s3);
-
 \end{tikzpicture}
 \caption{分布式}
 \label{distributed}
 \end{center}
 \end{figure}
 
+第三类：每个~\gss~维护游戏状态的一个副本。这类结构又称“{\ma}”。每个~\ioc~连接到距离它较近的~\gss，并以客户~\slash~服务器的模式与它交换数据。~\gss~之间可以用等级化的方式组织，也可以用~P2P~的方式组织（如图~\ref{distributed}）。
+
+如果使用~P2P~形式组织~\gss，那么这种结构就比较稳健，且不存在中央瓶颈。但是它也会需要一个同步机制来保障多个~\gss~之间的一致性。由于{\ma}中的~\gss~数量通常少于{\pa}中的节点数，所以{\ma}中的同步相对容易一些。
+
+
+
+
 
 %-------------------------------------------------%
-\subsection{八项服务}
+\subsection{游戏架构的八项服务}
 % 网络结构需要为游戏提供的八项服务（400字）
 % 见意大利论文
 \label{service}
 
-一个完整的游戏架构应该提供以下八项服务：\cite{openping, dsl}
+一个完整的游戏架构不应当只是由~\ioc~和~\gss~两类实体堆砌而成，而应该能够提供以下八项服务~\cite{openping, dsl}：
 
 \begin{description}
 \item[状态维护（State Maintenance）]
@@ -195,13 +227,14 @@ GSS~维护游戏状态。这个游戏状态包括虚拟世界和这个世界中�
 玩家间实时的文字、音频、视频通信可以增强用户体验。
 
 \item[多媒体资料传播（Multimedia Resource Distribution）]
-传统观点中多媒体资料的传播仅仅局限于游戏开始之前的“离线”下载阶段。~\cite{traditional}~而新兴的观点则认为多媒体资料的下载将贯穿整个游戏过程，并增强用户间互动，提升游戏的可玩性。~\cite{modern1, modern2, modern3}
+传统观点中多媒体资料的传播仅仅局限于游戏开始之前的“离线”下载阶段~\cite{traditional}。而新兴的观点则认为多媒体资料的下载将贯穿整个游戏过程，并增强用户间互动，提升游戏的可玩性~\cite{modern1, modern2, modern3}。
 \end{description}
 %-------------------------------------------------%
 
-\subsection{一堆概念}
+\subsection{一致性——同步的目的}
 \label{def}
 % 400字
+
 
 %============================%
 

@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.1415926-2.3-0.9997.5 (TeX Live 2011) (format=xelatex 2011.7.3)  18 AUG 2012 23:43
+This is XeTeX, Version 3.1415926-2.3-0.9997.5 (TeX Live 2011) (format=xelatex 2011.7.3)  20 AUG 2012 02:29
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1324,57 +1324,56 @@ Chapter 2.
 
 
 
-] [3] [4] [5] [6] (./main.bbl [7] [8] [9
+] [3] [4] [5] [6] [7] [8] [9] (./main.bbl [10] [11] [12
 
-] [10]
-Underfull \hbox (badness 10000) in paragraph at lines 83--86
-[]\EU1/TimesNewRoman(0)/m/n/14 the QuakeForge Project.  Quake forge project.  h
-ttp://
+] [13] [14]
+Underfull \hbox (badness 10000) in paragraph at lines 102--105
+[]\zf@basefont the QuakeForge Project.  Quake forge project.  http://
  []
 
-[11])) [12]
+)) [15]
 \openout2 = `data/waiwenfanyi.aux'.
 
  (./data/waiwenfanyi.tex
 Chapter 3.
-[13
+[16
 
 
 
-] [14] [15]
+] [17]
 File: images/narrow_waist.png Graphic file (type QTm)
- <use  "images/narrow_waist.png" > [16]
+ <use  "images/narrow_waist.png" > [18] [19]
 File: images/packet_types.png Graphic file (type QTm)
 
-<use  "images/packet_types.png" > [17] [18]
+<use  "images/packet_types.png" > [20] [21]
 File: images/engine.png Graphic file (type QTm)
  <use  "images/engine.png" >
-[19] [20] [21] [22] [23] [24] [25] [26]
+[22] [23] [24] [25] [26] [27] [28] [29]
 File: images/name.png Graphic file (type QTm)
- <use  "images/name.png" > [27]
+ <use  "images/name.png" > [30]
 File: images/name_tree.png Graphic file (type QTm)
 
-<use  "images/name_tree.png" > [28] [29] [30]
+<use  "images/name_tree.png" > [31] [32] [33]
 File: images/routing.png Graphic file (type QTm)
  <use  "images/routing.png" >
-[31] [32] [33] [34] [35] [36] [37] [38] [39] [40] [41] [42] [43] [44]
+[34] [35] [36] [37] [38] [39] [40] [41] [42] [43] [44] [45] [46] [47]
 File: images/trust.png Graphic file (type QTm)
 
-<use  "images/trust.png" > [45] [46] [47] [48] [49] [50]
+<use  "images/trust.png" > [48] [49] [50] [51] [52] [53]
 Overfull \hbox (15.69254pt too wide) in paragraph at lines 348--349
 []\rm/m/n/14 所 有 模 块 均 可 在 \zf@basefont Linux, Mac OS X[], Solari
 s[], FreeBSD, NetBSD \rm/m/n/14 和 \zf@basefont Mi-
  []
 
-[51]
+[54]
 File: images/performance.png Graphic file (type QTm)
- <use  "images/performance.png" > [52] [53]
+ <use  "images/performance.png" > [55] [56]
 File: images/share_performance.png Graphic file (type QTm)
 
-<use  "images/share_performance.png" > [54] [55] [56] [57]
+<use  "images/share_performance.png" > [57] [58] [59] [60]
 File: images/failover.png Graphic file (type QTm)
 
-<use  "images/failover.png" > [58] [59] [60] [61] [62] [63]
+<use  "images/failover.png" > [61] [62] [63] [64] [65] [66]
 Overfull \hbox (20.87276pt too wide) in paragraph at lines 501--504
 []\zf@basefont [3] B. Adamson, C. Bormann, M. Handley, and J. Macker. \EU1/Time
 sNewRoman(0)/m/it/14 Multicast Negative-
@@ -1386,27 +1385,31 @@ Overfull \hbox (3.45491pt too wide) in paragraph at lines 501--504
 t . IETF, November 2008. RFC 5401. 
  []
 
-[64] [65]
+[67] [68]
 Overfull \hbox (4.56792pt too wide) in paragraph at lines 540--542
 []\zf@basefont [20] V. Jacobson. Congestion Avoidance and Control. In \EU1/Time
 sNewRoman(0)/m/it/14 SIGCOMM\zf@basefont , 1988. 
  []
 
-[66]
+[69]
 Overfull \hbox (46.89568pt too wide) in paragraph at lines 574--577
 [][][][] [] [] [] [][][] [] [][][][][][][][][][][][][][] [] [][] [] [][][][][] 
 [] [][][] [] [] [] [][][][] [] [][][][][][][][][][][] []
  []
 
-[67]) [68] (./main.aux (./data/eval.aux) (./data/kaiti.aux)
-(./data/wenxianzongshu.aux) (./data/waiwenfanyi.aux)) ) 
+[70]) [71] (./main.aux (./data/eval.aux) (./data/kaiti.aux)
+(./data/wenxianzongshu.aux) (./data/waiwenfanyi.aux))
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
+ ) 
 Here is how much of TeX's memory you used:
- 23379 strings out of 494150
- 421902 string characters out of 3152950
- 500935 words of memory out of 3000000
- 26058 multiletter control sequences out of 15000+200000
+ 23387 strings out of 494150
+ 421934 string characters out of 3152950
+ 500949 words of memory out of 3000000
+ 26066 multiletter control sequences out of 15000+200000
  15171 words of font info for 118 fonts, out of 3000000 for 9000
  1018 hyphenation exceptions out of 8191
- 60i,12n,94p,739b,659s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 60i,12n,94p,739b,657s stack positions out of 5000i,500n,10000p,200000b,50000s
 
-Output written on main.pdf (76 pages).
+Output written on main.pdf (79 pages).

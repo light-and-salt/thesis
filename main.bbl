@@ -1,8 +1,8 @@
 \begin{thebibliography}{10}
 
 \bibitem{hla}
-Ieee standard for modeling and simulation (m amp;s) high level architecture
-  (hla) - framework and rules.
+{IEEE Standard for Modeling and Simulation {(M\&S)} High Level Architecture
+  (HLA) - Framework and Rules}.
 \newblock {\em IEEE Std. 1516-2000}, pages i --22, 2000.
 
 \bibitem{traditional}
@@ -38,10 +38,22 @@ Stefano Ferretti.
 \newblock Technical Report March, Department of Computer Science, University of
   Bologna, 2005.
 
+\bibitem{mimaze}
+L.~Gautier, C.~Diot, and J.~Kurose.
+\newblock End-to-end transmission control mechanisms for multiparty interactive
+  applications on the internet.
+\newblock In {\em Proceedings of IEEE Infocom1999}, volume~3, March 1999.
+
 \bibitem{ultima}
 Electronic~Arts Inc.
 \newblock Ultima online.
 \newblock http://www.uo.com/.
+
+\bibitem{p2p1}
+Y.~Kawahara, T.~Aoyama, and H.~Morikawa.
+\newblock A peer-to-peer message exchange scheme for large-scale networked
+  virtual environments.
+\newblock {\em Telecommunication Systems}, 25(3-4):353--370, 2004.
 
 \bibitem{cheat4}
 H.~Lee, E.~Kozlowski, S.~Lenker, and S.~Jamin.
@@ -56,6 +68,13 @@ P.~Okanda and G.~Blair.
   networked game applications.
 \newblock In {\em Proceedings of ACM SIGCOMM 2004 workshops on NetGames '04},
   pages 111--115. ACM Press, 2004.
+
+\bibitem{p2p2}
+A.~El Rhalibi.
+\newblock Peer-to-peer architecture and protocol for a massively multiplayer
+  online game.
+\newblock In {\em Proceedings of 1st IEEE International Workshop on Networking
+  Issues in Multimedia Entertainment (NIME'04)}, Las Vegas, NV, November 2004.
 
 \bibitem{modern1}
 M.~Roccetti, P.~Salomoni, V.~Ghini, and S.~Ferretti.
