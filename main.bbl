@@ -12,6 +12,18 @@ R.A. Bangun and H.P. Beadle.
   Information, Communications and Signal Processing}, pages 1815--1819,
   Singapore, September 1997.
 
+\bibitem{bryant}
+R.E. Bryant.
+\newblock Simulation of packet communication architecture computer systems.
+\newblock Technical report, Computer Science Laboratory, Massachusetts
+  Institute of Technologies, Cambridge, Massachusetts, 1977.
+
+\bibitem{chandy}
+K.M. Chandy and J.~Misra.
+\newblock Distributed simulation: A case study in design and verification of
+  distributed programs.
+\newblock {\em IEEE Transactions on Software Engeneering}, 5(5).
+
 \bibitem{cheat1}
 B.D. Chen and M.~Maheswaran.
 \newblock A cheat controlled protocol for centralized online multiplayer games.
@@ -37,6 +49,11 @@ Stefano Ferretti.
   multiplayer online games}.
 \newblock Technical Report March, Department of Computer Science, University of
   Bologna, 2005.
+
+\bibitem{lockstep}
+R.M. Fujimoto.
+\newblock {\em Parallel and Distribution Simulation Systems}.
+\newblock John Wiley \& Sons, Inc., 1999.
 
 \bibitem{mimaze}
 L.~Gautier, C.~Diot, and J.~Kurose.
@@ -69,6 +86,13 @@ P.~Okanda and G.~Blair.
 \newblock In {\em Proceedings of ACM SIGCOMM 2004 workshops on NetGames '04},
   pages 111--115. ACM Press, 2004.
 
+\bibitem{impact}
+L.~Pantel and L.C. Wolf.
+\newblock On the impact of delay on real-time multiplayer games.
+\newblock In {\em Proceedings of the 12th international workshop on Network and
+  operating systems support for digital audio and video}, pages 23--29. ACM
+  Press, 2002.
+
 \bibitem{p2p2}
 A.~El Rhalibi.
 \newblock Peer-to-peer architecture and protocol for a massively multiplayer
@@ -97,6 +121,12 @@ M.~Roccetti, P.~Salomoni, V.~Ghini, S.~Ferretti, S.~Cacciaguerra, and
 \newblock In {\em Proceedings of the International Conference on
   Communications, Internet and Information Technology}, pages 346--351, St.
   Thomas, Virgin Islands, November 2002.
+
+\bibitem{fixed-bucket}
+J.S. Steinman.
+\newblock Scalable parallel and distributed military simulations using the
+  speedes framework.
+\newblock Technical report, NASA, Jet Propulsion Laboratory, 1995.
 
 \bibitem{quake}
 the QuakeForge~Project.
