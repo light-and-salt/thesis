@@ -8,41 +8,40 @@
 \contentsline {chapter}{\numberline {2}本科毕业论文文献综述}{2}
 \contentsline {section}{\numberline {2.1}引言}{2}
 \contentsline {section}{\numberline {2.2}网络游戏与同步}{3}
-\contentsline {subsection}{\numberline {2.2.1}游戏架构}{3}
-\contentsline {subsubsection}{\numberline {2.2.1.1}客户\nobreakspace {}/\penalty \exhyphenpenalty \nobreakspace {}服务器架构}{4}
-\contentsline {subsubsection}{\numberline {2.2.1.2}对等体架构}{5}
+\contentsline {subsection}{\numberline {2.2.1}游戏架构}{4}
+\contentsline {subsubsection}{\numberline {2.2.1.1}客户\nobreakspace {}/\penalty \exhyphenpenalty \nobreakspace {}服务器架构}{5}
+\contentsline {subsubsection}{\numberline {2.2.1.2}对等体架构}{6}
 \contentsline {subsubsection}{\numberline {2.2.1.3}分布式架构}{7}
 \contentsline {subsection}{\numberline {2.2.2}游戏架构的八项服务}{9}
-\contentsline {subsection}{\numberline {2.2.3}一致性——同步的目的}{10}
+\contentsline {subsection}{\numberline {2.2.3}一致性——同步的目的}{11}
 \contentsline {section}{\numberline {2.3}传统\nobreakspace {}IP\nobreakspace {}网络中的经典同步机制}{11}
-\contentsline {subsection}{\numberline {2.3.1}保守同步算法}{11}
+\contentsline {subsection}{\numberline {2.3.1}保守同步算法}{12}
 \contentsline {subsection}{\numberline {2.3.2}乐观同步算法}{13}
-\contentsline {section}{\numberline {2.4}新兴数据命名网络中的同步机制}{13}
-\contentsline {subsection}{\numberline {2.4.1}CCN\nobreakspace {}中的\nobreakspace {}SYNC\nobreakspace {}协议}{13}
-\contentsline {subsection}{\numberline {2.4.2}用户自定义协议}{13}
-\contentsline {subsection}{\numberline {2.4.3}其它新型网络中的同步}{13}
-\contentsline {chapter}{\numberline {3}本科毕业论文外文翻译}{19}
-\contentsline {section}{\numberline {3.1}引言}{20}
-\contentsline {section}{\numberline {3.2}CCN\nobreakspace {}节点模型}{23}
-\contentsline {section}{\numberline {3.3}传输}{30}
-\contentsline {subsection}{\numberline {3.3.1}可靠性与流控制}{31}
-\contentsline {subsection}{\numberline {3.3.2}定序}{32}
-\contentsline {subsection}{\numberline {3.3.3}高连通性，移动性及策略}{36}
-\contentsline {section}{\numberline {3.4}路由}{39}
-\contentsline {subsection}{\numberline {3.4.1}链路状态域内路由}{40}
-\contentsline {subsection}{\numberline {3.4.2}域间路由}{44}
-\contentsline {section}{\numberline {3.5}内容为心安全}{46}
-\contentsline {subsection}{\numberline {3.5.1}内容验证}{46}
-\contentsline {subsection}{\numberline {3.5.2}信任管理}{48}
-\contentsline {subsubsection}{\numberline {3.5.2.1}公钥信任}{49}
-\contentsline {subsubsection}{\numberline {3.5.2.2}基于证据的安全}{52}
-\contentsline {subsection}{\numberline {3.5.3}内容保护与访问控制}{53}
-\contentsline {subsection}{\numberline {3.5.4}网络安全与策略实施}{53}
-\contentsline {section}{\numberline {3.6}评估}{56}
-\contentsline {subsection}{\numberline {3.6.1}数据传输的效率}{57}
-\contentsline {subsection}{\numberline {3.6.2}内容传播的效率}{61}
-\contentsline {subsection}{\numberline {3.6.3}VoCCN\nobreakspace {}与策略层}{63}
-\contentsline {section}{\numberline {3.7}相关工作}{65}
-\contentsline {section}{\numberline {3.8}结论}{69}
-\contentsline {section}{\numberline {3.9}参考文献}{69}
+\contentsline {section}{\numberline {2.4}数据命名网络中的同步机制}{15}
+\contentsline {subsection}{\numberline {2.4.1}CCN\nobreakspace {}中的\nobreakspace {}SYNC\nobreakspace {}协议}{16}
+\contentsline {section}{\numberline {2.5}结论}{17}
+\contentsline {chapter}{\numberline {3}本科毕业论文外文翻译}{24}
+\contentsline {section}{\numberline {3.1}引言}{25}
+\contentsline {section}{\numberline {3.2}CCN\nobreakspace {}节点模型}{28}
+\contentsline {section}{\numberline {3.3}传输}{35}
+\contentsline {subsection}{\numberline {3.3.1}可靠性与流控制}{36}
+\contentsline {subsection}{\numberline {3.3.2}定序}{37}
+\contentsline {subsection}{\numberline {3.3.3}高连通性，移动性及策略}{41}
+\contentsline {section}{\numberline {3.4}路由}{44}
+\contentsline {subsection}{\numberline {3.4.1}链路状态域内路由}{45}
+\contentsline {subsection}{\numberline {3.4.2}域间路由}{49}
+\contentsline {section}{\numberline {3.5}内容为心安全}{51}
+\contentsline {subsection}{\numberline {3.5.1}内容验证}{51}
+\contentsline {subsection}{\numberline {3.5.2}信任管理}{53}
+\contentsline {subsubsection}{\numberline {3.5.2.1}公钥信任}{54}
+\contentsline {subsubsection}{\numberline {3.5.2.2}基于证据的安全}{57}
+\contentsline {subsection}{\numberline {3.5.3}内容保护与访问控制}{58}
+\contentsline {subsection}{\numberline {3.5.4}网络安全与策略实施}{58}
+\contentsline {section}{\numberline {3.6}评估}{61}
+\contentsline {subsection}{\numberline {3.6.1}数据传输的效率}{62}
+\contentsline {subsection}{\numberline {3.6.2}内容传播的效率}{66}
+\contentsline {subsection}{\numberline {3.6.3}VoCCN\nobreakspace {}与策略层}{68}
+\contentsline {section}{\numberline {3.7}相关工作}{70}
+\contentsline {section}{\numberline {3.8}结论}{74}
+\contentsline {section}{\numberline {3.9}参考文献}{74}
 \contentsfinish 

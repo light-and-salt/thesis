@@ -8,47 +8,49 @@ A level-1 auxiliary file: data/wenxianzongshu.aux
 A level-1 auxiliary file: data/waiwenfanyi.aux
 Database file #1: data/zjubib.bib
 Warning--to sort, need author or key in hla
+Warning--to sort, need author or key in CCNxSync
 Warning--empty author in hla
 Warning--empty year in chandy
-You've used 22 entries,
+Warning--empty year in real
+You've used 25 entries,
             2118 wiz_defined-function locations,
-            625 strings with 8176 characters,
-and the built_in function-call counts, 7331 in all, are:
-= -- 726
-> -- 320
-< -- 9
-+ -- 129
-- -- 104
-* -- 446
-:= -- 1181
-add.period$ -- 70
-call.type$ -- 22
-change.case$ -- 118
+            640 strings with 8580 characters,
+and the built_in function-call counts, 8130 in all, are:
+= -- 803
+> -- 346
+< -- 10
++ -- 140
+- -- 112
+* -- 488
+:= -- 1300
+add.period$ -- 78
+call.type$ -- 25
+change.case$ -- 131
 chr.to.int$ -- 0
-cite$ -- 25
-duplicate$ -- 323
-empty$ -- 609
-format.name$ -- 104
-if$ -- 1599
+cite$ -- 30
+duplicate$ -- 361
+empty$ -- 685
+format.name$ -- 112
+if$ -- 1780
 int.to.chr$ -- 0
-int.to.str$ -- 22
-missing$ -- 18
-newline$ -- 112
-num.names$ -- 44
-pop$ -- 161
+int.to.str$ -- 25
+missing$ -- 20
+newline$ -- 126
+num.names$ -- 48
+pop$ -- 187
 preamble$ -- 1
-purify$ -- 95
+purify$ -- 105
 quote$ -- 0
-skip$ -- 226
+skip$ -- 253
 stack$ -- 0
-substring$ -- 350
-swap$ -- 88
-text.length$ -- 9
+substring$ -- 385
+swap$ -- 98
+text.length$ -- 10
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 86
-warning$ -- 3
-while$ -- 65
-width$ -- 24
-write$ -- 242
-(There were 3 warnings)
+type$ -- 98
+warning$ -- 5
+while$ -- 71
+width$ -- 27
+write$ -- 270
+(There were 5 warnings)

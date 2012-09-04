@@ -1,5 +1,10 @@
 \begin{thebibliography}{10}
 
+\bibitem{CCNxSync}
+{CCNx Synchronization Protocol}.
+\newblock
+  \url{http://www.ccnx.org/releases/latest/doc/technical/SynchronizationProtocol.html}.
+
 \bibitem{hla}
 {IEEE Standard for Modeling and Simulation {(M\&S)} High Level Architecture
   (HLA) - Framework and Rules}.
@@ -122,11 +127,23 @@ M.~Roccetti, P.~Salomoni, V.~Ghini, S.~Ferretti, S.~Cacciaguerra, and
   Communications, Internet and Information Technology}, pages 346--351, St.
   Thomas, Virgin Islands, November 2002.
 
+\bibitem{cr}
+J~Smed.
+\newblock {Cheating in networked computer games: a review}.
+\newblock {\em Proceedings of the 2nd international conference on \ldots},
+  2007.
+
 \bibitem{fixed-bucket}
 J.S. Steinman.
 \newblock Scalable parallel and distributed military simulations using the
   speedes framework.
 \newblock Technical report, NASA, Jet Propulsion Laboratory, 1995.
+
+\bibitem{real}
+D.~Stutzbach, R.~Stutzbach, and S~Sen.
+\newblock Characterizing unstructured overlay topologies in modern p2p
+  file-sharing systems.
+\newblock In {\em IMC'05}, pages 49--62, Berkeley, CA, USA.
 
 \bibitem{quake}
 the QuakeForge~Project.
