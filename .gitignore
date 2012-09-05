@@ -1,2 +1,5 @@
 *.aux
 *.swp
+*.log
+*.pdf
+.DS_Store

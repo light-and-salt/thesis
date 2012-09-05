@@ -1,9 +1,42 @@
 \begin{thebibliography}{10}
 
+\bibitem{CCNxCS}
+{CCNx Create Collection Protocol}.
+\newblock
+  \url{http://www.ccnx.org/releases/latest/doc/technical/CreateCollectionProtocol.html}.
+
+\bibitem{CCNxRepo}
+{CCNx Repository Protocols}.
+\newblock
+  \url{http://www.ccnx.org/releases/latest/doc/technical/RepoProtocol.html}.
+
 \bibitem{CCNxSync}
 {CCNx Synchronization Protocol}.
 \newblock
   \url{http://www.ccnx.org/releases/latest/doc/technical/SynchronizationProtocol.html}.
+
+\bibitem{unityrank}
+Develop: The top 10 game engines revealed.
+\newblock
+  \url{http://www.develop-online.net/news/32250/The-top-10-game-engines-revealed}.
+
+\bibitem{interop}
+System.runtime.interopservices namespace.
+\newblock
+  \url{http://msdn.microsoft.com/en-us/library/system.runtime.interopservices.aspx}.
+
+\bibitem{plugin}
+Unity plugin manual.
+\newblock \url{http://docs.unity3d.com/Documentation/Manual/Plugins.html}.
+
+\bibitem{unityppl}
+Unity reaches one million registered developers.
+\newblock
+  \url{http://www.marketwire.com/press-release/unity-reaches-one-million-registered-developers-1641486.htm}.
+
+\bibitem{WoW}
+World of warcraft.
+\newblock \url{http://us.battle.net/wow/en/}.
 
 \bibitem{hla}
 {IEEE Standard for Modeling and Simulation {(M\&S)} High Level Architecture
@@ -12,7 +45,7 @@
 
 \bibitem{traditional}
 R.A. Bangun and H.P. Beadle.
-\newblock A network architecture for multiuser net- worked games on demand.
+\newblock A network architecture for multiuser networked games on demand.
 \newblock In {\em Proceedings of the 1997 International Conference on
   Information, Communications and Signal Processing}, pages 1815--1819,
   Singapore, September 1997.
@@ -40,6 +73,11 @@ E.~Cronin, B.~Filstrup, and S.~Jamin.
 \newblock Cheat-proofing dead reckoned multi-player games.
 \newblock In {\em Proceedings of the International Conference on Application
   and Development of Computer Games (AdCog 2003)}, January 2003.
+
+\bibitem{andana}
+S~DiBenedetto, Paolo Gasti, and G~Tsudik.
+\newblock {ANDaNA: Anonymous Named Data Networking Application}.
+\newblock {\em Arxiv preprint arXiv:1112.2205}, 2011.
 
 \bibitem{cheat3}
 C.~Gauthier Dickey, D.~Zappala, V.~Lo, and J.~Marr.
@@ -70,6 +108,17 @@ L.~Gautier, C.~Diot, and J.~Kurose.
 Electronic~Arts Inc.
 \newblock Ultima online.
 \newblock http://www.uo.com/.
+
+\bibitem{voccn}
+Van Jacobson, Diana~K Smetters, Nicholas~H Briggs, Michael~F Plass, James~D
+  Thornton, and Rebecca~L Braynard.
+\newblock {VoCCN : Voice-over Content-Centric Networks}.
+\newblock pages 1--6, 2009.
+
+\bibitem{Jndn}
+Van Jacobson, DK~Smetters, and JD~Thornton.
+\newblock {Networking named content}.
+\newblock {\em Emerging networking}, pages 1--12, 2009.
 
 \bibitem{p2p1}
 Y.~Kawahara, T.~Aoyama, and H.~Morikawa.
@@ -150,11 +199,27 @@ the QuakeForge~Project.
 \newblock Quake forge project.
 \newblock http://www.quakeforge.net/, 2002.
 
+\bibitem{vehicle}
+Lucas Wang, Ryuji Wakikawa, Romain Kuntz, Rama Vuyyuru, and Lixia Zhang.
+\newblock {Data Naming in Vehicle-to-Vehicle Communications}.
+\newblock 2013.
+
 \bibitem{dsl}
 S.~Wright and S.~Tischer.
 \newblock Architectural considerations in online game services over dsl
   networks.
 \newblock In {\em Proceedings of the IEEE International Conference on
   Communications (ICC2004)}, Paris, France, June 2004.
+
+\bibitem{Zhu2011}
+Zhenkai Zhu, Jeffery Burke, Lixia Zhang, Paolo Gasti, Yanbin Lu, and Van
+  Jacobson.
+\newblock {A new approach to securing audio conference tools}.
+\newblock {\em Proceedings of the 7th Asian Internet Engineering Conference on
+  - AINTEC '11}, pages 120--123, 2011.
+
+\bibitem{Zact}
+Zhenkai Zhu and Van Jacobson.
+\newblock {ACT : Audio Conference Tool Over Named Data Networking}.
 
 \end{thebibliography}
