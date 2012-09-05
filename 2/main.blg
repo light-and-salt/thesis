@@ -1,0 +1,66 @@
+This is BibTeX, Version 0.99d (TeX Live 2011)
+Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
+The top-level auxiliary file: main.aux
+The style file: plain.bst
+A level-1 auxiliary file: data/absc.aux
+A level-1 auxiliary file: data/abse.aux
+A level-1 auxiliary file: data/chap1.aux
+A level-1 auxiliary file: data/chap2.aux
+A level-1 auxiliary file: data/chap3.aux
+A level-1 auxiliary file: data/chap4.aux
+A level-1 auxiliary file: data/chap5.aux
+A level-1 auxiliary file: data/chap6.aux
+A level-1 auxiliary file: data/thanks.aux
+A level-1 auxiliary file: data/appe.aux
+A level-1 auxiliary file: data/task.aux
+A level-1 auxiliary file: data/eval.aux
+Database file #1: data/zjubib.bib
+Warning--to sort, need author or key in CCNxSync
+Warning--to sort, need author or key in UnityCar
+Warning--to sort, need author or key in CCNxCS
+Warning--empty institution in Bryant
+Warning--empty school in Fgame
+Warning--empty journal in Zact
+Warning--empty year in Zact
+You've used 13 entries,
+            2118 wiz_defined-function locations,
+            591 strings with 6015 characters,
+and the built_in function-call counts, 3769 in all, are:
+= -- 377
+> -- 129
+< -- 4
++ -- 54
+- -- 40
+* -- 236
+:= -- 590
+add.period$ -- 36
+call.type$ -- 13
+change.case$ -- 59
+chr.to.int$ -- 0
+cite$ -- 20
+duplicate$ -- 157
+empty$ -- 327
+format.name$ -- 40
+if$ -- 815
+int.to.chr$ -- 0
+int.to.str$ -- 13
+missing$ -- 8
+newline$ -- 64
+num.names$ -- 20
+pop$ -- 82
+preamble$ -- 1
+purify$ -- 46
+quote$ -- 0
+skip$ -- 124
+stack$ -- 0
+substring$ -- 232
+swap$ -- 40
+text.length$ -- 4
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 52
+warning$ -- 7
+while$ -- 33
+width$ -- 15
+write$ -- 131
+(There were 7 warnings)

@@ -1,0 +1,76 @@
+\begin{thebibliography}{10}
+
+\bibitem{CCNxCS}
+{CCNx Create Collection Protocol}.
+\newblock
+  \url{http://www.ccnx.org/releases/latest/doc/technical/CreateCollectionProtocol.html}.
+
+\bibitem{CCNxSync}
+{CCNx Synchronization Protocol}.
+\newblock
+  \url{http://www.ccnx.org/releases/latest/doc/technical/SynchronizationProtocol.html}.
+
+\bibitem{UnityCar}
+{Unity Car Tutorial}.
+\newblock \url{http://unity3d.com/support/resources/tutorials/car-tutorial}.
+
+\bibitem{Bryant}
+R.~E. Bryant.
+\newblock Simulation of packet communication architecture computer systems.
+\newblock Technical report, Cambridge, MA, USA, 1977.
+
+\bibitem{Chandy}
+K.M. Chandy and J.~Misra.
+\newblock {Distributed Simulation: A Case Study in Design and Verification of
+  Distributed Programs}.
+\newblock {\em IEEE Transactions on Software Engineering}, SE-5(5):440--452,
+  September 1979.
+
+\bibitem{Csync}
+Eric Cronin, Anthony~R. Kurc, Burton Filstrup, and Sugih Jamin.
+\newblock {An Efficient Synchronization Mechanism for Mirrored Game
+  Architectures}.
+\newblock {\em Multimedia Tools and Applications}, 23(1):7--30, May 2004.
+
+\bibitem{Doptbkt}
+C.~Diot and L.~Gautier.
+\newblock A distributed architecture for multiplayer interactive applications
+  on the internet.
+\newblock {\em Network, IEEE}, 13(4):6 --15, jul/aug 1999.
+
+\bibitem{Fgame}
+Stefano Ferretti.
+\newblock {\em {Interactivity maintenance for event synchronization in massive
+  multiplayer online games}}.
+\newblock PhD thesis, 2005.
+
+\bibitem{Flockstep}
+R.M. Fujimoto.
+\newblock Parallel and distributed simulation.
+\newblock In {\em Simulation Conference Proceedings, 1999 Winter}, volume~1,
+  pages 122 --131 vol.1, 1999.
+
+\bibitem{Jndn}
+Van Jacobson, DK~Smetters, and JD~Thornton.
+\newblock {Networking named content}.
+\newblock {\em Emerging networking}, pages 1--12, 2009.
+
+\bibitem{Ldsg}
+Dan Lake, Mic Bowman, and Huaiyu Liu.
+\newblock Distributed scene graph to enable thousands of interacting users in a
+  virtual environment.
+\newblock In {\em Proceedings of the 9th Annual Workshop on Network and Systems
+  Support for Games}, NetGames '10, pages 19:1--19:6, Piscataway, NJ, USA,
+  2010. IEEE Press.
+
+\bibitem{Scheating}
+J~Smed.
+\newblock {Cheating in networked computer games: a review}.
+\newblock {\em Proceedings of the 2nd international conference on \ldots},
+  2007.
+
+\bibitem{Zact}
+Zhenkai Zhu and Van Jacobson.
+\newblock {ACT : Audio Conference Tool Over Named Data Networking}.
+
+\end{thebibliography}

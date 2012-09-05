@@ -1,7 +1,72 @@
-\chapter{实验结果}
+\chapter{同步~Synchronization}
 
-\section{第一节}
+\label{sync}
 
-\section{本章小结}
+The purpose of synchronization is to maintain consistent views of the global game state for all players. The definition of global game state varies from author to author, but it generally means the combined state of all entities (players, non-player characters and objects) in the game. In NDN in particular, the global game state is equivalent to the game tree (figure~\ref{game}) and all its corresponding content objects. Hence, to synchronize a NDN multiplayer on-line game is to synchronize its game tree and all the content objects that underlies.
+
+We divide the problem of synchronizing the game tree into three sub-problems: Asset synchronization, State synchronization and Event synchronization. We recognize nodes in the game tree as \emph{asset}s, \emph{state} and \emph{event}s and use choose different strategies to synchronize them. The idea behind such a division is that assets, state and events have different requirements for synchronization.
+
+%-----------------------------------%
+\section{Asset, State and Event}
+\label{ase}
+
+Asset, state and event are the three classes of content that need to be synchronized. In figure~\ref{game} for example, all asset names are colored blue, all state nodes pink and all event nodes yellow. A formal definition is as follows:
+\begin{description*} 
+\item [Asset]
+A node in the game tree whose presence and absence \emph{cannot} be deduced from the presence and absence of its parent node.
+\item [State]
+A node in the game tree whose presence and absence \emph{can} be deduced from the presence and absence of its parent node.
+\item [Event]
+A special State that is defined solely for the interaction among the previous two types.
+\end{description*}
+Intuitively, the underlying contents will be called \emph{asset}s, \emph{state} and \emph{event}s too and we will not distinguish a content from its name in many cases. Typical examples of assets are those dynamically created entities that do not have a parent in the virtual world: an avatar controlled by a player, a helmet lying on the ground, a bot controlled by game AI. Their corresponding member variables usually fall into the state class: the health points (HP) of an avatar, the defense power of a helmet, and the position of a bot. Actions taken by assets are usually recognized as events: a ``hit'' from an avatar to a bot, a ``heal'' to a group member, a ``pick'' to a public object, or an ``acknowledge as owner'' from an object to a hero. Note that although all these examples have some physical meanings in the virtual world, it is not a prerequisite for any of the three types. Assets, state, and events refer to a broader class of content. This can be exemplified by the \url{anti} asset, which is used to cancel the existence of a character or an object (see \ref{assetsync} for details).
+
+Asset, state and event are correlated and they model changes and happenings in the virtual world. An asset can change its own state and publish it, but it cannot change the state of another asset or publish the state for that asset. An asset could, however, publish an event that suggests a state change to another asset. The later asset will ``consider'' this suggestion and may change its state correspondingly and publish the new state. The following mini story shows this. Alice was a player-controlled warrior in a role-playing game ``Killing Zombies''. According to our definition Alice is an asset who has a lot of state such as \url{position}, \url{HP} and \url{defense power}. When Alice was walking around searching for zombies, she was voluntarily updating her \url{position} state and publishing it to the network so that other players like \url{Bob} and \url{Trudy} could see her. When she found a zombie (named zombie0), she published a ``hit'' event (\url{.../Alice/events}: \verb|decrease zombie0's HP|). Zombie0 (and other assets) received this event and found itself killed by Alice. So it published a new state saying that its HP has fallen to zero and is going to die. All players within vicinity will get a visual feedback of Alice's ``hit'' event (see \ref{eventsync} for more details). After killing zombie0, Alice found a prize on the ground. It was a helmet which could increase a warrior's defense power by 20 percent. So Alice published a ``pick'' event (\url{.../Alice/events}: \verb|pick helmet#|) and the helmet published a ``acknowledge as owner'' event in return. The story ends with Alice wearing her new helmet searching for the next zombie. Note that by the end of the story the helmet is not an asset any more since it got a parent object -- Alice. Its original name in the game tree will be ``canceled'' by an anti object and it will become a state (such as \url{.../Alice/outfit/head}).
+
+%We use three different strategies to synchronize assets, state and events. This is based on an observation of their different requirements for consistency. An asset can only be \emph{present} or \emph{absent} in a game tree. They themselves cannot be assigned any value and thus cannot be updated. Once created, there will not be any update about them until they are destroyed. Moreover, all assets are independent entities and the creation and 
 
 
+
+%-----------------------------------%
+\section{Asset Synchronization}
+\label{assetsync}
+
+Asset synchronization maintains the consistency of all assets. In the game tree, it is in charge of synchronizing all nodes colored blue. By definition, if all asset names are known then the entire game tree became know, as state and events' existence are predictable. Therefore, asset synchronization is also called \emph{name discovery}.
+
+% reason for FIFO processing order %
+Assets' requirement for consistency is relatively low. Updates about assets can be processed in a FIFO order -- they do not have to be delayed and sorted by their generation time before being processed. The reason comes three folds. First, assets can only be \emph{created} or \emph{destroyed} during their life time. Second, assets are predefined in a game so they will never change once created. The state of an asset will change, but this will not affect the definition of the asset (its name, structure, attributes etc.). Third, by definition, assets are independent of each other. These features make synchronization of assets very similar to synchronizing a directory of files, without caring about the content of those file content.  Files are also dynamic, independent objects whose content can be regarded as merely ``state''s. In file synchronization, the order of which files are added or removed is not important -- as long as a directory shows the right files, it is consistent. The same applies for asset synchronization.
+
+% slice, topo and prefix %
+Asset synchronization relies heavily on the CCNx Sync protocol. When a peer initializes its game, the local Sync Agent will write one or more slices into its local repository. These slices are units of synchronization and are defined by \emph{topo} and \emph{prefix}. Topo describes the scope within which the sync function should work. Prefix describes the common semantic location of the slice and its collection of data. For example, our topo is \url{/ndn/broadcast/Egal/Car/[SceneID]} which means the slice is synchronized on the NDN testbed (since its Interests will be broadcasted on it); our prefix is \url{/ndn/ucla.edu/apps/Egal/Car/[SceneID]} which means that this slice is a collection of assets in a scene of a car racing game, which is developed with the Egal library and is one of UCLA's applications running on the NDN testbed. Once the slice is created, the game application can use prefix to name content objects and write them into the local repository. Sync Agent will guarantee the data integrity of the slice with all other identically defined slices within the scope described by topo.
+
+% Adding an asset %
+
+% Deleting an asset %
+
+
+% define "namespace discovery" %
+% In order for gamers to play in the same virtual world, a game application must have a global namespace to which each player must contribute (the player information, and objects created during runtime). Moreover, each player should synchronize his/her local namespace with the global namespace. We term the process of a player learning about the global namespace \emph{``name discovery''}. 
+
+% Upon initialization, the game application defines a slice, using names in figure~\ref{repo}. Two parameters are used to define the slice: \emph{topo} and \emph{prefix}, which later become the root node of figure~\ref{broadcast} and figure~\ref{game}. Topo describes the scope of the game (scene). For instance, our topo could be interpreted as ``This scene belongs to a car racing game developed with the Egal library. Interests bearing this name should be broadcasted on the NDN testbed.'' Prefix tells the position of the player. Our prefix, for example, means ``This player is in this scene of the car racing game, which is running on the NDN testbed.'' 
+
+% The best example of name discovery would be \emph{player discovery}. After the slice is created, the application writes into repository a content object representing the local player (\url{<prefix>/[CarID]/<nounce>}). From this on, the local Sync Agent will broadcast root advise Interests like \url{<topo>/\%C1.S.ra/<slicehash>}. In effect, these Interests are announcements of the car game in which the local player is the only participant. Now if there are other peers who are also running the application on the NDN testbed, the local player will receive announcements of the same game, but with a different hash of player list. Upon receiving an announcement with a hash that differs from the local one, the local Sync Agent will set off Interests for every player that it did not know before. When the corresponding Data packets return, the Sync Agent will update the local slice and its hash. The process of player discovery ends temporarily when all distributed slices agree on the slice hash, but all Sync Agents will continue to work. 
+
+% When a player leaves the game, 
+
+% object discovery %
+% \emph{Object discovery} is similar and different from name discovery.
+
+% We divide the problem of synchronization into two subproblems (asset and state synchronization) and use different strategies to solve them. 
+
+% asset, state, attribute, event %
+% We borrow the term \emph{asset} from game developers to refer to virtual characters and artifacts. An asset can have many attributes, which may change from time to time. A \emph{state} is a snapshot of an attribute. Assets are often first-level entities in games -- they do not belong to any other asset and have their own 3D model, rigid body and animations. A game asset that \emph{does} have an owner will not be considered as an asset here, but as a potential attribute state of its owner. For example, a Glock in a first person shooting game will become the state of an attribute called ``weapon'' when it is selected by the character. \emph{Events} are initiated by assets. They correspond to actions of characters (walk, shoot, buy etc.). An event may result in either asset change (a brick wall get destroyed after an explosion) or state change (an enemy's life is shortened after an attack). Event synchronization might be desirable in many games. However, we do not explicitly synchronize events in our sample game because their effect is already in sync. 
+
+
+
+%-----------------------------------%
+\section{State Synchronization}
+\label{statesync}
+
+%-----------------------------------%
+\section{Event Synchronization}
+\label{eventsync}
