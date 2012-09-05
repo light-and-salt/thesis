@@ -7,6 +7,7 @@ A level-1 auxiliary file: data/kaiti.aux
 A level-1 auxiliary file: data/wenxianzongshu.aux
 A level-1 auxiliary file: data/waiwenfanyi.aux
 Database file #1: data/zjubib.bib
+Warning--to sort, need author or key in nsffia
 Warning--to sort, need author or key in CCNxSync
 Warning--to sort, need author or key in WoW
 Warning--to sort, need author or key in interop
@@ -23,45 +24,45 @@ Warning--empty year in real
 Warning--empty journal in vehicle
 Warning--empty journal in Zact
 Warning--empty year in Zact
-You've used 38 entries,
+You've used 39 entries,
             2118 wiz_defined-function locations,
-            695 strings with 10321 characters,
-and the built_in function-call counts, 11474 in all, are:
-= -- 1113
-> -- 496
+            698 strings with 10397 characters,
+and the built_in function-call counts, 11631 in all, are:
+= -- 1127
+> -- 497
 < -- 13
-+ -- 203
++ -- 204
 - -- 162
-* -- 681
-:= -- 1792
-add.period$ -- 109
-call.type$ -- 38
-change.case$ -- 195
+* -- 686
+:= -- 1808
+add.period$ -- 111
+call.type$ -- 39
+change.case$ -- 198
 chr.to.int$ -- 0
-cite$ -- 54
-duplicate$ -- 492
-empty$ -- 982
+cite$ -- 56
+duplicate$ -- 499
+empty$ -- 1005
 format.name$ -- 162
-if$ -- 2510
+if$ -- 2549
 int.to.chr$ -- 0
-int.to.str$ -- 38
+int.to.str$ -- 39
 missing$ -- 26
-newline$ -- 183
+newline$ -- 187
 num.names$ -- 60
-pop$ -- 315
+pop$ -- 326
 preamble$ -- 1
-purify$ -- 156
+purify$ -- 158
 quote$ -- 0
-skip$ -- 361
+skip$ -- 367
 stack$ -- 0
-substring$ -- 517
-swap$ -- 127
+substring$ -- 522
+swap$ -- 128
 text.length$ -- 13
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 150
-warning$ -- 16
+type$ -- 154
+warning$ -- 17
 while$ -- 92
-width$ -- 40
-write$ -- 377
-(There were 16 warnings)
+width$ -- 41
+write$ -- 384
+(There were 17 warnings)
