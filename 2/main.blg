@@ -24,43 +24,43 @@ Warning--empty journal in Zact
 Warning--empty year in Zact
 You've used 13 entries,
             2118 wiz_defined-function locations,
-            591 strings with 6015 characters,
-and the built_in function-call counts, 3769 in all, are:
-= -- 377
-> -- 129
-< -- 4
-+ -- 54
-- -- 40
-* -- 236
-:= -- 590
-add.period$ -- 36
+            595 strings with 6124 characters,
+and the built_in function-call counts, 4033 in all, are:
+= -- 411
+> -- 135
+< -- 5
++ -- 56
+- -- 42
+* -- 255
+:= -- 617
+add.period$ -- 37
 call.type$ -- 13
-change.case$ -- 59
+change.case$ -- 60
 chr.to.int$ -- 0
 cite$ -- 20
-duplicate$ -- 157
-empty$ -- 327
-format.name$ -- 40
-if$ -- 815
+duplicate$ -- 170
+empty$ -- 349
+format.name$ -- 42
+if$ -- 885
 int.to.chr$ -- 0
 int.to.str$ -- 13
 missing$ -- 8
 newline$ -- 64
 num.names$ -- 20
-pop$ -- 82
+pop$ -- 83
 preamble$ -- 1
-purify$ -- 46
+purify$ -- 47
 quote$ -- 0
-skip$ -- 124
+skip$ -- 137
 stack$ -- 0
-substring$ -- 232
-swap$ -- 40
-text.length$ -- 4
+substring$ -- 264
+swap$ -- 49
+text.length$ -- 5
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 52
 warning$ -- 7
-while$ -- 33
+while$ -- 36
 width$ -- 15
-write$ -- 131
+write$ -- 135
 (There were 7 warnings)

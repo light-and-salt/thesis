@@ -1,2 +1,20 @@
 \chapter{讨论~Discussions}
 \label{discussions}
+
+%------------------------------------------------------------------------------------------------------------------------------------%
+\section{Security}
+% attacking will be harder, since it's difficult to target
+Thanks to NDN, network security for games is enhanced. Spoofing has become more difficult, as NDN requires all content packets to be signed. Attacking a specific host will be much more difficult than it was before, since NDN does not talk about hosts, but about contents, so attackers will find it hard to direct their packets to their target.
+
+
+%------------------------------------------------------------------------------------------------------------------------------------%
+\section{Cheating Avoidance}
+%Trudy claims that she picked the helmet but the helmet didn't say so: when anti helmet was written into the repo, its content object should be "I was picked by Alice"
+
+% Trudy publishes other untrue state: "Bob healed me, so my HP should increase" --
+
+% " I just killed zombie0 so my Gold should increase" -- similar to our helmet's case
+
+Content objects representing assets have the extra functionality of preventing cheating besides providing initialization information for new assets. The fact that these content objects will remain static in every peer's local repository should be exploited for optimal use. One example utilizing these content to prevent cheating involves binding assets with their managers by writing such bound as the data of an asset name. In this way, all state and event updates received can be easily authenticated by individual peers since the whole mapping from assets to their managers is stored in the synchronized repository.
+
+Content of anti-assets can also be used to prevent spoofing in some cases. The destruction of an asset often bring benefits to some players. For example, the destruction of a helmet often means that some player has picked it, and the destruction of a zombie often means that some player's experience has increased. To prevent players from spoofing, such as claiming that they have just killed a zombie while they have actually not done so, we can quote or write the critical event that directly causes the an asset's destruction in the content data of the anti-asset. Since anti-assets are propagated and stored throughout the network just as assets are, the spoofing behavior mentioned above will soon be detected. 

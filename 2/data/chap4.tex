@@ -27,11 +27,14 @@ Asset, state and event are correlated and they model changes and happenings in t
 
 
 
-%-----------------------------------%
+%------------------------------------------------------------------------------------------------------------------------------------%
 \section{Asset Synchronization}
 \label{assetsync}
 
 Asset synchronization maintains the consistency of all assets. In the game tree, it is in charge of synchronizing all nodes colored blue. By definition, if all asset names are known then the entire game tree became know, as state and events' existence are predictable. Therefore, asset synchronization is also called \emph{name discovery}.
+
+% . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . %
+\subsection{An Unordered Mechanism}
 
 % reason for FIFO processing order %
 Assets' requirement for consistency is relatively low. Updates about assets can be processed in a FIFO order -- they do not have to be delayed and sorted by their generation time before being processed. The reason comes three folds. First, assets can only be \emph{created} or \emph{destroyed} during their life time. Second, assets are predefined in a game so they will never change once created. The state of an asset will change, but this will not affect the definition of the asset (its name, structure, attributes etc.). Third, by definition, assets are independent of each other. These features make synchronization of assets very similar to synchronizing a directory of files, without caring about the content of those file content.  Files are also dynamic, independent objects whose content can be regarded as merely ``state''s. In file synchronization, the order of which files are added or removed is not important -- as long as a directory shows the right files, it is consistent. The same applies for asset synchronization.
@@ -40,33 +43,170 @@ Assets' requirement for consistency is relatively low. Updates about assets can 
 Asset synchronization relies heavily on the CCNx Sync protocol. When a peer initializes its game, the local Sync Agent will write one or more slices into its local repository. These slices are units of synchronization and are defined by \emph{topo} and \emph{prefix}. Topo describes the scope within which the sync function should work. Prefix describes the common semantic location of the slice and its collection of data. For example, our topo is \url{/ndn/broadcast/Egal/Car/[SceneID]} which means the slice is synchronized on the NDN testbed (since its Interests will be broadcasted on it); our prefix is \url{/ndn/ucla.edu/apps/Egal/Car/[SceneID]} which means that this slice is a collection of assets in a scene of a car racing game, which is developed with the Egal library and is one of UCLA's applications running on the NDN testbed. Once the slice is created, the game application can use prefix to name content objects and write them into the local repository. Sync Agent will guarantee the data integrity of the slice with all other identically defined slices within the scope described by topo.
 
 % Adding an asset %
-
+Adding an asset to the game tree corresponds to writing a new content object into the local repository. This content object's name will become a new node in the game tree, and its content usually contains the initialization information of the new asset. Once written into the local repository, this new asset's existence will be announce to all other peers by CCNx Sync. Deleting an existing asset from the name tree corresponds to writing an \emph{anti-asset} into the local repository. An anti-asset has the same name prefix of the deleted asset, but has an extra \url{anti} name component in its name (see figure~\ref{game}). The content of an anti-asset can be defined by the game application. Usually this content is used for anti-cheating and authentication purposes (see Chapter~\ref{discussions}~for details). The existence of an anti-asset will be announced in exactly the same way as a new asset. Note that an anti-asset cannot be deleted. Namely, there should not be anti-anti-asset. 
 % Deleting an asset %
+% by writing an anti asset
+% an anti asset cannot be have an anti asset
+
+A typical example of asset synchronization is player discovery. When a new player joins in the game, its peer will create a new asset node in its local repository. This node represents the player and its content should contain sufficient initialization information such as position, race and class, but it should not contain any private information. Since asset synchronization Interests are broadcasted on the NDN testbed in our sample game (defined by \emph{topo}), the initial information of an asset is know to all players that has the same slice. When a player quits, the game application should first put an anti-player in the local repository before all processes could be terminated. Although the player no longer exists in game logic, its asset and anti-asset information still exists physically in all peers' repository, which is useful for anti-cheating mechanisms (see Chapter~\ref{discussions}). When a player quits unexpectedly (such as due to network failure), s/he would not have a chance to put an anti-player in the local repository. In this case, other peers would query the existence of the player and would eventually write an anti-player for it (see section~\ref{manager}).
+
+% This scheme is unordered
+Asset synchronization is unordered. It uses a FIFO order to process all received updates about assets and CCNx Sync Protocol guarantees the data integrity. For instance, if two players $P_1$ and $P_2$ join the game at about the same time (but $P_1$ is slightly earlier than $P_2$), the order of their appearance might vary from peer to peer: from a third peer's view, $P_2$ might appear first if the content object representing $P_2$ reaches the peer earlier. While such phenomena could mean \emph{inconsistency} to some synchronization mechanisms, we find it tolerable, and is in fact beneficial to the game's overall performance. This can be seen from the following comparison. In a conservative synchronization mechanism, when the content object representing $P_2$ arrives at the third peer, it will not be processed until all earlier content arrives. The task of rendering $P_2$ in the virtual world and all tasks after that will be delayed because of the late arrival of $P_1$. If the same thing happens in an optimistic synchronization algorithm, content $P_2$ will be processed but the entire game state will soon rollback when content $P_1$ arrives. After that, all following content objects, including content $P_2$, will be re-processed. In contrast, in our asset synchronization mechanism, no additional delay nor rollback is needed and we eventually produce the same result. The reason why asset synchronization works is that there is no causal relationship between assets, thus different process order does not lead to inconsistency. Note that this should not be confused with state and event synchronization(see sections~\ref{statesync}~and~\ref{eventsync}), in which the process order is critical to consistency maintenance.
 
 
-% define "namespace discovery" %
-% In order for gamers to play in the same virtual world, a game application must have a global namespace to which each player must contribute (the player information, and objects created during runtime). Moreover, each player should synchronize his/her local namespace with the global namespace. We term the process of a player learning about the global namespace \emph{``name discovery''}. 
+% . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . %
+\subsection{Managing Assets}
+\label{manager}
+Assets are the only class of active elements that can change the global game state. Hence it is important to manage them in an organized way to prevent spoofing and asset corruption. In a {\cs} architecture this problem is very simple: the central server (group) play the role of central asset manager and all clients are merely renderers that smooth the gameplay. In a pure P2P architecture, however, a clear rule is needed to map assets to the virtual game processes running on each peer. In the rest of this section, we present asset managing rules used in our game scenario. We discuss about various asset managing problems in sections~\ref{statesync}~and~\ref{discussions}~to validate these rules.
 
-% Upon initialization, the game application defines a slice, using names in figure~\ref{repo}. Two parameters are used to define the slice: \emph{topo} and \emph{prefix}, which later become the root node of figure~\ref{broadcast} and figure~\ref{game}. Topo describes the scope of the game (scene). For instance, our topo could be interpreted as ``This scene belongs to a car racing game developed with the Egal library. Interests bearing this name should be broadcasted on the NDN testbed.'' Prefix tells the position of the player. Our prefix, for example, means ``This player is in this scene of the car racing game, which is running on the NDN testbed.'' 
+First of all, an asset must have one \emph{creator} and one \emph{manager}. The creator is a virtual character in the gameplay who \emph{first} directly or indirectly triggers the creation of the asset. The content object written to the repository will be bearing the creator's signature. The manager of an asset is a virtual character selected by the asset creator at creation time to manage the state (and events) of the newly created asset. An object asset's manager and creator must not be the same character. A player asset is his own creator and manager. Only the manager of an asset has the right to produce the asset's anti-asset. In other words, all anti-assets' creator must be the same as the original asset's manager, which also manages the anti-assets.
 
-% The best example of name discovery would be \emph{player discovery}. After the slice is created, the application writes into repository a content object representing the local player (\url{<prefix>/[CarID]/<nounce>}). From this on, the local Sync Agent will broadcast root advise Interests like \url{<topo>/\%C1.S.ra/<slicehash>}. In effect, these Interests are announcements of the car game in which the local player is the only participant. Now if there are other peers who are also running the application on the NDN testbed, the local player will receive announcements of the same game, but with a different hash of player list. Upon receiving an announcement with a hash that differs from the local one, the local Sync Agent will set off Interests for every player that it did not know before. When the corresponding Data packets return, the Sync Agent will update the local slice and its hash. The process of player discovery ends temporarily when all distributed slices agree on the slice hash, but all Sync Agents will continue to work. 
+%The manager of an asset can change but the rules mentioned above shall not be violated. For example, when a player is experiencing an unexpected quit, she can no longer be the manager of herself and those public objects (artifacts, bots etc.) that used to be managed by her. In this case, the public objects 
 
-% When a player leaves the game, 
-
-% object discovery %
-% \emph{Object discovery} is similar and different from name discovery.
-
-% We divide the problem of synchronization into two subproblems (asset and state synchronization) and use different strategies to solve them. 
-
-% asset, state, attribute, event %
-% We borrow the term \emph{asset} from game developers to refer to virtual characters and artifacts. An asset can have many attributes, which may change from time to time. A \emph{state} is a snapshot of an attribute. Assets are often first-level entities in games -- they do not belong to any other asset and have their own 3D model, rigid body and animations. A game asset that \emph{does} have an owner will not be considered as an asset here, but as a potential attribute state of its owner. For example, a Glock in a first person shooting game will become the state of an attribute called ``weapon'' when it is selected by the character. \emph{Events} are initiated by assets. They correspond to actions of characters (walk, shoot, buy etc.). An event may result in either asset change (a brick wall get destroyed after an explosion) or state change (an enemy's life is shortened after an attack). Event synchronization might be desirable in many games. However, we do not explicitly synchronize events in our sample game because their effect is already in sync. 
+% every asset has an interaction scope
+% the creator chooses a manager for a new asset
+% the manager cannot be the creator
+% the manager should be far enough from the interaction scope
 
 
+% . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . %
+\subsection{Propagation Model and Efficiency}
+% relatively slow
+% but good for sharing knowledge, good for anti-cheating
 
-%-----------------------------------%
+The propagation of an asset update is a process of constructing a sink tree in the P2P network, with the asset creator node being that tree's root node (see figure~\ref{sinktree}). Since CCNx Sync Protocol works on directly connected peers, data packets propagate in a hop-to-hop manner. Moreover, since all peers in the network can choose the best \emph{face} (connection) to forward its Interest~\cite{Jndn} and the retrieved content will follow the trace of Interest to reach the data receiver, a shortest-path-tree is automatically constructed without the help of any additional calculation.
+
+Because the use of repository in CCNx Sync, asset synchronization is relatively slower than state synchronization and event synchronization. However, CCNx Sync also forms a solid base of sharing knowledge about the entire game tree, which is vital to the virtual world's evolvement. Given the fact that assets do not generate as much updates as state and events do, we conclude that the advantages of using CCNx Sync outweighs the disadvantages.
+
+\begin{figure}
+\begin{center}
+\begin{subfigure} []
+{
+\begin{tikzpicture} [scale=0.9, transform shape]
+\tikzstyle{every node}=[draw,shape=circle];
+\node (v0) at (0, 2) {$P_0$};
+\node (v1) at (1, 1) {$P_1$};
+\node (v2) at (1.8, 4) {$P_2$};
+\node (v3) at (3, 4) {$P_3$};
+\node (v4) at (4.4, 0.6) {$P_4$};
+\node (v5) at (3.8, 3) {$P_5$};
+\node (v6) at (5.5, 2.5) {$P_6$};
+\draw (v0) -- (v1)
+(v0) -- (v2)
+(v0) -- (v6)
+(v4) -- (v5)
+(v1) -- (v4)
+(v2) -- (v3)
+(v3) -- (v5)
+(v4) -- (v6)
+(v3) -- (v1);
+\end{tikzpicture}
+}
+\end{subfigure}
+\begin{subfigure}[]
+{
+\begin{tikzpicture} [scale=0.9, transform shape]
+\tikzstyle{every node}=[draw,shape=circle];
+\node [fill=black!30] (v0) at (0, 2) {$P_0$};
+\node (v1) at (1, 1) {$P_1$};
+\node (v2) at (1.8, 4) {$P_2$};
+\node (v3) at (3, 4) {$P_3$};
+\node (v4) at (4.4, 0.6) {$P_4$};
+\node (v5) at (3.8, 3) {$P_5$};
+\node (v6) at (5.5, 2.5) {$P_6$};
+\draw (v0) -- (v1)
+(v0) -- (v2)
+(v0) -- (v6)
+%(v4) -- (v5)
+(v1) -- (v4)
+(v2) -- (v3)
+(v3) -- (v5)
+%(v4) -- (v6)
+%(v3) -- (v1)
+;
+\end{tikzpicture}
+}
+\end{subfigure}
+\caption{Sink Tree Propagation}
+\label{sinktree}
+\end{center}
+\end{figure}
+
+
+%------------------------------------------------------------------------------------------------------------------------------------%
 \section{State Synchronization}
 \label{statesync}
+% Task: sync the red nodes
+% The state of an asset can only be published by its manager
+% what about global state? **** Oh! ****
+State synchronization maintains the consistency of the state of all assets. In figure~\ref{game}, state synchronization is in charge of synchronizing all nodes and corresponding content objects colored pink. State synchronization differs from asset synchronization in that it does not use CCNx Sync and it does not processes state updates in their arrival order.
 
-%-----------------------------------%
+
+% . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . %
+\subsection{An Ordered Mechanism with Misses}
+\label{orderedmiss}
+% why state should be in the right order %
+State synchronization should be ordered. When a peer receives a state update, the effect of this update will last until the next update comes. Moreover, state tend to be correlated, thought not necessarily causal. For example, a character's state change in position tend to be limited (by the maximum speed of that character), but if state updates were processed out of order, it will produce chaos at the receivers' end. In NDN in particular, processing state packets according to their generation time is especially important. This is because a series of state updates usually share the same name, and all of them will be stored in the network cache for future use. If state synchronization were unordered, NDN receivers could receive some randomly-old matching content, making the synchronization mechanism useless.
+
+% how does the mechanism work: everyone registers for "state" of everyone
+% increasing exclusion filter guarantees the right order
+% rightmost child guarantees to get the freshest state, but might cause state miss
+In state synchronization each peer plays both the role of \emph{publisher} and \emph{audience}. Each player (asset manager) publishes his/her own state (and the state of all assets under his/her management) and listens to state updates of other assets. Only asset managers have the right to publish new state of the assets under its management. The published state will bear the manager's signature and all spoofing will be detected immediately since every peer in the network is aware of the asset-manager bounding -- it is written in every peer's repository. A player listen to state updates by keeping an outstanding interest for each distinct state names. By dynamically adjusting his/her interest pool, a player decides whose state s/he wants to follow and how detailed the state updates should be. For example, every player would probably issue interests for all other players' \url{position} state. Although some players might be out of sight, it is good to know where everyone is to have a global view of the game. Moreover, by keeping track of all participants position, a player would be notified when some other player is approaching and would probably issue interests for more a detailed state of the approacher (\url{rotation}, \url{type} just to name a few).
+
+The correct process order of state synchronization is guaranteed by the use of an \emph{exclusion filter} in the Interest packet. An exclusion filter is a of \emph{Selector} in an Interest packet (see figure~\ref{packet_types}). It is used to exclude certain content objects whose names match the name of the Interest packet. When a received state update has been processed, the timestamp in the Data packet, which marks the generation time of that state, will be extracted. This timestamp will be used as the lower bound of the generation time of the next wanted state. This non-decreasing timestamp lower bound guarantees that all received packets are already automatically sorted according to their generation time. It also guarantees that no duplicate state will be received.
+
+Since state can be dated easily, we put another selector \url{RightmostChild} in the Interest packet. This will select the latest version of available state, the rightmost child in the name tree, thus guaranteeing the freshness of every state received.
+% why state can be missed: one will only miss other's state, which will be updated soon%
+% events will not be missed, if an asset really cares that much about another asset's state, it can gather all events and check by himself %
+
+It is guaranteed in state synchronization that all states will be processed in order, but it is not guaranteed that there will not be any state missing. On the contrary, because state synchronization does not introduce delay or perform rollback, there must be some state missing from time to time. But, the problem is how does such kind of state miss affect game state consistency. Note that a state is not a \emph{log of changes} from an asset's old value to its new value. A state is a \emph{snapshot} of the value specified by the state name. Hence, if a state failed to reach a peer (because that peer has increased its lower bound of timestamp), then its content must have either been dated or included in the state generated later. Also note that state changes will not have any causal effects either. They do not lead to any change -- no asset change, no state change, no event generation. State is the \emph{result}, and will never be the \emph{cause}. State is published by one authenticated publisher and is published just to help its audiences to have a knowledge of the happenings within the game play. Therefore we conclude that the missing in state synchronization will not hurt consistency, and introducing extra delay with a lockstep mechanism or with rollback mechanism is unnecessary.
+
+
+% . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . %
+\subsection{Bandwidth Consumption}
+% state generates the most traffic
+% interests aggregate
+% content propagate
+State synchronization generates the largest amount of packets among the three types of synchronization. Every manager should periodically publish new state for all its managed assets, otherwise the manager (or the player) would be suspected as unconnected by other peers and eventually be kicked out. In addition to these regularly published states, managers should also promptly publish new state when there is a major change in the asset values. But what really creates traffic is the need at the receivers' end. Typically in a P2P game, all player would want to learn some basic information of all other players (such as the much needed \url{position} state mentioned in section~\ref{orderedmiss}). So if a network has $N$ peers, every state update cycle there will be at least $2(N-1)^N$ packets going on to request and send data about state updates. This pompous amount of packets would render any P2P game on IP network unscalable. On NDN however, such kind of congestion will be largely alleviated. NDN guarantees that every packet will go through a link for at most once. Interests issued by state audiences will aggregate locally. Only one Interest will be sent out further to retrieve the matching state content. When the state content is retrieved, all Interests pending at a local node or router will be satisfied. In this way, P2P games can grow to a much larger scale than it could on the IP network.
+
+% . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . %
+\subsection{Distribution Efficiency}
+% all interests pending
+% efficiency higher than asset sync
+
+State is also propagated following the branches of a sink tree, but the distribution efficiency of state synchronization is significantly higher than that of asset synchronization. First, all peers keep their interest for state updates \emph{outstanding}. In other words, peers will always keep a pending Interest for each state they want. Once a new state is published, it will quickly propagate from the publisher to all its audiences. This is not like asset synchronization where Sync Agents has to spend some extra time to learn about a neighboring slice's difference. Asset synchronization is an efficient fast-forwarding strategy with little delay brought by the intermediate nodes. Second, asset synchronization does not utilize peers' repository, which further improves its distribution efficiency.
+
+%------------------------------------------------------------------------------------------------------------------------------------%
 \section{Event Synchronization}
 \label{eventsync}
+% Task: to synchronize the yellow nodes
+Event is a special type of state. It is similar to state in that it can be deduced from its parent and can only be published by an authenticated manager. % **** Oh! ****%
+However, the differences are more significant: events can lead to state changes and event asset changes. In fact, they are designed to produce changes.
+
+Event synchronization is an ordered synchronization mechanism with no potential misses. In figure~\ref{game}, event synchronization is in charge of all nodes and corresponding content objects colored yellow.
+% events is a special type of state
+% Only the manager could publish events
+
+
+% . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . %
+\subsection{An Ordered Mechanism with No Miss}
+% why events should be ordered: hit and heal
+% why there should be no miss: heal and hit
+Events should be processed according to their generation time and no event should be missed. To see this, one can imagine that if there were two events \url{hit} and \url{heal}, targeting at Bob, a brave hero who has only the smallest amount of HP left, different process order could lead to different states: if \url{hit} is processed first, the following \url{heal} event would be helpless because Bob would have already died by then; if \url{heal} is processed first, then Bob might still have chance to live and fight. A similar example would show why there should not be any event misses: if the \url{heal} event was indeed generated earlier than the \url{hit} event, but unfortunately was missed by Bob because he has updated his lower bound for timestamp, Bob is throwing away his own chances of living.
+
+
+% how do we ensure that there is no miss? we use sequence number
+Event synchronization mechanism evolves from the state synchronization mechanism. We require event publishers to add sequence numbers to each published event. The receiver still uses an exclusion filter to avoid getting duplicated events, but will only update its exclusion filter when the received event has the correct sequence number. If not, the event receiver would notice the events missing and should keep its lower bound of timestamp intact.
+
+% but then, the order is broken, so we rollback when necessary
+Such mechanism means that if a late event arrived, it will still be processed. (Unlike state synchronization mechanism, in which all late state are directly ignored.) We do not introduce delay to wait for a late event, instead, we let an asset optimistically executes the received events, assuming all late events are not targeted at it. When a late event was targeting at the asset however, we perform a rollback to the asset's earlier state. The asset's state should be rolled back to the state just before the generation time of the late event, and all events after that should be re-executed. 
+
+% what is the earliest time an asset should rollback? Local Virtual Time
+To be able to perform rollbacks each asset manager must manage a state history of all assets under its management. An important problem to take into consideration is to determine the earliest time to which a rollback could happen. This time is called the \emph{Local Virtual Time} and can be calculated by searching through all exclusion filters of the asset's event Interests and finding out the earliest bound in those exclusion filters. Put simply, the Local Virtual Time separates an asset's timeline into two sections: the section before the Local Virtual Time is known to be consistent; the section after the Local Virtual Time has events that are optimistically executed and is subject to rollback.
+
+% A critical event is an event that causes asset change
+% writing the anti asset should be delayed
+Events generally causes state changes, but sometimes they can also cause asset changes. Events that leads to asset changes are called \emph{critical event}s. For example, a \url{hit} event would usually only decrease a hero's HP, but it could also lead to a hero's death if the attacking power was too strong or if the hero's HP was already too low. When merely causing HP decrease, the \url{hit} event is a normal event; when causing a hero's death, the \url{hit} event becomes a critical event. Another typical example of critical events is the \url{acknowledge as owner} event published by objects, which would lead to the cancellation of the object's name in the game tree. 
+
+When a critical event happens, its resulting asset change should be delayed for a brief amount of time to prevent unnecessary overheads caused by potential rollback. For example, if Bob received a \url{hit} event which turned out to be a critical event for him, the manager of Bob should plan to write an \url{.../anti/Bob} into its local repository but it does not have to do it in haste. An advice to the manager is to wait until the Local Virtual Time has evolved to be some value later than the timestamp of the critical event. If no \url{heal} event arrives during this delay period, then the proposed anti-asset can be written. But if a \url{heal} does arrive, Bob's state will be rolled back to the state before the timestamp of \url{heal} and all events after that, including the \url{hit} event, should be re-executed.
+

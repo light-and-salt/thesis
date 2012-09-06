@@ -14,11 +14,20 @@
 \contentsline {chapter}{\numberline {4}同步\nobreakspace {}Synchronization}{11}
 \contentsline {section}{\numberline {4.1}Asset, State and Event}{11}
 \contentsline {section}{\numberline {4.2}Asset Synchronization}{13}
-\contentsline {section}{\numberline {4.3}State Synchronization}{14}
-\contentsline {section}{\numberline {4.4}Event Synchronization}{14}
-\contentsline {chapter}{\numberline {5}实现\nobreakspace {}Implementation}{15}
-\contentsline {chapter}{\numberline {6}讨论\nobreakspace {}Discussions}{16}
-\contentsline {chapter}{参考文献}{17}
-\contentsline {chapter}{致谢}{19}
-\contentsline {chapter}{附录}{20}
+\contentsline {subsection}{\numberline {4.2.1}An Unordered Mechanism}{13}
+\contentsline {subsection}{\numberline {4.2.2}Managing Assets}{15}
+\contentsline {subsection}{\numberline {4.2.3}Propagation Model and Efficiency}{16}
+\contentsline {section}{\numberline {4.3}State Synchronization}{17}
+\contentsline {subsection}{\numberline {4.3.1}An Ordered Mechanism with Misses}{17}
+\contentsline {subsection}{\numberline {4.3.2}Bandwidth Consumption}{19}
+\contentsline {subsection}{\numberline {4.3.3}Distribution Efficiency}{20}
+\contentsline {section}{\numberline {4.4}Event Synchronization}{20}
+\contentsline {subsection}{\numberline {4.4.1}An Ordered Mechanism with No Miss}{20}
+\contentsline {chapter}{\numberline {5}实现\nobreakspace {}Implementation}{23}
+\contentsline {chapter}{\numberline {6}讨论\nobreakspace {}Discussions}{24}
+\contentsline {section}{\numberline {6.1}Security}{24}
+\contentsline {section}{\numberline {6.2}Cheating Avoidance}{24}
+\contentsline {chapter}{参考文献}{25}
+\contentsline {chapter}{致谢}{27}
+\contentsline {chapter}{附录}{28}
 \contentsfinish 

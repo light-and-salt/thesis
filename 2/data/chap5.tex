@@ -1,2 +1,11 @@
 \chapter{实现~Implementation}
 \label{implementation}
+
+\label{implementation}
+\def\tm{\leavevmode\hbox{$\rm {}^{TM}$}} %注册符 网上找的
+
+We implemented asset, state and event synchronization in both C and C\#. We organize these functions in our \emph{Egal}\tm~library which can be reused by future programers. Moreover, we wrapped the Egal library as a Unity3D\tm~Pro plugin so that it can provide some direct support for Unity\tm~programmers. Last but not least, we adapted Unity\tm's Car Racing Tutorial~\cite{UnityCar}~into a P2P multiplayer on-line game running over NDN.
+
+The major language of NDN source code is in C while the main language used by Unity3D\tm~is C\# Script. We used \verb|System.Runtime.InteropServices| to invoke C functions from C\# and vice versa. Data structures are marshaled whenever necessary. The major developing environments we used were Xcode 4\tm~and Mono\tm.
+
+Please refer to the Appendix for the library functions provided by Egal\tm.
