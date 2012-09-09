@@ -15,52 +15,55 @@ A level-1 auxiliary file: data/appe.aux
 A level-1 auxiliary file: data/task.aux
 A level-1 auxiliary file: data/eval.aux
 Database file #1: data/zjubib.bib
-Warning--to sort, need author or key in CCNxSync
-Warning--to sort, need author or key in UnityCar
-Warning--to sort, need author or key in CCNxCS
+Warning--I'm ignoring Flockstep's extra "author" field
+--line 52 of file data/zjubib.bib
+Warning--I'm ignoring Bryant's extra "address" field
+--line 71 of file data/zjubib.bib
+Repeated entry---line 200 of file data/zjubib.bib
+ : @techreport{bryant
+ :                   ,
+I'm skipping whatever remains of this entry
 Warning--empty institution in Bryant
-Warning--empty school in Fgame
-Warning--empty journal in Zact
-Warning--empty year in Zact
+Warning--can't use both volume and number fields in Doptbkt
 You've used 13 entries,
             2118 wiz_defined-function locations,
-            595 strings with 6124 characters,
-and the built_in function-call counts, 4033 in all, are:
-= -- 411
-> -- 135
-< -- 5
-+ -- 56
-- -- 42
-* -- 255
-:= -- 617
-add.period$ -- 37
+            603 strings with 6380 characters,
+and the built_in function-call counts, 4551 in all, are:
+= -- 475
+> -- 150
+< -- 9
++ -- 63
+- -- 48
+* -- 293
+:= -- 673
+add.period$ -- 40
 call.type$ -- 13
-change.case$ -- 60
+change.case$ -- 66
 chr.to.int$ -- 0
-cite$ -- 20
-duplicate$ -- 170
-empty$ -- 349
-format.name$ -- 42
-if$ -- 885
+cite$ -- 15
+duplicate$ -- 197
+empty$ -- 392
+format.name$ -- 48
+if$ -- 1017
 int.to.chr$ -- 0
 int.to.str$ -- 13
 missing$ -- 8
-newline$ -- 64
+newline$ -- 65
 num.names$ -- 20
-pop$ -- 83
+pop$ -- 82
 preamble$ -- 1
-purify$ -- 47
+purify$ -- 53
 quote$ -- 0
-skip$ -- 137
+skip$ -- 162
 stack$ -- 0
-substring$ -- 264
-swap$ -- 49
-text.length$ -- 5
+substring$ -- 310
+swap$ -- 71
+text.length$ -- 9
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 52
-warning$ -- 7
-while$ -- 36
+warning$ -- 2
+while$ -- 42
 width$ -- 15
-write$ -- 135
-(There were 7 warnings)
+write$ -- 147
+(There was 1 error message)
