@@ -1,4 +1,4 @@
-\chapter{背景 Background}
+\chapter{Background}
 \label{background}
 
 % not so sure %
@@ -87,7 +87,7 @@ Optimistic synchronization algorithms assume received events are in correct orde
 \label{ndnbg}
 
 % Basic Exchange %
-NDN \emph{names} can be human-readable (for example \url{/Egal/Car/Scene0}). Their binary encodings can be used for routing using longest prefix match.
+NDN \emph{names} can be human-readable (for example "{/Egal/Car/Scene0}"). Their binary encodings can be used for routing using longest prefix match.
 
 NDN is designed for content distribution. Two packet types exists in NDN: \emph{Interest} and \emph{Data} (see figure~\ref{packet_types}). A data receiver first initiates an Interest packet that bears the \emph{name} of the \emph{content} it wants. The packet is then routed by name until it reaches a host that has the corresponding content. The matching content object is sent back as a Data packet, satisfying all Interest for it on its way and leaving a trail of `bread crumbs'~\cite{Jndn}~in the routers' memory. Later Interests for the same content may be directly satisfied by the routers. It is guaranteed that in NDN every piece of data would flow through a link for at most once. This would reduce a huge amount of network traffic around content distribution centers.
 

@@ -7,63 +7,48 @@ A level-1 auxiliary file: data/kaiti.aux
 A level-1 auxiliary file: data/wenxianzongshu.aux
 A level-1 auxiliary file: data/waiwenfanyi.aux
 Database file #1: data/zjubib.bib
-Warning--I didn't find a database entry for "cr"
-Warning--to sort, need author or key in nsffia
-Warning--to sort, need author or key in CCNxSync
-Warning--to sort, need author or key in WoW
-Warning--to sort, need author or key in interop
-Warning--to sort, need author or key in plugin
-Warning--to sort, need author or key in hla
-Warning--to sort, need author or key in unityrank
-Warning--to sort, need author or key in unityppl
-Warning--to sort, need author or key in CCNxCS
-Warning--to sort, need author or key in CCNxRepo
+Warning--empty institution in bryant
 Warning--empty author in hla
-Warning--empty year in chandy
-Warning--empty journal in voccn
-Warning--empty year in real
-Warning--empty journal in vehicle
-Warning--empty journal in Zact
-Warning--empty year in Zact
-You've used 38 entries,
+Warning--empty title in voccn
+You've used 36 entries,
             2118 wiz_defined-function locations,
-            694 strings with 10281 characters,
-and the built_in function-call counts, 11427 in all, are:
-= -- 1107
-> -- 490
-< -- 13
-+ -- 201
-- -- 160
-* -- 678
-:= -- 1769
-add.period$ -- 108
-call.type$ -- 38
-change.case$ -- 194
+            710 strings with 10178 characters,
+and the built_in function-call counts, 12860 in all, are:
+= -- 1331
+> -- 435
+< -- 20
++ -- 182
+- -- 142
+* -- 805
+:= -- 1821
+add.period$ -- 104
+call.type$ -- 36
+change.case$ -- 191
 chr.to.int$ -- 0
-cite$ -- 55
-duplicate$ -- 489
-empty$ -- 988
-format.name$ -- 160
-if$ -- 2508
+cite$ -- 39
+duplicate$ -- 561
+empty$ -- 1133
+format.name$ -- 142
+if$ -- 2926
 int.to.chr$ -- 0
-int.to.str$ -- 38
-missing$ -- 25
-newline$ -- 182
-num.names$ -- 58
-pop$ -- 322
+int.to.str$ -- 36
+missing$ -- 22
+newline$ -- 170
+num.names$ -- 48
+pop$ -- 260
 preamble$ -- 1
 purify$ -- 155
 quote$ -- 0
-skip$ -- 360
+skip$ -- 491
 stack$ -- 0
-substring$ -- 517
-swap$ -- 127
-text.length$ -- 13
+substring$ -- 906
+swap$ -- 211
+text.length$ -- 20
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 150
-warning$ -- 17
-while$ -- 90
-width$ -- 40
-write$ -- 374
-(There were 18 warnings)
+type$ -- 144
+warning$ -- 3
+while$ -- 102
+width$ -- 38
+write$ -- 385
+(There were 3 warnings)

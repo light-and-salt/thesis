@@ -94,7 +94,7 @@
 
 \setlength{\parindent}{2.5em}
 
-\renewcommand{\baselinestretch}{1.6}
+\renewcommand{\baselinestretch}{1.2}
 \renewcommand{\arraystretch}{0.6}
 \DeclareRobustCommand{\chuhao}{\fontsize{42pt}{\baselineskip}\selectfont}
 \DeclareRobustCommand{\xiaochu}{\fontsize{36pt}{\baselineskip}\selectfont}

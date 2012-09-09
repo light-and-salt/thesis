@@ -1,17 +1,17 @@
 \contentsline {chapter}{摘要}{I}
 \contentsline {chapter}{Abstract}{II}
-\contentsline {chapter}{目录}{III}
-\contentsline {chapter}{\numberline {1}绪论 Introduction}{1}
-\contentsline {chapter}{\numberline {2}背景 Background}{3}
+\contentsline {chapter}{Contents}{III}
+\contentsline {chapter}{\numberline {1}Introduction}{1}
+\contentsline {chapter}{\numberline {2}Background}{3}
 \contentsline {section}{\numberline {2.1}Game Design Background}{3}
 \contentsline {subsection}{\numberline {2.1.1}Game Architectures}{3}
 \contentsline {subsection}{\numberline {2.1.2}Synchronization Mechanisms}{4}
 \contentsline {section}{\numberline {2.2}NDN Background}{5}
 \contentsline {subsection}{\numberline {2.2.1}CCNx Sync Protocol}{5}
-\contentsline {chapter}{\numberline {3}NDN\nobreakspace {}上的游戏设计\nobreakspace {}NDN Game Design}{7}
+\contentsline {chapter}{\numberline {3}NDN Game Design}{7}
 \contentsline {section}{\numberline {3.1}P2P Game Architecture}{7}
 \contentsline {section}{\numberline {3.2}Namespace Design}{7}
-\contentsline {chapter}{\numberline {4}同步\nobreakspace {}Synchronization}{11}
+\contentsline {chapter}{\numberline {4}Synchronization}{11}
 \contentsline {section}{\numberline {4.1}Asset, State and Event}{11}
 \contentsline {section}{\numberline {4.2}Asset Synchronization}{13}
 \contentsline {subsection}{\numberline {4.2.1}An Unordered Mechanism}{13}
@@ -23,11 +23,11 @@
 \contentsline {subsection}{\numberline {4.3.3}Distribution Efficiency}{20}
 \contentsline {section}{\numberline {4.4}Event Synchronization}{20}
 \contentsline {subsection}{\numberline {4.4.1}An Ordered Mechanism with No Miss}{20}
-\contentsline {chapter}{\numberline {5}实现\nobreakspace {}Implementation}{23}
-\contentsline {chapter}{\numberline {6}讨论\nobreakspace {}Discussions}{24}
+\contentsline {chapter}{\numberline {5}Implementation}{23}
+\contentsline {chapter}{\numberline {6}Discussions}{24}
 \contentsline {section}{\numberline {6.1}Security}{24}
 \contentsline {section}{\numberline {6.2}Cheating Avoidance}{24}
-\contentsline {chapter}{参考文献}{25}
-\contentsline {chapter}{致谢}{27}
-\contentsline {chapter}{附录}{28}
+\contentsline {chapter}{References}{25}
+\contentsline {chapter}{Acknowlegements}{27}
+\contentsline {chapter}{Appendix}{28}
 \contentsfinish 

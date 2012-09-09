@@ -130,11 +130,11 @@
 \setcounter{secnumdepth}{4}
 
 \titleformat{\chapter}[block]%
-{\sanhao\heiti\filcenter}{第 \thechapter{} 章}{1em}{}{}
+{\sanhao\heiti\filcenter}{Chapter \thechapter{}}{1em}{}{}
 \titlespacing{\chapter}%
   {0pt}{0.3\baselineskip}{0.3\baselineskip}
 \titlecontents{chapter}[1.5em]{}%
-{第 \thecontentslabel{} 章\hspace{1em}}{}{\titlerule*[10pt]{.}\contentspage}
+{Chapter \thecontentslabel{} \hspace{1em}}{}{\titlerule*[10pt]{.}\contentspage}
 
 \titleformat{\section}[hang]%
   {\sihao\heiti}{\thesection}{1em}{}{}
@@ -168,12 +168,12 @@
 \fancyhead[L]{\xiaowu\songti 浙江大学计算机科学与技术学院本科毕业论文}
 \fancyhead[R]{\xiaowu\songti\leftmark}
 \fancyfoot[C]{\xiaowu\thepage}
-\renewcommand{\contentsname}{\centerline{目\quad 录}}
+\renewcommand{\contentsname}{\centerline{Contents}}
 \renewcommand{\listfigurename}{\centerline{图~目~录}}
 \renewcommand{\listtablename}{\centerline{表~目~录}}
 \setcounter{tocdepth}{1}  % 设置目录的深度到 subsection
-\renewcommand{\bibname}{参~考~文~献}
-\renewcommand{\nomname}{\centerline{术~语~表}}
+\renewcommand{\bibname}{References}
+\renewcommand{\nomname}{\centerline{Acknowledgements}}
 \renewcommand{\nomlabelwidth}{25mm}
 \renewcommand{\nompreamble}{\vspace{1em}}
 \makenomenclature

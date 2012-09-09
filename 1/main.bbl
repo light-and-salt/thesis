@@ -1,223 +1,215 @@
 \begin{thebibliography}{10}
 
-\bibitem{CCNxCS}
-{CCNx Create Collection Protocol}.
-\newblock
-  \url{http://www.ccnx.org/releases/latest/doc/technical/CreateCollectionProtocol.html}.
-
-\bibitem{CCNxRepo}
-{CCNx Repository Protocols}.
-\newblock
-  \url{http://www.ccnx.org/releases/latest/doc/technical/RepoProtocol.html}.
-
-\bibitem{CCNxSync}
-{CCNx Synchronization Protocol}.
-\newblock
-  \url{http://www.ccnx.org/releases/latest/doc/technical/SynchronizationProtocol.html}.
-
-\bibitem{unityrank}
-Develop: The top 10 game engines revealed.
-\newblock
-  \url{http://www.develop-online.net/news/32250/The-top-10-game-engines-revealed}.
-
-\bibitem{nsffia}
-Nsf future internet architecture project.
-\newblock \url{http://www.nets-fia.net/}.
-
-\bibitem{interop}
-System.runtime.interopservices namespace.
-\newblock
-  \url{http://msdn.microsoft.com/en-us/library/system.runtime.interopservices.aspx}.
-
-\bibitem{plugin}
-Unity plugin manual.
-\newblock \url{http://docs.unity3d.com/Documentation/Manual/Plugins.html}.
-
-\bibitem{unityppl}
-Unity reaches one million registered developers.
-\newblock
-  \url{http://www.marketwire.com/press-release/unity-reaches-one-million-registered-developers-1641486.htm}.
-
-\bibitem{WoW}
-World of warcraft.
-\newblock \url{http://us.battle.net/wow/en/}.
-
-\bibitem{hla}
-{IEEE Standard for Modeling and Simulation {(M\&S)} High Level Architecture
-  (HLA) - Framework and Rules}.
-\newblock {\em IEEE Std. 1516-2000}, pages i --22, 2000.
-
 \bibitem{traditional}
 R.A. Bangun and H.P. Beadle.
 \newblock A network architecture for multiuser networked games on demand.
-\newblock In {\em Proceedings of the 1997 International Conference on
-  Information, Communications and Signal Processing}, pages 1815--1819,
-  Singapore, September 1997.
+\newblock In {\em Information, Communications and Signal Processing}, volume~3,
+  pages 1815 -- 1819, Singapore, September 1997.
 
 \bibitem{bryant}
 R.E. Bryant.
 \newblock Simulation of packet communication architecture computer systems.
-\newblock Technical report, Computer Science Laboratory, Massachusetts
-  Institute of Technologies, Cambridge, Massachusetts, 1977.
+\newblock Technical report, Cambridge, MA, USA, 1977.
+
+\bibitem{CCNxCS}
+{CCNx\tm~Create Collection Protocol}.
+\newblock
+  http://www.ccnx.org/releases/latest/doc/technical/CreateCollectionProtocol.html.
+
+\bibitem{CCNxRepo}
+{CCNx\tm~Repository Protocols}.
+\newblock http://www.ccnx.org/releases/latest/doc/technical/RepoProtocol.html.
+
+\bibitem{CCNxSync}
+{CCNx\tm~Synchronization Protocol}.
+\newblock
+  http://www.ccnx.org/releases/latest/doc/technical/SynchronizationProtocol.html.
 
 \bibitem{chandy}
 K.M. Chandy and J.~Misra.
 \newblock Distributed simulation: A case study in design and verification of
   distributed programs.
-\newblock {\em IEEE Transactions on Software Engeneering}, 5(5).
+\newblock {\em Software Engineering, IEEE Transactions on}, 5(5):440 -- 452,
+  September 1979.
 
 \bibitem{cheat1}
 B.D. Chen and M.~Maheswaran.
 \newblock A cheat controlled protocol for centralized online multiplayer games.
-\newblock In {\em Proceedings of ACMSIGCOMM 2004 workshops on NetGames '04},
-  pages 139--143. ACM Press, 2004.
-
-\bibitem{cheat2}
-E.~Cronin, B.~Filstrup, and S.~Jamin.
-\newblock Cheat-proofing dead reckoned multi-player games.
-\newblock In {\em Proceedings of the International Conference on Application
-  and Development of Computer Games (AdCog 2003)}, January 2003.
+\newblock In {\em Proceedings of 3rd ACM SIGCOMM workshop on Network and system
+  support for games}, NetGames, pages 139 -- 143, New York, NY, USA, 2004. ACM.
 
 \bibitem{andana}
-S~DiBenedetto, Paolo Gasti, and G~Tsudik.
-\newblock {ANDaNA: Anonymous Named Data Networking Application}.
-\newblock {\em Arxiv preprint arXiv:1112.2205}, 2011.
+S.~DiBenedetto, P.~Gasti, and G.~Tsudik.
+\newblock {ANDaNA}: anonymous named data networking application.
+\newblock In {\em Proceedings of the Network and Distributed System Security
+  Symposium}, NDSS, February 2012.
 
 \bibitem{cheat3}
-C.~Gauthier Dickey, D.~Zappala, V.~Lo, and J.~Marr.
+C.G. Dickey, D.~Zappala, V.~Lo, and J.~Marr.
 \newblock Low latency and cheat-proof event ordering for peer-to-peer games.
 \newblock In {\em Proceedings of the 14th international workshop on Network and
-  operating systems support for digital audio and video}, pages 134--139. ACM
-  Press, 2004.
+  operating systems support for digital audio and video}, NOSSDAV, pages 134 --
+  139, New York, NY, USA, 2004. ACM.
 
 \bibitem{Ferretti2005}
-Stefano Ferretti.
-\newblock {Interactivity maintenance for event synchronization in massive
-  multiplayer online games}.
-\newblock Technical Report March, Department of Computer Science, University of
-  Bologna, 2005.
+S.~Ferretti.
+\newblock {\em {Interactivity maintenance for event synchronization in massive
+  multiplayer online games}}.
+\newblock PhD thesis, University of Bologna, 2005.
 
 \bibitem{lockstep}
 R.M. Fujimoto.
-\newblock {\em Parallel and Distribution Simulation Systems}.
-\newblock John Wiley \& Sons, Inc., 1999.
+\newblock Parallel and distributed simulation.
+\newblock In {\em Proceedings of Simulation Conference}, volume~1, pages 122 --
+  131, 1999.
 
 \bibitem{mimaze}
 L.~Gautier, C.~Diot, and J.~Kurose.
-\newblock End-to-end transmission control mechanisms for multiparty interactive
-  applications on the internet.
-\newblock In {\em Proceedings of IEEE Infocom1999}, volume~3, March 1999.
+\newblock {End-to-end transmission control mechanisms for multiparty
+  interactive applications on the Internet}.
+\newblock In {\em Proceedings of the 18th Annual Joint Conference of the IEEE
+  Computer and Communications Societies}, volume~3, pages 1470 -- 1479, March
+  1999.
 
-\bibitem{ultima}
-Electronic~Arts Inc.
-\newblock Ultima online.
-\newblock http://www.uo.com/.
+\bibitem{hla}
+{IEEE Standard for Modeling and Simulation {(M\&S)} High Level Architecture
+  (HLA) - Framework and Rules}.
+\newblock {\em IEEE Std. 1516-2000}, pages i -- 22, 2000.
+
+\bibitem{interop}
+{.Net Framework - System.Runtime.InteropServices Namespace}.
+\newblock
+  http://msdn.microsoft.com/en-us/library/system.runtime.interopservices.aspx.
 
 \bibitem{voccn}
-Van Jacobson, Diana~K Smetters, Nicholas~H Briggs, Michael~F Plass, James~D
-  Thornton, and Rebecca~L Braynard.
-\newblock {VoCCN : Voice-over Content-Centric Networks}.
-\newblock pages 1--6, 2009.
+V.~Jacobson, D.K. Smetters, N.H. Briggs, M.F. Plass, J.D. Thornton, and R.L.
+  Braynard.
+\newblock In {\em Proceedings of the 2009 workshop on Re-architecting the
+  Internet}, ReArch '09, pages 1 -- 6, New York, NY, USA, December 2009. ACM.
 
 \bibitem{Jndn}
-Van Jacobson, DK~Smetters, and JD~Thornton.
-\newblock {Networking named content}.
-\newblock {\em Emerging networking}, pages 1--12, 2009.
+V.~Jacobson, D.K. Smetters, and J.D. Thornton.
+\newblock Networking named content.
+\newblock In {\em Proceedings of the 5th international conference on Emerging
+  networking experiments and technologies}, CoNEXT, pages 1 -- 12, New York,
+  NY, USA, December 2009. ACM.
 
 \bibitem{p2p1}
 Y.~Kawahara, T.~Aoyama, and H.~Morikawa.
 \newblock A peer-to-peer message exchange scheme for large-scale networked
   virtual environments.
-\newblock {\em Telecommunication Systems}, 25(3-4):353--370, 2004.
+\newblock {\em Telecommunication Systems}, 25(3):353 -- 370, 2004.
 
-\bibitem{cheat4}
-H.~Lee, E.~Kozlowski, S.~Lenker, and S.~Jamin.
-\newblock Synchronization and cheat-proofing protocol for real-time mulitplayer
-  games.
-\newblock In {\em Proceedings of 1st Workshop on Entertainment Computing},
-  Makuhari, Japan, May 2002.
+\bibitem{p2p2}
+M.~Merabti and A.~El~Rhalibi.
+\newblock Peer-to-peer architecture and protocol for a massively multiplayer
+  online game.
+\newblock In {\em Global Telecommunications Conference Workshops}, pages 519 --
+  528, December 2004.
+
+\bibitem{nsffia}
+{NSF\textregistered~Future Internet Architecture Project}.
+\newblock http://www.nets-fia.net.
 
 \bibitem{openping}
 P.~Okanda and G.~Blair.
-\newblock Openping: a reflective middleware for the construc- tion of adaptive
-  networked game applications.
-\newblock In {\em Proceedings of ACM SIGCOMM 2004 workshops on NetGames '04},
-  pages 111--115. ACM Press, 2004.
+\newblock {OpenPING: a reflective middleware for the construction of adaptive
+  networked game applications}.
+\newblock In {\em Proceedings of 3rd ACM SIGCOMM workshop on Network and system
+  support for games}, NetGames, pages 111 -- 115, New York, NY, USA, 2004. ACM.
 
 \bibitem{impact}
 L.~Pantel and L.C. Wolf.
 \newblock On the impact of delay on real-time multiplayer games.
 \newblock In {\em Proceedings of the 12th international workshop on Network and
-  operating systems support for digital audio and video}, pages 23--29. ACM
-  Press, 2002.
+  operating systems support for digital audio and video}, NOSSDAV, pages 23 --
+  29, New York, NY, USA, 2002. ACM.
 
-\bibitem{p2p2}
-A.~El Rhalibi.
-\newblock Peer-to-peer architecture and protocol for a massively multiplayer
-  online game.
-\newblock In {\em Proceedings of 1st IEEE International Workshop on Networking
-  Issues in Multimedia Entertainment (NIME'04)}, Las Vegas, NV, November 2004.
+\bibitem{quake}
+{The QuakeForge Project}\textregistered.
+\newblock http://www.quakeforge.net.
 
 \bibitem{modern1}
 M.~Roccetti, P.~Salomoni, V.~Ghini, and S.~Ferretti.
-\newblock Bringing the wireless internet to umts devices: A case study with
-  music distribution.
-\newblock {\em Multimedia Tools and Applications}, December 2002.
-
-\bibitem{modern2}
-M.~Roccetti, P.~Salomoni, V.~Ghini, S.~Ferretti, and S.~Cacciaguerra.
-\newblock Delivering music over the wireless internet: from song distribution
-  to interactive karaoke on umts devices.
-\newblock In B.~Furht and M.~Ilyas, editors, {\em Wireless Internet Handbook:
-  Technologies, Standards, and Applications}. CRC Press, March 2003.
+\newblock {Bringing the wireless internet to UMTS devices: A case study with
+  music distribution}.
+\newblock {\em Multimedia Tools and Applications}, 25(2):217 -- 251, February
+  2005.
 
 \bibitem{modern3}
 M.~Roccetti, P.~Salomoni, V.~Ghini, S.~Ferretti, S.~Cacciaguerra, and
-  A.~Sor-cinelli.
-\newblock Moka: a wireless internet application for delivering mobile karaoke
-  on umts devices.
+  A.~Sorcinelli.
+\newblock {MoKa: a wireless internet application for delivering mobile karaoke
+  on UMTS devices}.
 \newblock In {\em Proceedings of the International Conference on
-  Communications, Internet and Information Technology}, pages 346--351, St.
-  Thomas, Virgin Islands, November 2002.
+  Communications, Internet and Information Technology}, pages 346 -- 351, 2002.
 
 \bibitem{fixed-bucket}
 J.S. Steinman.
-\newblock Scalable parallel and distributed military simulations using the
-  speedes framework.
+\newblock {Scalable parallel and distributed military simulations using the
+  SPEEDES framework}.
 \newblock Technical report, NASA, Jet Propulsion Laboratory, 1995.
 
 \bibitem{real}
 D.~Stutzbach, R.~Stutzbach, and S~Sen.
-\newblock Characterizing unstructured overlay topologies in modern p2p
+\newblock Characterizing unstructured overlay topologies in modern {P2P}
   file-sharing systems.
-\newblock In {\em IMC'05}, pages 49--62, Berkeley, CA, USA.
+\newblock {\em IEEE/ACM Transactions on Networking}, 16(2):267 -- 280, April
+  2008.
 
-\bibitem{quake}
-the QuakeForge~Project.
-\newblock Quake forge project.
-\newblock http://www.quakeforge.net/, 2002.
+\bibitem{ultima}
+{Ultima Online}\tm.
+\newblock http://www.uoherald.com/.
+
+\bibitem{plugin}
+{Unity\tm~Plugin Manual}, February 2012.
+\newblock http://docs.unity3d.com/Documentation/Manual/Plugins.html.
+
+\bibitem{unityppl}
+{Marketwire\textregistered~News}, April 2009.
+\newblock
+  http://www.marketwire.com/press-release/unity-reaches-one-million-registered-developers-1641486.htm.
+
+\bibitem{unityrank}
+Develop\tm: The top 10 game engines revealed, June 2009.
+\newblock
+  http://www.develop-online.net/news/32250/The-top-10-game-engines-revealed.
 
 \bibitem{vehicle}
-Lucas Wang, Ryuji Wakikawa, Romain Kuntz, Rama Vuyyuru, and Lixia Zhang.
-\newblock {Data Naming in Vehicle-to-Vehicle Communications}.
-\newblock 2013.
+L.~Wang, R.~Wakikawa, R.~Kuntz, R.~Vuyyuru, and L.~Zhang.
+\newblock Data naming in vehicle-to-vehicle communications.
+\newblock In {\em Workshop on Emerging Design Choices in Name-Oriented
+  Networking}, INFOCOM, March 2012.
+
+\bibitem{Scheating}
+S.D. Webb and S.~Soh.
+\newblock Cheating in networked computer games: a review.
+\newblock In {\em Proceedings of the 2nd international conference on Digital
+  interactive media in entertainment and arts}, DIMEA, pages 105 -- 112, New
+  York, NY, USA, 2007. ACM.
+
+\bibitem{WoW}
+{World of Warcraft}\textregistered.
+\newblock http://us.battle.net/wow/en/.
 
 \bibitem{dsl}
 S.~Wright and S.~Tischer.
-\newblock Architectural considerations in online game services over dsl
-  networks.
-\newblock In {\em Proceedings of the IEEE International Conference on
-  Communications (ICC2004)}, Paris, France, June 2004.
+\newblock {Architectural considerations in online game services over DSL
+  networks}.
+\newblock In {\em Communications, 2004 IEEE International Conference on},
+  volume~3, pages 1380 -- 1385, 2004.
 
 \bibitem{Zhu2011}
-Zhenkai Zhu, Jeffery Burke, Lixia Zhang, Paolo Gasti, Yanbin Lu, and Van
-  Jacobson.
-\newblock {A new approach to securing audio conference tools}.
-\newblock {\em Proceedings of the 7th Asian Internet Engineering Conference on
-  - AINTEC '11}, pages 120--123, 2011.
+Z.~Zhu, J.A. Burke, L.~Zhang, P.~Gasti, Y.~Lu, and V.~Jacobson.
+\newblock A new approach to securing audio conference tools.
+\newblock In {\em Proceedings of the 7th Asian Internet Engineering
+  Conference}, AINTEC, pages 120 -- 123, New York, NY, USA, November 2011. ACM.
 
 \bibitem{Zact}
-Zhenkai Zhu and Van Jacobson.
-\newblock {ACT : Audio Conference Tool Over Named Data Networking}.
+Z.~Zhu, S.~Wang, X.~Yang, V~Jacobson, and L.~Zhang.
+\newblock {ACT: audio conference tool over named data networking}.
+\newblock In {\em Proceedings of the ACM SIGCOMM workshop on
+  Information-centric networking}, ICN, pages 68 -- 73, New York, NY, USA,
+  2011. ACM.
 
 \end{thebibliography}
