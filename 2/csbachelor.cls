@@ -177,8 +177,8 @@
 \renewcommand{\nomlabelwidth}{25mm}
 \renewcommand{\nompreamble}{\vspace{1em}}
 \makenomenclature
-\renewcommand{\figurename}{图} % 插图题头
-\renewcommand{\tablename}{表} % 插表题头
+\renewcommand{\figurename}{Figure} % 插图题头
+\renewcommand{\tablename}{Table} % 插表题头
 \renewcommand{\captionlabeldelim}{} %% 定义如 "图(表)1: 示例" 中的间隔符号,如 ":" ,这里定义为空
 \renewcommand{\captionlabelsep}{\hspace{1em}} %定义图表编号与标题间的间隔距离
 \setlength{\belowcaptionskip}{2mm}

@@ -24,10 +24,12 @@
 \contentsline {section}{\numberline {4.4}Event Synchronization}{20}
 \contentsline {subsection}{\numberline {4.4.1}An Ordered Mechanism with No Miss}{20}
 \contentsline {chapter}{\numberline {5}Implementation}{23}
-\contentsline {chapter}{\numberline {6}Discussions}{24}
-\contentsline {section}{\numberline {6.1}Security}{24}
-\contentsline {section}{\numberline {6.2}Cheating Avoidance}{24}
-\contentsline {chapter}{References}{25}
-\contentsline {chapter}{Acknowlegements}{27}
-\contentsline {chapter}{Appendix}{28}
+\contentsline {section}{\numberline {5.1}Hierarchy}{23}
+\contentsline {section}{\numberline {5.2}Interop}{24}
+\contentsline {chapter}{\numberline {6}Discussions}{25}
+\contentsline {section}{\numberline {6.1}Security}{25}
+\contentsline {section}{\numberline {6.2}Cheating Avoidance}{25}
+\contentsline {chapter}{References}{26}
+\contentsline {chapter}{Acknowlegements}{28}
+\contentsline {chapter}{Appendix}{29}
 \contentsfinish 

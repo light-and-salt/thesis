@@ -1,10 +1,12 @@
-// 
+//
 // Egal Library
 //
 // The C# Library the exposes NDN functions 
 // and supports Asset&State&Event Sync
 //
 // Author: Zening Qu
+// shuier@zju.edu.cn
+// 
 
 using UnityEngine;
 using System;
@@ -13,20 +15,17 @@ using System.Runtime.InteropServices;
 
 public class Egal: MonoBehaviour {
 	
-	
 	// Structs //
 	//==================================//
 	[StructLayout (LayoutKind.Sequential)]
-	public struct ccn_charbuf 
-	{
+	public struct ccn_charbuf {
 		public int length;
     	public int limit;
     	public IntPtr buf;
 	}
 	
 	[StructLayout (LayoutKind.Sequential)]
-	public struct bufnode 
-	{
+	public struct bufnode {
 		public string name;
     	public string content;
     	public IntPtr next;
@@ -42,14 +41,17 @@ public class Egal: MonoBehaviour {
  	* When the count drops back to 0, the closure will be called with
  	* kind = CCN_UPCALL_FINAL so that it has an opportunity to clean up.
  	*/
+	
 	[StructLayout (LayoutKind.Sequential)]
 	public struct ccn_closure {
-		ccn_handler p;      	/**< client-supplied handler */
-		public IntPtr data;     /**< for client use */
-		int intdata;   			/**< for client use */
-		private int refcount;       	/**< client should not update this directly */
-		
-		// constructor
+		/**< client-supplied handler */
+		ccn_handler p;  
+		/**< for client use */
+		public IntPtr data;  
+		/**< for client use */
+		int intdata;   	
+		/**< client should not update this directly */
+		private int refcount;   
 		public ccn_closure(ccn_handler cb, IntPtr pdata, int idata)
 		{
 			p = cb;
@@ -68,15 +70,15 @@ public class Egal: MonoBehaviour {
  	* When the count drops back to 0, the closure will be called with
  	* kind = CCN_UPCALL_FINAL so that it has an opportunity to clean up.
  	*/
+	
 	[StructLayout (LayoutKind.Sequential)]
 	public struct ccn_upcall_info {
-    	public IntPtr h;              /**< The ccn library handle */
-    	/* Interest (incoming or matched) */
+		/**< The ccn library handle */
+    	public IntPtr h;              
     	IntPtr interest_ccnb;
     	IntPtr pi;
     	IntPtr interest_comps;
     	int matched_comps;
-    	/* Incoming content for CCN_UPCALL_CONTENT* - otherwise NULL */
     	IntPtr content_ccnb;
     	IntPtr pco;
     	IntPtr content_comps;
@@ -90,13 +92,6 @@ public class Egal: MonoBehaviour {
  	* For the default (sign with the user's default key pair), pass NULL
  	* for the pointer.
  	*
- 	* The recommended way to us this is to create a local variable:
- 	*
- 	*   struct ccn_signing_params myparams = CCN_SIGNING_PARAMS_INIT;
-	*
- 	* and then fill in the desired fields.  This way if additional parameters
- 	* are added, it won't be necessary to go back and modify exiting clients.
- 	* 
  	* The template_ccnb may contain a ccnb-encoded SignedInfo to supply
  	* selected fields from under the direction of sp_flags.
  	* It is permitted to omit unneeded fields from the template, even if the
@@ -109,7 +104,7 @@ public class Egal: MonoBehaviour {
  	* The default signing key is obtained from ~/.ccnx/.ccnx_keystore unless
  	* the CCNX_DIR is used to override the directory location.
  	*/
- 
+	
 	[StructLayout (LayoutKind.Sequential)]
 	public struct ccn_signing_params {
     	int api_version;
@@ -119,9 +114,6 @@ public class Egal: MonoBehaviour {
 		public string pubid;
     	public Content.ccn_content_type co_type;
     	int freshness;
-    	// XXX where should digest_algorithm fit in?
-		
-		// constructor
 		public ccn_signing_params(int api)
 		{
 			api_version = api;
@@ -134,11 +126,11 @@ public class Egal: MonoBehaviour {
 	}
 
 	
-	// Aggregated Functions//
+	// Sync Functions//
 	//==================================//	
+	
 	[DllImport ("Egal")]
 	public static extern int WriteSlice(IntPtr h, System.String prefix, System.String topo);
-	// returns 0 for success
 	
 	[DllImport ("Egal")]
 	public static extern IntPtr ReadFromRepo(System.String name);
@@ -148,12 +140,13 @@ public class Egal: MonoBehaviour {
 	
 	[DllImport ("Egal")]
 	public static extern IntPtr ReadFromBuffer();
+	
 	[DllImport ("Egal")]
 	public static extern void PutToBuffer(string name, string content);
+	
 	[DllImport ("Egal")]
 	public static extern void testbuffer(int time);
 	
-	// from C#, mode = 'r', name = content = null
 	[DllImport ("Egal")]
 	public static extern IntPtr Buffer(char mode, string name, string content);
 	
@@ -215,8 +208,7 @@ public class Egal: MonoBehaviour {
 	public static extern int ccn_uri_append(IntPtr c, IntPtr ccnb, int size, int includescheme);
 	
 	[DllImport ("Egal")]
-	public static extern int ccn_create_version(IntPtr h, IntPtr name,
-                   int versioning_flags, int secs, int nsecs);
+	public static extern int ccn_create_version(IntPtr h, IntPtr name, int versioning_flags, int secs, int nsecs);
 	
 	[DllImport ("Egal")]
 	public static extern int ccn_name_append_nonce(IntPtr c);
@@ -226,7 +218,6 @@ public class Egal: MonoBehaviour {
 	
 	[DllImport ("Egal")]
 	public static extern int ccn_name_append_numeric(IntPtr c, Marker.ccn_marker marker, int value);
-
 
 	// slice, ccns
 	[DllImport ("Egal")]
@@ -242,50 +233,38 @@ public class Egal: MonoBehaviour {
 	public static extern void ccns_slice_destroy(ref IntPtr sp);
 	
 	[DllImport ("Egal")]
-	public static extern IntPtr ccns_open(IntPtr h, IntPtr slice,
-          ccns_callback callback, IntPtr rhash, IntPtr pname);
-	
+	public static extern IntPtr ccns_open(IntPtr h, IntPtr slice, ccns_callback callback, IntPtr rhash, IntPtr pname);
 	
 	// interest 
 	[DllImport ("Egal")]
-	public static extern IntPtr SyncGenInterest(IntPtr name, int scope, int lifetime, 
-		int maxSuffix, int childPref, IntPtr excl);
+	public static extern IntPtr SyncGenInterest(IntPtr name, int scope, int lifetime, int maxSuffix, int childPref, IntPtr excl);
 	
 	[DllImport ("Egal")]
-	public static extern int ccn_set_interest_filter(IntPtr h, IntPtr namebuf, 
-		IntPtr p_ccn_closure);
+	public static extern int ccn_set_interest_filter(IntPtr h, IntPtr namebuf, IntPtr p_ccn_closure);
 	
 	[DllImport ("Egal")]
-	public static extern int ccn_express_interest(IntPtr h, IntPtr namebuf,
-		IntPtr p_ccn_closure, IntPtr interest_template);
+	public static extern int ccn_express_interest(IntPtr h, IntPtr namebuf, IntPtr p_ccn_closure, IntPtr interest_template);
 	
 	// signning
 	[DllImport ("Egal")]
-	public static extern int ccn_sign_content(IntPtr h, IntPtr resultbuf, IntPtr name_prefix, 
-		IntPtr param, IntPtr data, int size);
+	public static extern int ccn_sign_content(IntPtr h, IntPtr resultbuf, IntPtr name_prefix, IntPtr param, IntPtr data, int size);
 	
 	[DllImport ("Egal")]
-	public static extern int ccn_chk_signing_params(IntPtr h,
-                       IntPtr param,
-                       IntPtr result,
-                       ref IntPtr ptimestamp,
-                       ref IntPtr pfinalblockid,
-                       ref IntPtr pkeylocator);
+	public static extern int ccn_chk_signing_params(IntPtr h, IntPtr param, IntPtr result, ref IntPtr ptimestamp, ref IntPtr pfinalblockid, ref IntPtr pkeylocator);
 			
 	// actions
 	[DllImport ("Egal")]
-	public static extern int ccn_put(IntPtr h, IntPtr p, int length); // returns -1 for error
-
+	public static extern int ccn_put(IntPtr h, IntPtr p, int length);
 
 	
 	
 	// Delegates, for Callback //
 	//==================================//
+	
 	public delegate int ccns_callback (IntPtr ccns, IntPtr lhash, IntPtr rhash, IntPtr pname);
 	
 	public delegate Upcall.ccn_upcall_res ccn_handler (IntPtr selfp, Upcall.ccn_upcall_kind kind, IntPtr info);
 
-	
 	
 	// Tests //
 	[DllImport ("Egal")]

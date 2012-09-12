@@ -1,11 +1,66 @@
 \chapter{Implementation}
 \label{implementation}
-
-\label{implementation}
 \def\tm{\leavevmode\hbox{$\rm {}^{TM}$}} %注册符 网上找的
 
-We implemented asset, state and event synchronization in both C and C\#. We organize these functions in our \emph{Egal}\tm~library which can be reused by future programers. Moreover, we wrapped the Egal library as a Unity3D\tm~Pro plugin so that it can provide some direct support for Unity\tm~programmers. Last but not least, we adapted Unity\tm's Car Racing Tutorial~\cite{UnityCar}~into a P2P multiplayer on-line game running over NDN.
+We implemented the synchronization mechanism proposed in chapter~\ref{sync}~in a real-world multiplayer on-line game -- we adapted Unity\tm's Car Racing Tutorial~\cite{UnityCar}, which is a single-player off-line game, into a P2P multiplayer on-line game running on the NDN testbed. We describe in this chapter the implementation details of such process. 
 
-The major language of NDN source code is in C while the main language used by Unity3D\tm~is C\# Script. We used \verb|System.Runtime.InteropServices| to invoke C functions from C\# and vice versa. Data structures are marshaled whenever necessary. The major developing environments we used were Xcode 4\tm~and Mono\tm.
+%We implemented asset, state and event synchronization in both C and C\#. We organize these functions in our \emph{Egal}\tm~library which can be reused by future programers. Moreover, we wrapped the Egal library as a Unity3D\tm~Pro plugin so that it can provide some direct support for Unity\tm~programmers. Last but not least, we adapted Unity\tm's Car Racing Tutorial~\cite{UnityCar}~into a P2P multiplayer on-line game running over NDN.
 
-Please refer to the Appendix for the library functions provided by Egal\tm.
+%The major language of NDN source code is in C while the main language used by Unity3D\tm~is C\# Script. We used \verb|System.Runtime.InteropServices| to invoke C functions from C\# and vice versa. Data structures are marshaled whenever necessary. The major developing environments we used were Xcode 4\tm~and Mono\tm.
+
+\section{Hierarchy}
+
+The software hierarchy of our sample game is illustrated by the stack of figure~\ref{hierarchy}. On the top of the stack is Unity3D\tm~Pro, the game engine with which the sample game is created. Just below Unity3D\tm~is the \emph{ccnd} daemon, which provides all default functionalities of NDN. Since our sample game utilizes CCNx Sync and CCNx repository for asset synchronization, it also needs \emph{ccnr}, the daemon of the local repository, to be running. Each peer's local repository do not communicate with each other directly. Instead, their content is updated through the work done by the ccnd daemon (issuing Interests and retrieving Data). This explains why ccnr is placed under ccnd in the stack and why there is no explicit communication (illustrated by bi-direction arrows) between repository daemons. Note that for the time being, CCNx Sync daemon is incorporated as part of the ccnr daemon, therefore we did not explicitly show the synchronization daemon in figure~\ref{hierarchy}. However, according to~\cite{CCNxSync}, CCNx's Sync daemon will become independent of the repository eventually. By that time, there should be a new layer for asset synchronization between the "ccnd" daemon and the "ccnr" daemon.
+
+\begin{figure}
+\begin{center}
+\begin{tikzpicture}[stack/.style={rectangle split, rectangle split parts=#1,draw, anchor=center}]
+\node at (0, 0) [stack=3]  {
+\nodepart{one}Unity3D
+\nodepart{two}ccnd
+\nodepart{three}ccnr
+};
+\node at (3, 0) [stack=3]  {
+\nodepart{one}Unity3D
+\nodepart{two}ccnd
+\nodepart{three}ccnr
+};
+\draw[ <-> ] (1, -0.1) -- (2, -0.1);
+\end{tikzpicture}
+\caption{Peer Hierarchy}
+\label{hierarchy}
+\end{center}
+\end{figure}
+
+
+
+%-------------------------------------------------------------------------------------------------------------------------------------%
+\section{Interop}
+
+The majority part of native NDN source code is in C, while the main language used by Unity3D\tm~is C\# Script. Such phenomenon is quite common since native code needs to be efficient and language designed for application development must accommodate for fast-prototyping. To bridge the two parts, or, to \emph{interop} between C and C\#, we present Egal Library\tm~and Egal Plugin\tm.
+
+Egal Library\tm~contains two parts: C source code and a C\# API list. The C source code contains the most important functions for asset, state and event synchronization. It is a supplement of the NDN source code, enhancing its synchronization capability. The C\# API list exposes both the synchronization functions and the native NDN functions to the game application. \verb|System.Runtime.InteropServices| is used to invoke C functions from C\# and vice versa. Data structures are marshaled whenever necessary. With the help of the Egal Library\tm, game developers can call asset, state and event synchronization functions as well as NDN functions directly from C\#. They do not have to know the implementation details of each function. 
+
+Egal Plugin\tm~is an effort to further simplify things for Unity3D\tm~developers. We wrapped the Egal Library\tm~into a .bundle file, which would allow Unity3D\tm~developers to use Egal Library\tm~from within Unity\tm 's editor window.
+
+We developed the C part of our Egal Library\tm~with Xcode 4\tm, and the C\# part with Mono\tm. Please refer to the Appendix for the library functions provided by Egal\tm.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
